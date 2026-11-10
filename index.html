@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Valedictor · Ask the top of the class.</title>
 <meta name="description" content="Valedictor. Book short sessions with verified students, alumni and faculty from the world's top institutions. From 15 minutes to 2 hours. Ask the top of the class.">
-<meta name="theme-color" content="#121317">
+<meta name="theme-color" content="#0B0C0F">
 <meta property="og:title" content="Valedictor · Ask the top of the class.">
 <meta property="og:description" content="Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,236 +13,466 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#121317; --paper:#F6F3EC; --blue:#2B59FF; --white:#FFFFFF; --line:#E4DFD3; --muted:rgba(18,19,23,.62); }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  html { scroll-behavior:smooth; }
-  body { background:var(--paper); color:var(--ink); font-family:'Outfit', system-ui, sans-serif; font-size:17px; line-height:1.5; -webkit-font-smoothing:antialiased; }
-  a { color:inherit; }
-  .wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
-  h1, h2, h3 { font-weight:700; letter-spacing:-.035em; line-height:1.04; }
-  h2 { font-size:clamp(34px, 4.4vw, 54px); }
-  h3 { font-size:22px; letter-spacing:-.02em; line-height:1.2; }
-  .eyebrow { font-size:14px; font-weight:500; color:var(--muted); display:flex; align-items:center; gap:10px; }
-  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; background:var(--blue); flex:none; }
-  .btn { display:inline-flex; align-items:center; gap:10px; background:var(--blue); color:#fff; text-decoration:none; font-weight:700; font-size:16px; padding:15px 24px; border-radius:14px; box-shadow:0 10px 24px rgba(43,89,255,.25); transition:transform .15s, box-shadow .15s; }
-  .btn:hover { transform:translateY(-1px); box-shadow:0 14px 30px rgba(43,89,255,.32); }
-  .btn.ghost { background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--ink); }
-  .btn.ghost:hover { box-shadow:inset 0 0 0 1.5px var(--ink); background:rgba(18,19,23,.04); }
-  .btn.light { background:var(--paper); color:var(--ink); box-shadow:none; }
+  :root{
+    --bg:#0B0C0F; --panel:#121317; --panel2:#16171C; --paper:#F6F3EC;
+    --muted:rgba(246,243,236,.58); --faint:rgba(246,243,236,.38);
+    --line:rgba(246,243,236,.12); --blue:#2B59FF; --glow:rgba(43,89,255,.55);
+    --serif:'Instrument Serif', Georgia, serif; --sans:'Outfit', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{background:var(--bg);color:var(--paper);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--blue);color:#fff}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  .label{font-family:var(--sans);font-weight:500;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--faint)}
+  .serif{font-family:var(--serif);font-weight:400}
+  .it{font-family:var(--serif);font-style:italic;font-weight:400}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 14px var(--glow);flex:none}
+  .rule{height:1px;background:var(--line);border:0}
+
+  /* background: grain + drifting dots */
+  #field{position:fixed;inset:0;z-index:0;pointer-events:none}
+  .grain{position:fixed;inset:-50%;z-index:1;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 8s steps(8) infinite}
+  @keyframes grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-2%)}100%{transform:translate(0,0)}}
+  main,nav,footer{position:relative;z-index:2}
+
+  /* entrance */
+  #veil{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;transition:opacity 1s ease, visibility 1s}
+  #veil.gone{opacity:0;visibility:hidden}
+  .rise{display:flex;flex-direction:column-reverse;align-items:center;gap:10px;height:150px;justify-content:flex-start}
+  .rise i{display:block;border-radius:50%;background:var(--paper);opacity:0;transform:translateY(18px);animation:up .7s cubic-bezier(.2,.7,.2,1) forwards}
+  .rise i.top{background:var(--blue);box-shadow:0 0 30px var(--glow)}
+  @keyframes up{to{opacity:var(--o,1);transform:none}}
+  #veil .w{height:40px;opacity:0;animation:fade 1s ease 1.9s forwards}
+  #veil .l{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);opacity:0;animation:fade 1s ease 2.4s forwards}
+  #veil .enter{position:absolute;bottom:38px;opacity:0;animation:fade 1s ease 3s forwards;cursor:pointer;background:none;border:0;color:var(--faint)}
+  @keyframes fade{to{opacity:1}}
 
   /* nav */
-  nav { position:sticky; top:0; z-index:20; background:rgba(246,243,236,.86); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:border-color .2s; }
-  nav.scrolled { border-bottom-color:var(--line); }
-  nav .wrap { display:flex; align-items:center; gap:32px; height:72px; }
-  nav .logo { height:30px; width:auto; display:block; }
-  nav .links { display:flex; gap:28px; font-size:15px; }
-  nav .links a { text-decoration:none; color:var(--muted); }
-  nav .links a:hover { color:var(--ink); }
-  nav .btn { margin-left:auto; padding:11px 18px; font-size:15px; box-shadow:none; }
+  nav{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .4s, border-color .4s;border-bottom:1px solid transparent}
+  nav.solid{background:rgba(11,12,15,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;height:76px;gap:36px}
+  nav img{height:26px;display:block}
+  nav .links{display:flex;gap:30px;margin-left:auto}
+  nav .links a{font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:500;color:var(--muted);transition:color .2s}
+  nav .links a:hover{color:var(--paper)}
+  .pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(246,243,236,.28);border-radius:999px;padding:11px 20px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:all .25s}
+  .pill:hover{border-color:var(--paper);background:rgba(246,243,236,.06)}
+  .pill.solid{background:var(--paper);color:var(--bg);border-color:var(--paper)}
+  .pill.solid:hover{background:#fff}
 
   /* hero */
-  .hero { padding:72px 0 96px; }
-  .hero .wrap { display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center; }
-  .hero h1 { font-size:clamp(52px, 7vw, 96px); letter-spacing:-.045em; margin-top:22px; }
-  .hero .sub { font-size:clamp(18px, 1.8vw, 21px); color:var(--muted); margin-top:24px; max-width:520px; }
-  .hero .ctas { display:flex; gap:12px; flex-wrap:wrap; margin-top:36px; }
-  .card { background:var(--white); border:1px solid var(--line); border-radius:22px; padding:22px; box-shadow:0 30px 60px -30px rgba(18,19,23,.25); }
-  .demo .ask { display:flex; align-items:center; gap:10px; border:1.5px solid var(--ink); border-radius:14px; padding:12px 14px; font-size:15px; }
-  .demo .ask span { color:var(--muted); }
-  .demo .ai { margin-top:12px; background:var(--paper); border-radius:14px; padding:12px 14px; font-size:14px; color:var(--muted); }
-  .demo .ai b { color:var(--ink); font-weight:500; }
-  .person { display:flex; gap:14px; align-items:center; margin-top:16px; padding-top:16px; border-top:1px solid var(--line); }
-  .avatar { width:46px; height:46px; border-radius:50%; background:#E8E4FF; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--blue); flex:none; }
-  .person .meta { font-size:13.5px; color:var(--muted); }
-  .person .name { font-weight:700; font-size:16px; }
-  .person .price { margin-left:auto; text-align:right; font-weight:700; font-size:18px; }
-  .person .price small { display:block; font-weight:400; font-size:12px; color:var(--muted); }
-  .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
-  .tag { font-size:12.5px; padding:5px 10px; border-radius:999px; background:var(--paper); }
-  .open { font-size:12px; font-weight:500; color:var(--blue); display:inline-flex; align-items:center; gap:6px; }
-  .demo .book { margin-top:16px; width:100%; justify-content:center; }
-  .example { font-size:12px; color:var(--muted); text-align:center; margin-top:12px; }
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 70px;position:relative}
+  .hero .glow{position:absolute;left:50%;top:38%;width:820px;height:820px;transform:translate(-50%,-50%);background:radial-gradient(circle, rgba(43,89,255,.20), rgba(43,89,255,0) 62%);filter:blur(10px);pointer-events:none}
+  .hero .wrap{position:relative;text-align:center}
+  .hero h1{font-family:var(--sans);font-weight:500;font-size:clamp(56px,10.5vw,152px);letter-spacing:-.05em;line-height:.95;margin-top:28px}
+  .hero h1 .it{letter-spacing:-.02em;font-size:1.04em}
+  .hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:560px;margin:30px auto 0}
+  .hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+  .scrollcue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scrollcue span{width:1px;height:46px;background:linear-gradient(var(--line),var(--paper));animation:cue 2.4s ease-in-out infinite}
+  @keyframes cue{0%,100%{opacity:.2;transform:scaleY(.5);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
 
-  /* sections */
-  section { padding:96px 0; }
-  .head { max-width:720px; }
-  .head p { font-size:19px; color:var(--muted); margin-top:18px; }
-  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; }
-  .step { background:var(--white); border:1px solid var(--line); border-radius:22px; padding:28px; }
-  .step .num { font-size:14px; font-weight:700; color:var(--blue); }
-  .step h3 { margin-top:18px; }
-  .step p { color:var(--muted); margin-top:10px; font-size:16px; }
+  /* marquee */
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0}
+  .marquee .track{display:inline-flex;gap:46px;animation:mq 46s linear infinite;padding-left:46px}
+  .marquee span{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--muted);display:inline-flex;align-items:center;gap:46px}
+  .marquee span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--glow)}
+  @keyframes mq{to{transform:translateX(-50%)}}
 
-  .who { background:var(--ink); color:var(--paper); }
-  .who .head p { color:rgba(246,243,236,.65); }
-  .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px; }
-  .tier { border:1px solid rgba(246,243,236,.14); border-radius:22px; padding:28px; }
-  .tier .badge { display:inline-flex; align-items:center; gap:8px; font-size:13px; padding:6px 12px; border-radius:999px; background:rgba(246,243,236,.08); }
-  .tier h3 { margin-top:20px; }
-  .tier p { color:rgba(246,243,236,.65); margin-top:10px; font-size:16px; }
+  section{padding:150px 0}
+  .kicker{display:flex;align-items:center;gap:14px}
+  .kicker .ln{width:38px;height:1px;background:var(--line)}
+  h2{font-family:var(--sans);font-weight:500;font-size:clamp(40px,5.6vw,82px);letter-spacing:-.045em;line-height:1}
+  h2 .it{font-size:1.06em;letter-spacing:-.015em}
+  .lede{font-size:19px;color:var(--muted);max-width:620px;margin-top:26px}
 
-  .safe { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
-  .list { display:grid; gap:14px; margin-top:34px; }
-  .item { display:flex; gap:16px; align-items:flex-start; background:var(--white); border:1px solid var(--line); border-radius:18px; padding:18px 20px; }
-  .item .ic { width:34px; height:34px; border-radius:10px; background:var(--paper); display:flex; align-items:center; justify-content:center; flex:none; }
-  .item b { display:block; font-weight:700; }
-  .item span { color:var(--muted); font-size:15.5px; }
-  .call { background:var(--ink); border-radius:24px; padding:18px; color:var(--paper); box-shadow:0 30px 60px -30px rgba(18,19,23,.45); }
-  .call .bar { display:flex; justify-content:space-between; font-size:13px; opacity:.75; }
-  .call .rec { display:inline-flex; align-items:center; gap:6px; color:#FF6B6B; opacity:1; }
-  .call .tiles { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
-  .call .tile { aspect-ratio:4/3; border-radius:16px; background:linear-gradient(160deg,#2a2c34,#17181d); display:flex; align-items:flex-end; padding:12px; font-size:13px; }
-  .call .sum { margin-top:12px; background:rgba(246,243,236,.06); border-radius:14px; padding:14px; font-size:14px; line-height:1.5; }
-  .call .sum b { display:block; font-size:12px; letter-spacing:.06em; text-transform:uppercase; opacity:.6; margin-bottom:6px; font-weight:500; }
+  /* statement */
+  .statement{text-align:center}
+  .statement p.big{font-family:var(--serif);font-size:clamp(34px,4.6vw,64px);line-height:1.12;letter-spacing:-.01em;max-width:980px;margin:0 auto}
+  .statement p.big em{color:var(--paper)}
+  .statement p.big span{color:var(--faint)}
 
-  .members { background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-  .members .wrap { display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
-  .perks { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .perk { background:var(--paper); border-radius:18px; padding:20px; }
-  .perk b { display:block; font-size:28px; letter-spacing:-.03em; }
-  .perk span { color:var(--muted); font-size:15px; }
+  /* circle (who) */
+  .circle{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:28px;overflow:hidden;margin-top:70px}
+  .member{background:var(--bg);padding:44px 36px 40px;position:relative;min-height:380px;display:flex;flex-direction:column;transition:background .4s}
+  .member:hover{background:var(--panel)}
+  .member .dots{display:flex;gap:7px;height:12px;align-items:flex-end}
+  .member .dots i{width:7px;height:7px;border-radius:50%;background:var(--paper);opacity:.35}
+  .member .dots i.b{background:var(--blue);opacity:1;box-shadow:0 0 12px var(--glow)}
+  .member h3{font-family:var(--serif);font-weight:400;font-size:48px;letter-spacing:-.01em;line-height:1;margin-top:auto}
+  .member p{color:var(--muted);margin-top:16px;font-size:16px;max-width:300px}
+  .member .badge{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 14px;align-self:flex-start}
 
-  .faq { max-width:820px; }
-  details { border-bottom:1px solid var(--line); padding:22px 0; }
-  summary { cursor:pointer; list-style:none; font-weight:700; font-size:19px; letter-spacing:-.01em; display:flex; justify-content:space-between; gap:20px; }
-  summary::-webkit-details-marker { display:none; }
-  summary::after { content:"+"; font-weight:400; font-size:24px; line-height:1; color:var(--muted); }
-  details[open] summary::after { content:"–"; }
-  details p { color:var(--muted); margin-top:12px; max-width:680px; }
+  /* ask (how it works) */
+  .ask{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .steps{margin-top:54px;border-top:1px solid var(--line)}
+  .step{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:28px 0;border-bottom:1px solid var(--line)}
+  .step .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--faint)}
+  .step b{font-weight:500;font-size:21px;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:16px;margin-top:6px}
+  .console{position:sticky;top:120px;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:0 60px 120px -60px rgba(43,89,255,.35)}
+  .console .top{display:flex;justify-content:space-between;align-items:center}
+  .console .q{margin-top:22px;border:1px solid rgba(246,243,236,.22);border-radius:16px;padding:16px 18px;font-size:16px;min-height:58px}
+  .console .q .caret{display:inline-block;width:1.5px;height:18px;background:var(--paper);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .console .a{margin-top:14px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--muted);line-height:1.4;min-height:54px}
+  .match{margin-top:18px;display:grid;gap:10px}
+  .person{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:16px;background:rgba(246,243,236,.02);opacity:0;transform:translateY(8px);transition:all .6s ease}
+  .person.show{opacity:1;transform:none}
+  .av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;background:rgba(43,89,255,.16);color:#9DB2FF;flex:none}
+  .person .nm{font-weight:500}
+  .person .mt{font-size:13px;color:var(--faint)}
+  .person .pr{margin-left:auto;text-align:right;font-weight:500}
+  .person .pr small{display:block;font-size:11.5px;color:var(--faint);font-weight:300}
+  .console .note{margin-top:16px;text-align:center;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--faint)}
 
-  .final { text-align:center; padding:120px 0; }
-  .final h2 { font-size:clamp(44px, 6vw, 80px); }
-  .final p { color:var(--muted); font-size:19px; margin-top:18px; }
-  .final .ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:36px; }
+  /* the room */
+  .room{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+  .call{border:1px solid var(--line);border-radius:28px;padding:18px;background:var(--panel)}
+  .call .bar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);padding:4px 6px 14px}
+  .rec{display:inline-flex;align-items:center;gap:8px;color:#FF7A7A}
+  .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF5A5A;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{50%{opacity:.25}}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tile{aspect-ratio:4/3;border-radius:18px;background:radial-gradient(120% 90% at 30% 20%,#23252d,#121317);position:relative;overflow:hidden}
+  .tile .who{position:absolute;left:14px;bottom:12px;font-size:13px;color:var(--muted)}
+  .tile .orb{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(246,243,236,.06);border:1px solid var(--line)}
+  .after{margin-top:12px;border-radius:18px;background:rgba(246,243,236,.03);border:1px solid var(--line);padding:18px 20px}
+  .after .label{display:block;margin-bottom:10px}
+  .after li{list-style:none;padding:7px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--muted)}
+  .after li:first-of-type{border-top:0}
+  .keeps{margin-top:44px;display:grid;gap:0;border-top:1px solid var(--line)}
+  .keep{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .keep .dot{margin-top:9px}
+  .keep b{font-weight:500;font-size:18px}
+  .keep p{color:var(--muted);font-size:15.5px;margin-top:4px}
 
-  footer { border-top:1px solid var(--line); padding:36px 0 44px; font-size:14px; color:var(--muted); }
-  footer .wrap { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start; }
-  footer .logo { height:24px; display:block; margin-bottom:12px; }
-  footer .fine { max-width:560px; line-height:1.5; }
+  /* journey */
+  .journey{background:linear-gradient(180deg,var(--bg),#0E0F13 40%,var(--bg))}
+  .path{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:70px;position:relative}
+  .path::before{content:"";position:absolute;top:22px;left:0;right:0;height:1px;background:var(--line)}
+  .stage{position:relative;padding-top:58px}
+  .stage .pip{position:absolute;top:14px;left:0;width:17px;height:17px;border-radius:50%;border:1px solid rgba(246,243,236,.4);background:var(--bg)}
+  .stage:last-child .pip{background:var(--blue);border-color:var(--blue);box-shadow:0 0 18px var(--glow)}
+  .stage .label{color:var(--faint)}
+  .stage h4{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;margin-top:12px}
+  .stage p{color:var(--muted);font-size:15.5px;margin-top:12px}
+  .cardwrap{display:flex;justify-content:center;margin-top:100px;perspective:1200px}
+  .mcard{width:min(460px,90vw);aspect-ratio:1.586;border-radius:22px;padding:28px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#1a1c22 0%,#0d0e12 55%,#16182a 100%);border:1px solid rgba(246,243,236,.16);
+    box-shadow:0 50px 100px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.02) inset;transform:rotateX(8deg) rotateY(-10deg);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .mcard:hover{transform:rotateX(0) rotateY(0)}
+  .mcard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.07) 50%,transparent 65%);transform:translateX(-60%);animation:sheen 6s ease-in-out infinite}
+  @keyframes sheen{50%{transform:translateX(60%)}}
+  .mcard img{height:22px}
+  .mcard .rising{position:absolute;right:28px;top:26px;display:flex;flex-direction:column-reverse;align-items:center;gap:4px}
+  .mcard .rising i{display:block;border-radius:50%;background:var(--paper)}
+  .mcard .nm{position:absolute;left:28px;bottom:58px;font-family:var(--serif);font-size:28px}
+  .mcard .meta{position:absolute;left:28px;bottom:30px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--faint)}
+  .mcard .no{position:absolute;right:28px;bottom:30px;font-size:11px;letter-spacing:.26em;color:var(--faint)}
 
-  @media (max-width:900px) {
-    nav .links { display:none; }
-    .hero .wrap, .safe, .members .wrap { grid-template-columns:1fr; }
-    .steps, .tiers { grid-template-columns:1fr; }
-    section { padding:72px 0; }
+  /* standard */
+  .rules{margin-top:70px;border-top:1px solid var(--line)}
+  .rulei{display:grid;grid-template-columns:120px 1fr 1fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .3s}
+  .rulei:hover{padding-left:12px}
+  .rulei .n{font-family:var(--serif);font-style:italic;color:var(--faint);font-size:22px}
+  .rulei b{font-family:var(--sans);font-weight:500;font-size:clamp(26px,3vw,38px);letter-spacing:-.03em}
+  .rulei p{color:var(--muted)}
+
+  /* founders */
+  .founders{text-align:center}
+  .founders .names{display:flex;justify-content:center;gap:80px;margin-top:56px;flex-wrap:wrap}
+  .founders .f b{display:block;font-family:var(--serif);font-weight:400;font-size:40px}
+  .founders .f span{display:block;margin-top:8px}
+
+  /* request */
+  .request{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+  form{display:grid;gap:18px}
+  .seg{display:flex;gap:10px;flex-wrap:wrap}
+  .seg label{cursor:pointer}
+  .seg input{position:absolute;opacity:0;pointer-events:none}
+  .seg span{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:11px 18px;font-size:14px;color:var(--muted);transition:all .2s}
+  .seg input:checked + span{border-color:var(--paper);color:var(--paper);background:rgba(246,243,236,.06)}
+  .field{display:grid;gap:8px}
+  .field input,.field textarea{background:transparent;border:0;border-bottom:1px solid rgba(246,243,236,.22);color:var(--paper);font-family:var(--sans);font-weight:300;font-size:18px;padding:10px 0;outline:none;transition:border-color .2s;resize:none}
+  .field input:focus,.field textarea:focus{border-bottom-color:var(--paper)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  button.send{margin-top:14px;justify-self:start;cursor:pointer;font-family:var(--sans)}
+  .fine{font-size:13px;color:var(--faint);margin-top:6px}
+
+  footer{border-top:1px solid var(--line);padding:56px 0 60px}
+  footer .wrap{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end}
+  footer img{height:28px;display:block;margin-bottom:18px}
+  footer .fine{max-width:560px;line-height:1.55}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(26px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1), transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  .rv.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  @media (max-width:960px){
+    nav .links{display:none}
+    nav .pill{margin-left:auto}
+    section{padding:100px 0}
+    .circle,.path{grid-template-columns:1fr}
+    .path::before{display:none}
+    .ask,.room,.request{grid-template-columns:1fr;gap:50px}
+    .console{position:relative;top:0}
+    .rulei{grid-template-columns:60px 1fr;}
+    .rulei p{grid-column:2}
+    .member{min-height:300px}
   }
-  @media (max-width:520px) {
-    .perks { grid-template-columns:1fr; }
-    nav .btn { padding:10px 14px; }
-    .hero { padding:40px 0 64px; }
+  @media (max-width:520px){
+    .wrap{padding:0 20px}
+    .row2{grid-template-columns:1fr}
+    footer .wrap{grid-template-columns:1fr}
+    .founders .names{gap:36px}
+    nav .pill span.hide{display:none}
+    .hero .label{letter-spacing:.18em;font-size:10.5px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+    #veil{display:none}
   }
 </style>
 </head>
 <body>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<div id="veil" role="presentation">
+  <div class="rise" aria-hidden="true">
+    <i style="width:5px;height:5px;--o:.18;animation-delay:.15s"></i>
+    <i style="width:7px;height:7px;--o:.32;animation-delay:.35s"></i>
+    <i style="width:9px;height:9px;--o:.5;animation-delay:.55s"></i>
+    <i style="width:11px;height:11px;--o:.7;animation-delay:.75s"></i>
+    <i style="width:13px;height:13px;--o:.88;animation-delay:.95s"></i>
+    <i class="top" style="width:22px;height:22px;animation-delay:1.25s"></i>
+  </div>
+  <img class="w" src="logo-white.png" alt="valedictor">
+  <div class="l">Ask the top of the class.</div>
+  <button class="enter label" id="enter">Enter</button>
+</div>
 
 <nav id="nav"><div class="wrap">
-  <a href="#top" aria-label="Valedictor home"><img class="logo" src="logo.png" alt="valedictor"></a>
-  <div class="links"><a href="#how">How it works</a><a href="#who">Who's on Valedictor</a><a href="#members">Join as a member</a><a href="#faq">FAQ</a></div>
-  <a class="btn" href="mailto:valedictor2026@gmail.com?subject=Early%20access">Get early access</a>
+  <a href="#top" aria-label="Valedictor"><img src="logo-white.png" alt="valedictor"></a>
+  <div class="links"><a href="#circle">The circle</a><a href="#ask">How it works</a><a href="#journey">Membership</a><a href="#standard">The standard</a></div>
+  <a class="pill" href="#request"><span class="dot"></span>Request <span class="hide">&nbsp;access</span></a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
+<main>
+<header class="hero" id="top">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="label rv">Boston &nbsp;·&nbsp; Harvard &nbsp;·&nbsp; MIT &nbsp;·&nbsp; Babson</div>
+    <h1 class="rv d1">Ask the top<br><span class="it">of the class.</span></h1>
+    <p class="sub rv d2">Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.</p>
+    <div class="ctas rv d3"><a class="pill solid" href="#request">Request access</a><a class="pill" href="#journey">Become a member</a></div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"><span></span></div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="mq">
+  <span>The first circle is forming</span><span>Students, alumni and faculty</span><span>Verified, every one</span><span>From 15 minutes to 2 hours</span><span>Boston first</span><span>Recorded, with consent</span>
+</div></div>
+
+<section class="statement"><div class="wrap">
+  <p class="big rv">Anyone can give advice.<br><em>Few have earned the right to.</em> <span>Valedictor is where you find the ones who have.</span></p>
+</div></section>
+
+<section id="circle"><div class="wrap">
+  <div class="kicker rv"><span class="ln"></span><span class="label">The circle</span></div>
+  <h2 class="rv d1" style="margin-top:26px">Everyone here<br><span class="it">earned their place.</span></h2>
+  <p class="lede rv d2">Every member is verified against a top institution before a single booking. The degree gets them in. The ratings keep them here.</p>
+  <div class="circle">
+    <div class="member rv"><div class="dots"><i></i><i></i><i class="b"></i></div><h3>Students</h3><p>The sharpest minds on campus, fluent in tools most people haven't heard of yet.</p><span class="badge"><span class="dot"></span>Verified · MIT '27</span></div>
+    <div class="member rv d1"><div class="dots"><i></i><i class="b"></i><i></i></div><h3>Alumni</h3><p>Graduates who now build, invest and lead, and remember exactly how they got there.</p><span class="badge"><span class="dot"></span>Verified · Harvard alum '15</span></div>
+    <div class="member rv d2"><div class="dots"><i class="b"></i><i></i><i></i></div><h3>Faculty</h3><p>Professors and teachers who have spent careers on the question you're facing for the first time.</p><span class="badge"><span class="dot"></span>Verified · Faculty</span></div>
+  </div>
+</div></section>
+
+<section id="ask"><div class="wrap ask">
   <div>
-    <div class="eyebrow"><span class="dot"></span>Boston first · Harvard, MIT, Babson</div>
-    <h1>Ask the top<br>of the class.</h1>
-    <p class="sub">Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.</p>
-    <div class="ctas">
-      <a class="btn" href="mailto:valedictor2026@gmail.com?subject=Early%20access">Get early access</a>
-      <a class="btn ghost" href="#members">Become a member</a>
+    <div class="kicker rv"><span class="ln"></span><span class="label">How it works</span></div>
+    <h2 class="rv d1" style="margin-top:26px">Say it plainly.<br><span class="it">We'll find who knows.</span></h2>
+    <div class="steps">
+      <div class="step rv"><span class="n">i.</span><div><b>Ask</b><p>Tell our guide what you need in your own words. It turns that into a clear brief.</p></div></div>
+      <div class="step rv"><span class="n">ii.</span><div><b>Meet your match</b><p>Two or three verified people who have done exactly this, with their price and when they're free.</p></div></div>
+      <div class="step rv"><span class="n">iii.</span><div><b>Book</b><p>From 15 minutes to 2 hours. Pay up front; your money is held until the session happens.</p></div></div>
+      <div class="step rv"><span class="n">iv.</span><div><b>Leave with it on paper</b><p>Meet in our own room. Afterwards you both get the transcript, a summary and the next steps.</p></div></div>
     </div>
   </div>
-  <div class="card demo" aria-hidden="true">
-    <div class="ask">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#121317" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-      <span>I have three slides and three minutes…</span>
+  <div class="console rv d2" aria-hidden="true">
+    <div class="top"><span class="label">The guide</span><span class="label" style="display:flex;gap:8px;align-items:center"><span class="dot"></span>Open now · 14</span></div>
+    <div class="q"><span id="qt"></span><span class="caret"></span></div>
+    <div class="a" id="at"></div>
+    <div class="match">
+      <div class="person"><div class="av">LM</div><div><div class="nm">Leo M.</div><div class="mt">MIT · Computer Science '27</div></div><div class="pr">$18<small>15 min</small></div></div>
+      <div class="person"><div class="av">PS</div><div><div class="nm">Priya S.</div><div class="mt">Harvard alum · Economics '19</div></div><div class="pr">$45<small>30 min</small></div></div>
+      <div class="person"><div class="av">EW</div><div><div class="nm">Prof. E. W.</div><div class="mt">Faculty · Entrepreneurship</div></div><div class="pr">$90<small>30 min</small></div></div>
     </div>
-    <div class="ai"><b>Valedictor guide:</b> Sounds like pitch feedback. A 15-minute session with someone who has pitched before. Here's who's open now.</div>
-    <div class="person">
-      <div class="avatar">LM</div>
-      <div><div class="name">Leo M.</div><div class="meta">MIT · Computer Science '27</div><div class="open"><span class="dot"></span>Open now</div></div>
-      <div class="price">$18<small>/ 15 min</small></div>
-    </div>
-    <div class="tags"><span class="tag">Pitch feedback</span><span class="tag">AI for presentations</span><span class="tag">Claude setup</span></div>
-    <a class="btn book" href="#how">Book 15 minutes</a>
-    <div class="example">Example profile</div>
-  </div>
-</div></header>
-
-<section id="how"><div class="wrap">
-  <div class="head"><h2>Three steps. No searching.</h2><p>Tell us what you need in plain words. We find the person who has done it, and you meet them on Valedictor.</p></div>
-  <div class="steps">
-    <div class="step"><div class="num">01 · Ask</div><h3>Describe it like you'd tell a friend.</h3><p>Our AI guide turns your question into a clear brief and suggests two or three people who fit.</p></div>
-    <div class="step"><div class="num">02 · Book</div><h3>Pick a time, from 15 minutes to 2 hours.</h3><p>Pay securely up front. Your money is held until the session is done.</p></div>
-    <div class="step"><div class="num">03 · Meet</div><h3>Meet on Valedictor. Leave with notes.</h3><p>Sessions run in our own video room. Afterwards you both get the transcript, a summary and the action list.</p></div>
+    <div class="note">Example profiles</div>
   </div>
 </div></section>
 
-<section class="who" id="who"><div class="wrap">
-  <div class="head"><h2>Everyone here earned their place.</h2><p>Every member is verified against a top institution before they can take a single booking.</p></div>
-  <div class="tiers">
-    <div class="tier"><span class="badge"><span class="dot"></span>Verified · MIT '27</span><h3>Students</h3><p>The sharpest current students, fluent in the newest tools, at prices that make sense for quick help.</p></div>
-    <div class="tier"><span class="badge"><span class="dot"></span>Verified · Harvard alum '15</span><h3>Alumni</h3><p>Graduates who now build, invest and lead, with the experience to tell you what actually works.</p></div>
-    <div class="tier"><span class="badge"><span class="dot"></span>Verified · Faculty</span><h3>Faculty</h3><p>Professors and teachers who have spent careers on the questions you're facing for the first time.</p></div>
+<section><div class="wrap room">
+  <div class="call rv" aria-hidden="true">
+    <div class="bar"><span>Pitch feedback · 15 min</span><span class="rec">Recording</span></div>
+    <div class="tiles"><div class="tile"><div class="orb"></div><span class="who">Leo M.</span></div><div class="tile"><div class="orb"></div><span class="who">You</span></div></div>
+    <div class="after"><span class="label">After the call · sent to both</span><ul><li>Cut slide two. Lead with the problem.</li><li>Make the customer the hero of the story.</li><li>End on one clear ask.</li></ul></div>
   </div>
-</div></section>
-
-<section><div class="wrap safe">
   <div>
-    <div class="head"><h2>Every session, kept on the record.</h2><p>Meetings happen inside Valedictor, so you never lose what was said, and you're always protected.</p></div>
-    <div class="list">
-      <div class="item"><div class="ic"><span class="dot"></span></div><div><b>Recorded with your consent</b><span>Both people agree before recording starts. You'll always see when it's on.</span></div></div>
-      <div class="item"><div class="ic"><span class="dot"></span></div><div><b>Transcript and summary, after every call</b><span>Sent to both of you, with the action list, saved in your account.</span></div></div>
-      <div class="item"><div class="ic"><span class="dot"></span></div><div><b>Payment protection</b><span>Money is only released once the session happens. Refunds if it doesn't.</span></div></div>
-      <div class="item"><div class="ic"><span class="dot"></span></div><div><b>Your details stay private</b><span>Chat and calls happen on Valedictor. No phone numbers or emails needed.</span></div></div>
+    <div class="kicker rv"><span class="ln"></span><span class="label">The room</span></div>
+    <h2 class="rv d1" style="margin-top:26px">Every word,<br><span class="it">kept on the record.</span></h2>
+    <div class="keeps">
+      <div class="keep rv"><span class="dot"></span><div><b>Recorded only with consent</b><p>Both people agree before it starts. You'll always see when it's on.</p></div></div>
+      <div class="keep rv"><span class="dot"></span><div><b>Transcript and summary, every time</b><p>Sent to both of you minutes after the call, saved in your account.</p></div></div>
+      <div class="keep rv"><span class="dot"></span><div><b>Protected payment</b><p>Released only once the session happens. If it doesn't, you get it back.</p></div></div>
+      <div class="keep rv"><span class="dot"></span><div><b>Private by design</b><p>No phone numbers, no emails. Everything happens on Valedictor.</p></div></div>
     </div>
   </div>
-  <div class="call" aria-hidden="true">
-    <div class="bar"><span>Pitch deck feedback · 15 min</span><span class="rec">● Recording</span></div>
-    <div class="tiles"><div class="tile">Leo M.</div><div class="tile">You</div></div>
-    <div class="sum"><b>After the call</b>Cut slide 2. Make the case the hero. End with one clear ask.</div>
+</div></section>
+
+<section class="journey" id="journey"><div class="wrap">
+  <div class="kicker rv"><span class="ln"></span><span class="label">Membership</span></div>
+  <h2 class="rv d1" style="margin-top:26px">How one becomes<br><span class="it">a member.</span></h2>
+  <p class="lede rv d2">There is no "sign up" button. If you study, teach or graduated at a top institution, you can apply, and every application is read by the founders.</p>
+  <div class="path">
+    <div class="stage rv"><span class="pip"></span><span class="label">One</span><h4>The application</h4><p>Who you are, what you know, and what someone should ask you about.</p></div>
+    <div class="stage rv d1"><span class="pip"></span><span class="label">Two</span><h4>The proof</h4><p>We verify your affiliation: your institutional email, enrolment, faculty page or alumni record.</p></div>
+    <div class="stage rv d2"><span class="pip"></span><span class="label">Three</span><h4>The conversation</h4><p>Fifteen minutes with the founders. Not an interview; a check that Valedictor is right for you.</p></div>
+    <div class="stage rv d3"><span class="pip"></span><span class="label">Four</span><h4>The card</h4><p>Your profile goes live, with your verified badge and a member number that is yours for good.</p></div>
+  </div>
+  <div class="cardwrap rv"><div class="mcard" aria-hidden="true">
+    <img src="logo-white.png" alt="">
+    <div class="rising"><i style="width:9px;height:9px;background:#2B59FF;box-shadow:0 0 12px rgba(43,89,255,.7)"></i><i style="width:6px;height:6px;opacity:.85"></i><i style="width:5px;height:5px;opacity:.6"></i><i style="width:4px;height:4px;opacity:.4"></i><i style="width:3px;height:3px;opacity:.25"></i></div>
+    <div class="nm">Your name</div><div class="meta">Verified member · Boston</div><div class="no">No. 0001</div>
+  </div></div>
+</div></section>
+
+<section id="standard"><div class="wrap">
+  <div class="kicker rv"><span class="ln"></span><span class="label">The standard</span></div>
+  <h2 class="rv d1" style="margin-top:26px">Four rules.<br><span class="it">Kept quietly.</span></h2>
+  <div class="rules">
+    <div class="rulei rv"><span class="n">i.</span><b>Come prepared.</b><p>Read the brief before you join. Every minute is someone's money.</p></div>
+    <div class="rulei rv"><span class="n">ii.</span><b>Be precise.</b><p>Give the answer you'd want: specific, honest, useful tomorrow morning.</p></div>
+    <div class="rulei rv"><span class="n">iii.</span><b>Be discreet.</b><p>What's shared in a session stays between the two people in it.</p></div>
+    <div class="rulei rv"><span class="n">iv.</span><b>Stay on Valedictor.</b><p>Every session, every message, every payment. It's what keeps everyone protected.</p></div>
   </div>
 </div></section>
 
-<section class="members" id="members"><div class="wrap">
+<section class="founders"><div class="wrap">
+  <div class="label rv">Founded in Boston</div>
+  <div class="names">
+    <div class="f rv d1"><b>Vansh Aggarwal</b><span class="label">Co-founder</span></div>
+    <div class="f rv d2"><b>Maud Bismuth</b><span class="label">Co-founder</span></div>
+  </div>
+</div></section>
+
+<section id="request"><div class="wrap request">
   <div>
-    <div class="head"><h2>Know something worth asking about?</h2><p>If you study, teach or graduated at a top institution, people will pay for an hour of your thinking. Set your price, choose your hours, and get paid for every session.</p></div>
-    <div class="ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px"><a class="btn" href="mailto:valedictor2026@gmail.com?subject=Become%20a%20member">Apply to join</a></div>
+    <div class="kicker rv"><span class="ln"></span><span class="label">Request access</span></div>
+    <h2 class="rv d1" style="margin-top:26px">The first circle<br><span class="it">is forming.</span></h2>
+    <p class="lede rv d2">We're opening in Boston first. Tell us who you are, and we'll write back personally.</p>
   </div>
-  <div class="perks">
-    <div class="perk"><b>You set it</b><span>Your price per session</span></div>
-    <div class="perk"><b>15–120</b><span>Minutes, your choice</span></div>
-    <div class="perk"><b>Verified</b><span>A badge that shows where you're from</span></div>
-    <div class="perk"><b>Paid</b><span>After every completed session</span></div>
-  </div>
+  <form id="rq" class="rv d2">
+    <div class="field"><span class="label">I want to</span>
+      <div class="seg">
+        <label><input type="radio" name="role" value="Ask (client)" checked><span>Ask someone</span></label>
+        <label><input type="radio" name="role" value="Become a member"><span>Become a member</span></label>
+      </div>
+    </div>
+    <div class="row2">
+      <label class="field"><span class="label">Name</span><input name="name" required autocomplete="name"></label>
+      <label class="field"><span class="label">Email</span><input name="email" type="email" required autocomplete="email"></label>
+    </div>
+    <label class="field"><span class="label">Institution (members)</span><input name="inst" placeholder=""></label>
+    <label class="field"><span class="label">In a line, what do you need, or what do you know?</span><textarea name="line" rows="2"></textarea></label>
+    <button class="pill solid send" type="submit">Send request</button>
+    <p class="fine">This opens an email to the founders with your answers filled in.</p>
+  </form>
 </div></section>
-
-<section id="faq"><div class="wrap faq">
-  <h2>Questions</h2>
-  <div style="margin-top:28px">
-    <details><summary>Who can be a member?</summary><p>Students, alumni and faculty of the world's top institutions, plus people formally affiliated with them. We verify every member before they can be booked.</p></details>
-    <details><summary>How much does a session cost?</summary><p>Members set their own prices. Quick sessions with students start around $15 for 15 minutes; alumni and faculty usually charge more.</p></details>
-    <details><summary>Are sessions recorded?</summary><p>Only with both people's consent, given before the call starts. Recordings and transcripts are private to the two of you and stored in your accounts.</p></details>
-    <details><summary>What if a session doesn't happen?</summary><p>Your payment is held until the session is complete. If it doesn't take place, you get your money back.</p></details>
-    <details><summary>Where are you starting?</summary><p>Boston, with Harvard, MIT and Babson, then more institutions and more cities.</p></details>
-  </div>
-</div></section>
-
-<section class="final"><div class="wrap">
-  <h2>Ask the top of the class.</h2>
-  <p>Be first in when we open in Boston.</p>
-  <div class="ctas"><a class="btn" href="mailto:valedictor2026@gmail.com?subject=Early%20access">Get early access</a><a class="btn ghost" href="mailto:valedictor2026@gmail.com?subject=Become%20a%20member">Apply as a member</a></div>
-</div></section>
+</main>
 
 <footer><div class="wrap">
-  <div><img class="logo" src="logo.png" alt="valedictor"><div class="fine">Institution names show where members study, teach or graduated. They do not imply any partnership with or endorsement by those institutions.</div></div>
-  <div>Boston · valedictor.com</div>
+  <div><img src="logo-white.png" alt="valedictor"><p class="fine">Institution names show where members study, teach or graduated. They do not imply any partnership with or endorsement by those institutions.</p></div>
+  <div class="label">Boston &nbsp;·&nbsp; valedictor.com</div>
 </div></footer>
 
 <script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // entrance: once per session
+  const veil = document.getElementById('veil');
+  const open = () => { veil.classList.add('gone'); document.body.style.overflow = ''; };
+  let seen = new URLSearchParams(location.search).has('skip');
+  try { seen = seen || sessionStorage.getItem('v-in') === '1'; sessionStorage.setItem('v-in', '1'); } catch (e) {}
+  if (reduce || seen) { veil.remove(); } else {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('enter').addEventListener('click', open);
+    veil.addEventListener('click', open);
+    setTimeout(open, 4200);
+  }
+
+  // nav
   const nav = document.getElementById('nav');
-  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+  addEventListener('scroll', () => nav.classList.toggle('solid', scrollY > 30), { passive: true });
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .14 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // marquee: duplicate content for a seamless loop
+  const mq = document.getElementById('mq'); mq.innerHTML += mq.innerHTML;
+
+  // guide demo: type, answer, reveal matches
+  const qt = document.getElementById('qt'), at = document.getElementById('at');
+  const people = [...document.querySelectorAll('.person')];
+  const q = 'I have three slides and three minutes to pitch…';
+  const a = 'Pitch feedback, then. Fifteen minutes with someone who has pitched before. Here’s who’s open now.';
+  let ran = false;
+  const run = () => {
+    if (ran) return; ran = true;
+    if (reduce) { qt.textContent = q; at.textContent = a; people.forEach(p => p.classList.add('show')); return; }
+    let i = 0;
+    const t = setInterval(() => { qt.textContent = q.slice(0, ++i); if (i >= q.length) { clearInterval(t);
+      let j = 0; const u = setInterval(() => { at.textContent = a.slice(0, ++j); if (j >= a.length) { clearInterval(u);
+        people.forEach((p, k) => setTimeout(() => p.classList.add('show'), 260 * k)); } }, 18); } }, 38);
+  };
+  new IntersectionObserver((es, o) => es.forEach(e => { if (e.isIntersecting) { run(); o.disconnect(); } }), { threshold: .4 }).observe(document.querySelector('.console'));
+
+  // request form -> prefilled email
+  document.getElementById('rq').addEventListener('submit', ev => {
+    ev.preventDefault();
+    const f = new FormData(ev.target);
+    const body = `I want to: ${f.get('role')}\nName: ${f.get('name')}\nEmail: ${f.get('email')}\nInstitution: ${f.get('inst') || '-'}\n\n${f.get('line') || ''}`;
+    location.href = 'mailto:valedictor2026@gmail.com?subject=' + encodeURIComponent('Request access: ' + f.get('role')) + '&body=' + encodeURIComponent(body);
+  });
+
+  // background: slow rising dots
+  const c = document.getElementById('field'), x = c.getContext('2d');
+  let w, h, dots = [];
+  const size = () => { const r = devicePixelRatio || 1; w = c.width = innerWidth * r; h = c.height = innerHeight * r; c.style.width = innerWidth + 'px'; c.style.height = innerHeight + 'px'; };
+  size(); addEventListener('resize', size);
+  const n = Math.min(46, Math.round(innerWidth / 30));
+  for (let i = 0; i < n; i++) dots.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.6 + .4, s: Math.random() * .00018 + .00006, a: Math.random() * .35 + .08, b: Math.random() < .08 });
+  const draw = () => {
+    x.clearRect(0, 0, w, h);
+    for (const d of dots) {
+      d.y -= d.s; if (d.y < -.02) { d.y = 1.02; d.x = Math.random(); }
+      x.beginPath(); x.arc(d.x * w, d.y * h, d.r * (devicePixelRatio || 1), 0, 6.283);
+      x.fillStyle = d.b ? `rgba(43,89,255,${d.a + .3})` : `rgba(246,243,236,${d.a})`; x.fill();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  draw();
+})();
 </script>
 </body>
 </html>
