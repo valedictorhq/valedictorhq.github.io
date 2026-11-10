@@ -1,5 +1,9 @@
 # web
 
-valedictor.com. Right now a single static "coming soon" page (`index.html`), deployable to Vercel as-is (set the project root to `web/`).
+valedictor.com. A single static page (`index.html`), hosted free on GitHub Pages.
 
-Next: rebuild as a Next.js app with the roster, booking flow and Stripe, keeping the brand tokens from `CLAUDE.md`.
+- Live repo: `valedictorhq/valedictorhq.github.io` (public, website files only)
+- Publish: from the repo root run `./scripts/publish-site.sh`
+- `CNAME` must stay `valedictor.com`
+
+Next: grow this into the real product (roster, booking, Stripe). A backend will need a host beyond GitHub Pages when that day comes.
