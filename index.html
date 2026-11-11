@@ -781,28 +781,28 @@ dialog.req .done .btn { margin-top: 20px; }
     <div class="wrap split">
       <div>
         <h2>The price you see is the price you pay</h2>
-        <p>No booking fee, no card fee, no subscription to browse. Every member gets 80% of what you pay, and we keep 20%.</p>
+        <p>No booking fee, no card fee, no subscription to browse. Every member gets 75% of what you pay, and we keep 25%.</p>
         <ul class="rules">
           <li><b>Members set their own prices</b>Each listing shows the full price for every length before you choose anything.</li>
-          <li><b>Our 20% covers everything we run</b>Checking every member, card processing, the video room, notes and support. Nothing else is added later.</li>
+          <li><b>Our 25% covers everything we run</b>Checking every member, card processing, the video room, notes and support. Nothing else is added later.</li>
           <li><b>Payment waits for the session</b>We hold your payment and release it to the member only after the session happens.</li>
           <li><b>If it doesn’t happen, you get it all back</b>If the member cancels or doesn’t show up, you’re refunded in full.</li>
-          <li><b>Group classes work the same way</b>You pay per seat. The 80/20 split is the same.</li>
+          <li><b>Group classes work the same way</b>You pay per seat. The 75/25 split is the same.</li>
         </ul>
       </div>
       <div class="calc paycalc">
         <div class="out">
           <span>You pay</span>
-          <div><output id="pPay">$50</output><small>and nothing more</small></div>
+          <div><output id="pPay">$60</output><small>and nothing more</small></div>
         </div>
         <div class="rng">
-          <div class="h"><label for="price">Try a session price</label><b id="priceV">$50</b></div>
-          <input type="range" id="price" min="20" max="300" step="5" value="50">
+          <div class="h"><label for="price">Try a session price</label><b id="priceV">$60</b></div>
+          <input type="range" id="price" min="20" max="300" step="5" value="60">
         </div>
-        <div class="splitbar" aria-hidden="true"><i class="m" style="width:80%"></i><i class="v" style="width:20%"></i></div>
+        <div class="splitbar" aria-hidden="true"><i class="m" style="width:75%"></i><i class="v" style="width:25%"></i></div>
         <div class="ledger">
-          <div><span><i class="dot m"></i>The member gets 80%</span><b id="pMember">$40</b></div>
-          <div><span><i class="dot v"></i>Valedictor keeps 20%</span><b id="pUs">$10</b></div>
+          <div><span><i class="dot m"></i>The member gets 75%</span><b id="pMember">$45</b></div>
+          <div><span><i class="dot v"></i>Valedictor keeps 25%</span><b id="pUs">$15</b></div>
           <div><span>Booking and card fees</span><b>$0</b></div>
         </div>
         <p class="fine">Members can see the same numbers before they set a price.</p>
@@ -824,7 +824,7 @@ dialog.req .done .btn { margin-top: 20px; }
       <div class="calc" id="calc">
         <div class="out">
           <span>What you’d take home</span>
-          <div><output id="earn">$1,040</output><small>a month, after our 20%</small></div>
+          <div><output id="earn">$980</output><small>a month, after our 25%</small></div>
         </div>
         <div class="rng">
           <div class="h"><label for="rate">Your rate</label><b id="rateV">$75 an hour</b></div>
@@ -845,7 +845,7 @@ dialog.req .done .btn { margin-top: 20px; }
       <div class="qs">
         <details><summary>Who can be a member?<i></i></summary><p>Students, alumni and faculty of top institutions, plus people formally affiliated with them. We start with Harvard, MIT and Babson.</p></details>
         <details><summary>How do you check members?<i></i></summary><p>Every member is verified with their institution before their first booking, for example through their institution email. We also read each application ourselves.</p></details>
-        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 80% and Valedictor keeps 20%.</p></details>
+        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 75% and Valedictor keeps 25%.</p></details>
         <details><summary>What if a session doesn’t happen?<i></i></summary><p>Your payment is held until the session takes place. If the member cancels or doesn’t show up, you get a full refund.</p></details>
         <details><summary>What are group classes?<i></i></summary><p>Small live classes, usually 8 to 10 people, run by one member on a set day and time. You pay per seat. They’re a cheaper way to learn things like AI basics or prompting with others.</p></details>
         <details><summary>Can someone help me set up Claude or other AI tools?<i></i></summary><p>Yes. Members can install and set up tools like Claude Code with you on your own laptop, build custom skills and agents, or teach you to use ChatGPT, Claude and Gemini on your real work.</p></details>
@@ -949,7 +949,8 @@ dialog.req .done .btn { margin-top: 20px; }
     build:    { name: 'Priyanka V.', av: ['PV', '#3B3F6B'], open: true, who: 'MIT, Computer Science student', bio: 'Bring an idea for a small AI tool. We plan it, build it on your laptop with you typing, and put it online so you leave with a link you can share.', opts: [['1 hr', 'Plan it and build the first version', 70], ['2 hr', 'Build and ship it together', 140]] },
     papers:   { name: 'Ben A.', av: ['BA', '#4F5B3A'], who: 'Harvard, PhD candidate in Biology', bio: 'AI can read fifty papers in an afternoon and still get the sample size wrong. I’ll show you a workflow that saves the time and checks every claim against the source.', opts: [['30 min', 'Set up your reading workflow', 35], ['1 hr', 'Literature review with AI, checked', 65]] }
   };
-  var FEE = 0.2;
+  var FEE = 0.25;
+  function cash(n) { return n % 1 ? '$' + n.toFixed(2) : money(n); }
 
   /* filtering */
   var state = { cat: '', inst: '', len: '', q: '' };
@@ -1007,13 +1008,13 @@ dialog.req .done .btn { margin-top: 20px; }
   function timesFor(i) { return days[i].wk ? ['10:00 am', '11:30 am', '2:00 pm'] : ['8:00 am', '6:00 pm', '7:30 pm', '9:00 pm']; }
   function money(n) { return '$' + n.toLocaleString('en-US'); }
   function ledger(price, label) {
-    var cut = Math.round(price * FEE), keep = price - cut;
+    var cut = price * FEE, keep = price - cut;
     return '<div><span>' + label + '</span><b>' + money(price) + '</b></div>' +
       '<div><span>Booking and card fees</span><b>$0</b></div>' +
       '<div class="tot"><span>You pay</span><b>' + money(price) + '</b></div>' +
       '<p class="splitbar" aria-hidden="true"><i class="m" style="width:' + (100 - FEE * 100) + '%"></i><i class="v" style="width:' + FEE * 100 + '%"></i></p>' +
-      '<div><span><i class="dot m"></i>The member gets ' + (100 - FEE * 100) + '%</span><b>' + money(keep) + '</b></div>' +
-      '<div><span><i class="dot v"></i>Valedictor keeps ' + FEE * 100 + '%</span><b>' + money(cut) + '</b></div>';
+      '<div><span><i class="dot m"></i>The member gets ' + (100 - FEE * 100) + '%</span><b>' + cash(keep) + '</b></div>' +
+      '<div><span><i class="dot v"></i>Valedictor keeps ' + FEE * 100 + '%</span><b>' + cash(cut) + '</b></div>';
   }
   function renderSheet() {
     var L = D[current], c = L.cls;
@@ -1153,9 +1154,9 @@ dialog.req .done .btn { margin-top: 20px; }
   /* pricing calculator */
   var price = $('#price');
   function split() {
-    var p = +price.value, cut = Math.round(p * FEE);
+    var p = +price.value, cut = p * FEE;
     $('#pPay').textContent = money(p); $('#priceV').textContent = money(p);
-    $('#pMember').textContent = money(p - cut); $('#pUs').textContent = money(cut);
+    $('#pMember').textContent = cash(p - cut); $('#pUs').textContent = cash(cut);
     price.style.setProperty('--p', ((p - price.min) / (price.max - price.min) * 100) + '%');
   }
   price.addEventListener('input', split); split();
