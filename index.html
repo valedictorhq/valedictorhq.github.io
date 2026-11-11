@@ -8,6 +8,18 @@
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="Valedictor: Ask the top of the class.">
 <meta property="og:description" content="Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://valedictor.com/">
+<meta property="og:site_name" content="Valedictor">
+<meta property="og:image" content="https://valedictor.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Valedictor. Ask the top of the class. Example listings for a pitch deck review and a code review.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Valedictor: Ask the top of the class.">
+<meta name="twitter:description" content="Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.">
+<meta name="twitter:image" content="https://valedictor.com/og-image.png">
+<link rel="canonical" href="https://valedictor.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -253,6 +265,7 @@ footer ul { list-style: none; display: grid; gap: 8px; }
 footer a:hover { color: var(--ink); }
 footer .legal { grid-column: 1 / -1; padding-top: 28px; margin-top: 8px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 footer .legal p { max-width: 46em; }
+footer .legal .links { display: flex; gap: 20px; flex-wrap: wrap; }
 
 /* sheet */
 .scrim { position: fixed; inset: 0; z-index: 40; background: rgba(18,19,23,.36); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
@@ -321,7 +334,13 @@ dialog.req .sub { margin-top: 8px; color: var(--ink-2); font-size: 15px; }
 .field[hidden] { display: none; }
 dialog.req .btn.send { margin-top: 20px; width: 100%; height: 50px; }
 dialog.req .fine { margin-top: 12px; text-align: center; font-size: 13.5px; color: var(--muted); }
+dialog.req .fine a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
+dialog.req .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+dialog.req .err { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: #FDF0EE; color: #8A2A1C; font-size: 14px; }
+dialog.req .err a { text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
+dialog.req .btn.send:disabled { opacity: .7; cursor: default; }
 dialog.req .done { padding: 8px 0 4px; }
+dialog.req .done h3 { margin-top: 18px; font-size: 19px; letter-spacing: -.02em; }
 dialog.req .done p { margin-top: 8px; color: var(--ink-2); }
 dialog.req .done .btn { margin-top: 20px; }
 
@@ -627,7 +646,7 @@ dialog.req .done .btn { margin-top: 20px; }
     <div><h4>Valedictor</h4><ul><li><a href="#browse">Browse sessions</a></li><li><a href="#members">For members</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li></ul></div>
     <div><h4>Founders</h4><ul><li>Vansh Aggarwal</li><li>Maud Bismuth</li></ul></div>
-    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span>© 2026 Valedictor</span></div>
+    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><span>© 2026 Valedictor</span></span></div>
   </div>
 </footer>
 
@@ -666,11 +685,14 @@ dialog.req .done .btn { margin-top: 20px; }
         <label class="field full" id="instField" hidden><span>Institution and field</span><input name="inst" placeholder="MIT, Computer Science"></label>
         <label class="field full"><span id="whatLbl">What do you need help with?</span><textarea name="what" id="what"></textarea></label>
       </div>
-      <button class="btn send" type="submit">Send request</button>
-      <p class="fine">This opens your email app with the request filled in.</p>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="err" id="rErr" role="alert" hidden></p>
+      <button class="btn send" type="submit" id="rSend">Send request</button>
+      <p class="fine">By sending this you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
     </div>
     <div class="done" hidden>
-      <p>Your email app should now be open with the request ready. Send it and we’ll reply from valedictor2026@gmail.com.</p>
+      <h3>Request sent</h3>
+      <p id="rDoneMsg">Thanks. One of the founders will reply by email.</p>
       <button class="btn quiet" type="button" id="rDone">Close</button>
     </div>
   </form>
@@ -830,15 +852,40 @@ dialog.req .done .btn { margin-top: 20px; }
   $('#rClose').addEventListener('click', closeReq);
   $('#rDone').addEventListener('click', closeReq);
   req.addEventListener('click', function (e) { if (e.target === req) closeReq(); });
+  var INBOX = 'valedictor2026@gmail.com', sendBtn = $('#rSend'), err = $('#rErr');
+  function mailtoFor(f, member) {
+    var body = 'Name: ' + f.get('name') + '\nEmail: ' + f.get('email') +
+      (member ? '\nInstitution: ' + (f.get('inst') || '-') : '') + '\n\n' + (f.get('what') || '');
+    return 'mailto:' + INBOX + '?subject=' + encodeURIComponent('Request access: ' + f.get('role')) + '&body=' + encodeURIComponent(body);
+  }
+  function showError(f, member) {
+    err.innerHTML = 'That didn’t go through. <a href="' + mailtoFor(f, member).replace(/"/g, '&quot;') + '">Send it by email instead</a> or write to ' + INBOX + '.';
+    err.hidden = false;
+  }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var f = new FormData(form), member = f.get('role') !== 'Looking for help';
-    var body = 'Name: ' + f.get('name') + '\nEmail: ' + f.get('email') +
-      (member ? '\nInstitution: ' + (f.get('inst') || '-') : '') + '\n\n' + (f.get('what') || '');
-    location.href = 'mailto:valedictor2026@gmail.com?subject=' +
-      encodeURIComponent('Request access: ' + f.get('role')) + '&body=' + encodeURIComponent(body);
-    form.querySelector('.rbody').hidden = true; form.querySelector('.done').hidden = false;
+    if (f.get('_honey')) return;
+    err.hidden = true; sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
+    var payload = {
+      _subject: (member ? 'Member application: ' : 'Help request: ') + f.get('name'),
+      _template: 'table', _captcha: 'false',
+      Type: f.get('role'), Name: f.get('name'), email: f.get('email'),
+      Institution: member ? (f.get('inst') || '-') : 'n/a', Message: f.get('what') || '-',
+      Page: location.href
+    };
+    fetch('https://formsubmit.co/ajax/' + INBOX, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload)
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (String(d.success) !== 'true') throw new Error(d.message || 'failed');
+      $('#rDoneMsg').textContent = 'Thanks, ' + String(f.get('name')).split(' ')[0] + '. One of the founders will reply to ' + f.get('email') + '.';
+      form.querySelector('.rbody').hidden = true; form.querySelector('.done').hidden = false;
+      form.reset(); setRole(false);
+    }).catch(function () { showError(f, member); }).then(function () {
+      sendBtn.disabled = false; sendBtn.textContent = 'Send request';
+    });
   });
+  if (location.hash === '#request') openRequest({});
 
   /* earnings */
   var rate = $('#rate'), hrs = $('#hrs');
