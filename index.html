@@ -319,6 +319,22 @@ footer .legal .links { display: flex; gap: 20px; flex-wrap: wrap; }
 .rules li { padding: 16px 0 17px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
 .rules li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
 .paycalc { align-self: start; }
+.plusline { margin-top: 22px; font-size: 14px; color: var(--muted); }
+.plusline b { color: var(--ink); font-weight: 600; }
+.plans { margin-top: 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.plan { background: var(--white); border-radius: 18px; padding: 30px 32px 32px; box-shadow: 0 0 0 1px var(--line); }
+.plan.plus { box-shadow: 0 0 0 1.5px var(--ink); }
+.plan .ph { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.plan h3 { font-size: 22px; letter-spacing: -.025em; font-weight: 700; }
+.plan .pp { font-size: 14.5px; color: var(--muted); }
+.plan .keep { margin-top: 18px; padding-bottom: 20px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+.plan .keep b { display: block; font-size: clamp(30px, 3vw, 38px); line-height: 1.05; letter-spacing: -.04em; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.plan.plus .keep b { color: var(--blue); }
+.plan ul { margin-top: 20px; list-style: none; display: grid; gap: 12px; }
+.plan li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; color: var(--ink-2); }
+.plan li svg { margin-top: 4px; color: var(--ink); }
+.plannote { margin-top: 18px; font-size: 14px; color: var(--muted); }
+@media (max-width: 860px) { .plans { grid-template-columns: 1fr; margin-top: 48px; } .plan { padding: 24px; } }
 .paycalc .out output { font-variant-numeric: tabular-nums; }
 .splitbar { margin-top: 26px; height: 10px; border-radius: 5px; background: var(--ink); overflow: hidden; display: flex; }
 .splitbar i { display: block; height: 100%; }
@@ -781,13 +797,13 @@ dialog.req .done .btn { margin-top: 20px; }
     <div class="wrap split">
       <div>
         <h2>The price you see is the price you pay</h2>
-        <p>No booking fee, no card fee, no subscription to browse. Every member gets 75% of what you pay, and we keep 25%.</p>
+        <p>No booking fee, no card fee, no subscription to browse. Members keep 75% of what you pay, or 80% on our Plus plan, and we keep the rest.</p>
         <ul class="rules">
           <li><b>Members set their own prices</b>Each listing shows the full price for every length before you choose anything.</li>
           <li><b>Our 25% covers everything we run</b>Checking every member, card processing, the video room, notes and support. Nothing else is added later.</li>
           <li><b>Payment waits for the session</b>We hold your payment and release it to the member only after the session happens.</li>
           <li><b>If it doesn’t happen, you get it all back</b>If the member cancels or doesn’t show up, you’re refunded in full.</li>
-          <li><b>Group classes work the same way</b>You pay per seat. The 75/25 split is the same.</li>
+          <li><b>Group classes are priced per seat</b>Classes are run by members on Plus, so they keep 80% of each seat and we keep 20%.</li>
         </ul>
       </div>
       <div class="calc paycalc">
@@ -805,7 +821,7 @@ dialog.req .done .btn { margin-top: 20px; }
           <div><span><i class="dot v"></i>Valedictor keeps 25%</span><b id="pUs">$15</b></div>
           <div><span>Booking and card fees</span><b>$0</b></div>
         </div>
-        <p class="fine">Members can see the same numbers before they set a price.</p>
+        <p class="fine">For members on Plus it’s 80% to them and 20% to us. Your price is the same either way.</p>
       </div>
     </div>
   </section>
@@ -834,8 +850,35 @@ dialog.req .done .btn { margin-top: 20px; }
           <div class="h"><label for="hrs">Hours a week</label><b id="hrsV">4 hours</b></div>
           <input type="range" id="hrs" min="1" max="15" step="1" value="4">
         </div>
+        <p class="plusline">On Plus you’d keep <b id="earnPlus">$1,040</b> a month, before the plan price.</p>
         <button class="btn" type="button" data-request data-member>Apply to be a member</button>
       </div>
+    </div>
+    <div class="wrap">
+      <div class="plans" id="plans">
+        <article class="plan">
+          <div class="ph"><h3>Standard</h3><p class="pp">Free</p></div>
+          <p class="keep"><b>You keep 75%</b> of every booking</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your profile and 1:1 sessions</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Set your own prices and hours</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking, payment and the video room handled</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out weekly</li>
+          </ul>
+        </article>
+        <article class="plan plus">
+          <div class="ph"><h3>Plus</h3><p class="pp">Monthly plan. Price announced before launch</p></div>
+          <p class="keep"><b>You keep 80%</b> of every booking</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Featured higher in search and categories</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Run paid group classes with seats</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your own booking link to share anywhere</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out the next day, with a dashboard of views, bookings and repeat clients</li>
+          </ul>
+        </article>
+      </div>
+      <p class="plannote">Clients pay the same price on either plan. The plan only changes how much of it you keep.</p>
     </div>
   </section>
 
@@ -845,7 +888,8 @@ dialog.req .done .btn { margin-top: 20px; }
       <div class="qs">
         <details><summary>Who can be a member?<i></i></summary><p>Students, alumni and faculty of top institutions, plus people formally affiliated with them. We start with Harvard, MIT and Babson.</p></details>
         <details><summary>How do you check members?<i></i></summary><p>Every member is verified with their institution before their first booking, for example through their institution email. We also read each application ourselves.</p></details>
-        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 75% and Valedictor keeps 25%.</p></details>
+        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 75% and Valedictor keeps 25%, or 80% and 20% if the member is on Plus. Each booking shows you the exact split.</p></details>
+        <details><summary>What is Plus?<i></i></summary><p>A monthly plan for members. On Plus you keep 80% of every booking instead of 75%, appear higher in search, can run paid group classes, get your own booking link, and are paid out the next day with a dashboard of your bookings. We’ll announce the price before launch.</p></details>
         <details><summary>What if a session doesn’t happen?<i></i></summary><p>Your payment is held until the session takes place. If the member cancels or doesn’t show up, you get a full refund.</p></details>
         <details><summary>What are group classes?<i></i></summary><p>Small live classes, usually 8 to 10 people, run by one member on a set day and time. You pay per seat. They’re a cheaper way to learn things like AI basics or prompting with others.</p></details>
         <details><summary>Can someone help me set up Claude or other AI tools?<i></i></summary><p>Yes. Members can install and set up tools like Claude Code with you on your own laptop, build custom skills and agents, or teach you to use ChatGPT, Claude and Gemini on your real work.</p></details>
@@ -941,16 +985,16 @@ dialog.req .done .btn { margin-top: 20px; }
     offer:    { name: 'Hannah L.', av: ['HL', '#3D5566'], open: true, who: 'Babson alum, product lead in fintech', bio: 'I’ve hired for product teams and negotiated my own offers. We’ll compare yours line by line and script the call.', opts: [['30 min', 'Compare two offers', 50], ['1 hr', 'Offer review plus a practice negotiation', 90]] },
     gtm:      { name: 'Sam P.', av: ['SP', '#7A5C2E'], who: 'MIT Sloan, MBA student', bio: 'I led growth at a B2B startup before Sloan. We’ll find where your funnel leaks and write a plan for your first 100 paying customers.', opts: [['1 hr', 'Go-to-market plan', 95], ['2 hr', 'Plan plus pricing and messaging', 180]] },
     claude:   { name: 'Arjun M.', av: ['AM', '#2F3B52'], open: true, who: 'MIT, EECS student', bio: 'I set up Claude Code for founders and researchers most weeks. We install it, point it at your real project, write your CLAUDE.md together and add the commands you’ll actually use.', opts: [['30 min', 'Install it and run your first task', 40], ['1 hr', 'Full setup with your own commands and skills', 75]] },
-    aiclass:  { name: 'Sofia G.', av: ['SG', '#3E5A4A'], open: true, who: 'Babson, MBA student', bio: 'A small class for people who have never used AI properly. We use ChatGPT, Claude and Gemini on your own work: email, research, planning and spreadsheets. Bring a laptop.', cls: { day: 'Thursday', time: '6:00 pm', len: '90 min', seats: 8, taken: 5 }, opts: [['90 min', 'One seat', 25], ['90 min', 'Two seats', 50]] },
+    aiclass:  { name: 'Sofia G.', av: ['SG', '#3E5A4A'], open: true, who: 'Babson, MBA student', bio: 'A small class for people who have never used AI properly. We use ChatGPT, Claude and Gemini on your own work: email, research, planning and spreadsheets. Bring a laptop.', plus: true, cls: { day: 'Thursday', time: '6:00 pm', len: '90 min', seats: 8, taken: 5 }, opts: [['90 min', 'One seat', 25], ['90 min', 'Two seats', 50]] },
     skill:    { name: 'Nadia R.', av: ['NR', '#5B3F55'], who: 'Harvard, Computer Science alum', bio: 'Bring a task you do every week. We turn it into a Claude skill with clear steps and test it on your real files, so next week it takes one line to run.', opts: [['1 hr', 'Build and test one skill', 70], ['2 hr', 'Three skills for you or your team', 130]] },
     agents:   { name: 'James T.', av: ['JT', '#4B4A2E'], who: 'MIT Sloan, MBA student', bio: 'I run my own inbox, calendar and sales follow-ups with AI agents. We set up one workflow end to end, with you approving anything that goes out.', opts: [['1 hr', 'Automate one workflow', 80], ['2 hr', 'Inbox, calendar and CRM together', 150]] },
-    prompting:{ name: 'Mei L.', av: ['ML', '#2E4D5C'], who: 'Harvard, CS PhD candidate', bio: 'I research how language models fail. In this class you learn to write prompts that give the same good answer every time, and to spot when the model is guessing.', cls: { day: 'Tuesday', time: '7:30 pm', len: '1 hr', seats: 10, taken: 7 }, opts: [['1 hr', 'One seat', 20], ['1 hr', 'Two seats', 40]] },
+    prompting:{ name: 'Mei L.', av: ['ML', '#2E4D5C'], who: 'Harvard, CS PhD candidate', bio: 'I research how language models fail. In this class you learn to write prompts that give the same good answer every time, and to spot when the model is guessing.', plus: true, cls: { day: 'Tuesday', time: '7:30 pm', len: '1 hr', seats: 10, taken: 7 }, opts: [['1 hr', 'One seat', 20], ['1 hr', 'Two seats', 40]] },
     aimap:    { name: 'Omar H.', av: ['OH', '#6A4A3A'], who: 'Babson, MBA in Entrepreneurship', bio: 'We go through your week task by task and decide what AI should do, what it should draft for you, and what stays human. You leave with the first two automations running.', opts: [['30 min', 'Quick AI audit', 45], ['1 hr', 'Full map and first automations', 85]] },
     build:    { name: 'Priyanka V.', av: ['PV', '#3B3F6B'], open: true, who: 'MIT, Computer Science student', bio: 'Bring an idea for a small AI tool. We plan it, build it on your laptop with you typing, and put it online so you leave with a link you can share.', opts: [['1 hr', 'Plan it and build the first version', 70], ['2 hr', 'Build and ship it together', 140]] },
     papers:   { name: 'Ben A.', av: ['BA', '#4F5B3A'], who: 'Harvard, PhD candidate in Biology', bio: 'AI can read fifty papers in an afternoon and still get the sample size wrong. I’ll show you a workflow that saves the time and checks every claim against the source.', opts: [['30 min', 'Set up your reading workflow', 35], ['1 hr', 'Literature review with AI, checked', 65]] }
   };
-  var FEE = 0.25;
-  function cash(n) { return n % 1 ? '$' + n.toFixed(2) : money(n); }
+  var FEE = 0.25, PLUS_KEEP = 0.8;
+  function cash(n) { n = Math.round(n * 100) / 100; return n % 1 ? '$' + n.toFixed(2) : money(n); }
 
   /* filtering */
   var state = { cat: '', inst: '', len: '', q: '' };
@@ -1007,14 +1051,14 @@ dialog.req .done .btn { margin-top: 20px; }
   })();
   function timesFor(i) { return days[i].wk ? ['10:00 am', '11:30 am', '2:00 pm'] : ['8:00 am', '6:00 pm', '7:30 pm', '9:00 pm']; }
   function money(n) { return '$' + n.toLocaleString('en-US'); }
-  function ledger(price, label) {
-    var cut = price * FEE, keep = price - cut;
+  function ledger(price, label, plus) {
+    var fee = plus ? 1 - PLUS_KEEP : FEE, cut = price * fee, keep = price - cut, mp = Math.round((1 - fee) * 100), vp = 100 - mp;
     return '<div><span>' + label + '</span><b>' + money(price) + '</b></div>' +
       '<div><span>Booking and card fees</span><b>$0</b></div>' +
       '<div class="tot"><span>You pay</span><b>' + money(price) + '</b></div>' +
-      '<p class="splitbar" aria-hidden="true"><i class="m" style="width:' + (100 - FEE * 100) + '%"></i><i class="v" style="width:' + FEE * 100 + '%"></i></p>' +
-      '<div><span><i class="dot m"></i>The member gets ' + (100 - FEE * 100) + '%</span><b>' + cash(keep) + '</b></div>' +
-      '<div><span><i class="dot v"></i>Valedictor keeps ' + FEE * 100 + '%</span><b>' + cash(cut) + '</b></div>';
+      '<p class="splitbar" aria-hidden="true"><i class="m" style="width:' + mp + '%"></i><i class="v" style="width:' + vp + '%"></i></p>' +
+      '<div><span><i class="dot m"></i>The member gets ' + mp + '%' + (plus ? ' (on Plus)' : '') + '</span><b>' + cash(keep) + '</b></div>' +
+      '<div><span><i class="dot v"></i>Valedictor keeps ' + vp + '%</span><b>' + cash(cut) + '</b></div>';
   }
   function renderSheet() {
     var L = D[current], c = L.cls;
@@ -1024,7 +1068,7 @@ dialog.req .done .btn { margin-top: 20px; }
       return '<label class="opt"><input type="radio" name="opt" value="' + i + '"' + (i === sel.opt ? ' checked' : '') + '><span>' + o[1] + '<small>' + (c ? o[0] + ' class' : o[0]) + '</small></span><b>' + money(o[2]) + '</b></label>';
     }).join('');
     var o = L.opts[sel.opt];
-    $('#sLedger').innerHTML = ledger(o[2], c ? o[1] + ', ' + o[0] + ' class' : o[0] + ' session');
+    $('#sLedger').innerHTML = ledger(o[2], c ? o[1] + ', ' + o[0] + ' class' : o[0] + ' session', L.plus);
     $('#sClass').hidden = !c; $('#sDays').hidden = !!c; $('#sTimes').hidden = !!c;
     $('#sTotal').textContent = money(o[2]);
     $('#sBook').textContent = c ? 'Request a seat' : 'Request this session';
@@ -1145,6 +1189,7 @@ dialog.req .done .btn { margin-top: 20px; }
   function earn() {
     var r = +rate.value, h = +hrs.value, m = Math.round(r * h * 52 / 12 * (1 - FEE) / 10) * 10;
     $('#earn').textContent = money(m);
+    $('#earnPlus').textContent = money(Math.round(r * h * 52 / 12 * PLUS_KEEP / 10) * 10);
     $('#rateV').textContent = '$' + r + ' an hour';
     $('#hrsV').textContent = h + (h === 1 ? ' hour' : ' hours');
     [rate, hrs].forEach(function (x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); });
