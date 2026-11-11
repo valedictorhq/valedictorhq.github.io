@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browse sessions | Valedictor</title>
+<meta name="description" content="Example 1:1 sessions and group classes from students, alumni and faculty of Harvard, MIT and Babson. Search by topic, institution and length.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="Browse sessions | Valedictor">
+<meta property="og:description" content="Example 1:1 sessions and group classes from students, alumni and faculty of Harvard, MIT and Babson. Search by topic, institution and length.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://valedictor.com/sessions/">
+<meta property="og:site_name" content="Valedictor">
+<meta property="og:image" content="https://valedictor.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Valedictor. Ask the top of the class. Example listings for a pitch deck review and a code review.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Browse sessions | Valedictor">
+<meta name="twitter:description" content="Example 1:1 sessions and group classes from students, alumni and faculty of Harvard, MIT and Babson. Search by topic, institution and length.">
+<meta name="twitter:image" content="https://valedictor.com/og-image.png">
+<link rel="canonical" href="https://valedictor.com/sessions/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body class="page">
+
+<header class="top searching" id="top">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Valedictor home"></a>
+    <form class="mini" id="mini" role="search" action="/sessions/">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="mq" name="q" placeholder="Search sessions" aria-label="Search sessions">
+      <button type="submit" aria-label="Search"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </form>
+    <nav aria-label="Main">
+      <a class="nl" href="/sessions/">Browse</a>
+      <a class="nl" href="/ai/">AI</a>
+      <a class="nl" href="/pricing/">Pricing</a>
+      <a class="nl" href="/members/">For members</a>
+      <a class="nl" href="/faq/">FAQ</a>
+      <button class="btn" type="button" data-request>Request access</button>
+      <button class="menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mnav" id="mnav" hidden>
+    <div class="wrap">
+      <a href="/sessions/">Browse sessions</a>
+      <a href="/ai/">AI</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/members/">For members</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="phead compact">
+    <div class="wrap">
+      <h1>Browse sessions</h1>
+      <p class="lede">1:1 sessions and small group classes with students, alumni and faculty of Harvard, MIT and Babson. From 15 minutes to 2 hours.</p>
+      <form class="finder" id="finder" role="search">
+        <label><span>What do you need?</span><input id="q" name="q" placeholder="Set up Claude Code, a pitch deck review…" autocomplete="off"></label>
+        <label><span>Institution</span>
+          <select id="fi" name="inst"><option value="">Any</option><option>Harvard</option><option>MIT</option><option>Babson</option></select>
+        </label>
+        <label><span>Length</span>
+          <select id="fl" name="len"><option value="">Any length</option><option value="short">Up to 30 min</option><option value="hour">About an hour</option><option value="long">2 hours</option></select>
+        </label>
+        <button class="btn go" type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="browse" id="browse" aria-label="Browse sessions">
+    <div class="tabsbar">
+      <div class="wrap">
+        <div class="tabs" role="tablist" aria-label="Categories">
+          <button class="tab" role="tab" aria-selected="true" data-cat="">All</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="ai">AI</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="classes">Group classes</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="pitch">Pitch decks</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="interviews">Interviews</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="code">Code</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="applications">Applications</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="research">Research</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="tutoring">Tutoring</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="careers">Careers</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="startups">Startups</button>
+        </div>
+        <div class="inst" role="group" aria-label="Institution">
+          <button type="button" aria-pressed="true" data-inst="">All</button>
+          <button type="button" aria-pressed="false" data-inst="Harvard">Harvard</button>
+          <button type="button" aria-pressed="false" data-inst="MIT">MIT</button>
+          <button type="button" aria-pressed="false" data-inst="Babson">Babson</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="status">
+        <div id="count" aria-live="polite"><strong>16 sessions</strong></div>
+        <div class="note">These are example listings that show the format. Real members go live in Boston first.</div>
+      </div>
+
+      <div class="grid" id="grid">
+        <button class="card" data-id="claude" data-cat="ai code" data-inst="MIT" data-len="short hour" data-k="claude claude code setup set up install ai assistant terminal agent coding anthropic">
+          <div class="th code term" aria-hidden="true">
+            <span class="lbl dark">Claude Code setup</span>
+            <pre><span><b class="p">~/startup $</b> claude</span><span class="u">&gt; set this project up for me</span><span class="ok">  ✓ Read 42 files</span><span class="ok">  ✓ Wrote CLAUDE.md</span><span class="ok">  ✓ Added a /deploy command</span><span class="u">&gt; <i class="cur"></i></span></pre>
+          </div>
+          <div class="meta"><span class="av open" style="background:#2F3B52">AM</span><div class="who"><b>Arjun M.</b><span>MIT, EECS student</span></div></div>
+          <h3>Set up Claude Code on your laptop and get it working on your own project</h3>
+          <p class="price">From <b>$40</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="deck" data-cat="pitch startups" data-inst="Babson" data-len="short hour" data-k="pitch deck fundraising investor slides startup">
+          <div class="th deck" aria-hidden="true">
+            <span class="lbl">Pitch deck</span>
+            <div class="slide"><i>Why now</i><div class="bars"><span style="height:30%"></span><span style="height:46%"></span><span style="height:62%"></span><span style="height:100%"></span></div><div class="lines"><span></span><span style="width:80%"></span><span style="width:60%"></span></div></div>
+            <span class="ring"></span>
+            <span class="bub">Lead with this. It’s your best slide.</span>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3E4A3F">DK</span><div class="who"><b>Daniel K.</b><span>Babson, MBA in Entrepreneurship</span></div></div>
+          <h3>Slide-by-slide review of your pitch deck before you send it</h3>
+          <p class="price">From <b>$45</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="aiclass" data-cat="ai classes" data-inst="Babson" data-len="hour" data-k="ai class beginners beginner course learn ai basics chatgpt claude gemini group class">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Group class</span>
+            <div class="cls"><b>AI for complete beginners</b><small>Thursday, 6:00 pm, 90 min</small>
+              <div class="seats"><span style="--c:#3E5A4A"></span><span style="--c:#6B4E3D"></span><span style="--c:#2F3B52"></span><span style="--c:#5A4B6E"></span><span style="--c:#7A5C2E"></span><span class="free"></span><span class="free"></span><span class="free"></span></div>
+              <div class="left">3 of 8 seats left</div></div>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3E5A4A">SG</span><div class="who"><b>Sofia G.</b><span>Babson, MBA student</span></div></div>
+          <h3>AI for complete beginners: a hands-on class where you leave using it daily</h3>
+          <p class="price"><b>$25</b> a seat, 90 min class</p>
+        </button>
+
+        <button class="card" data-id="case" data-cat="interviews careers" data-inst="Harvard" data-len="short hour long" data-k="case interview consulting mock interview mbb">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Case interview</span>
+            <svg viewBox="0 0 300 225" font-family="Schibsted Grotesk, sans-serif" font-size="11">
+              <g fill="none" stroke="#B7B9C0" stroke-width="1"><path d="M150 82v12M86 94h128M86 94v10M214 94v10M86 128v12M52 140h68M52 140v10M120 140v10M214 128v12M182 140h64M182 140v10M246 140v10"/></g>
+              <rect x="112" y="60" width="76" height="24" rx="5" fill="#121317"/><text x="150" y="76" fill="#fff" text-anchor="middle" font-weight="600">Profit</text>
+              <rect x="52" y="104" width="68" height="24" rx="5" fill="#fff"/><text x="86" y="120" text-anchor="middle" fill="#121317">Revenue</text>
+              <rect x="180" y="104" width="68" height="24" rx="5" fill="#fff"/><text x="214" y="120" text-anchor="middle" fill="#121317">Costs</text>
+              <rect x="24" y="150" width="56" height="22" rx="5" fill="#fff"/><text x="52" y="165" text-anchor="middle" fill="#121317">Price</text>
+              <rect x="92" y="150" width="56" height="22" rx="5" fill="#2B59FF"/><text x="120" y="165" text-anchor="middle" fill="#fff" font-weight="600">Volume</text>
+              <rect x="154" y="150" width="56" height="22" rx="5" fill="#fff"/><text x="182" y="165" text-anchor="middle" fill="#121317">Fixed</text>
+              <rect x="218" y="150" width="56" height="22" rx="5" fill="#fff"/><text x="246" y="165" text-anchor="middle" fill="#121317">Variable</text>
+              <text x="120" y="194" text-anchor="middle" fill="#2B59FF" font-weight="600" font-size="10.5">Volume fell 18%. Start here.</text>
+            </svg>
+          </div>
+          <div class="meta"><span class="av" style="background:#121317">PS</span><div class="who"><b>Priya S.</b><span>Harvard, Economics alum</span></div></div>
+          <h3>Full mock case interview with written feedback after</h3>
+          <p class="price">From <b>$30</b> for 15 min</p>
+        </button>
+
+        <button class="card" data-id="skill" data-cat="ai" data-inst="Harvard" data-len="hour long" data-k="claude skills skill build custom automation workflow ai repeat task">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Claude skill</span>
+            <div class="file"><div class="fn">SKILL.md</div><pre><span class="dim">---</span>
+<span class="hl">name: friday-update</span>description: Turns my week's notes
+  into the client email
+<span class="dim">---</span>
+1. Read notes/this-week.md
+2. Draft it in my tone
+3. Flag anything late</pre></div>
+          </div>
+          <div class="meta"><span class="av" style="background:#5B3F55">NR</span><div class="who"><b>Nadia R.</b><span>Harvard, Computer Science alum</span></div></div>
+          <h3>Build a Claude skill that does a task you repeat every week</h3>
+          <p class="price">From <b>$70</b> for 1 hr</p>
+        </button>
+
+        <button class="card" data-id="code" data-cat="code" data-inst="MIT" data-len="short hour" data-k="code debugging debug bug programming python javascript ai review">
+          <div class="th code" aria-hidden="true">
+            <span class="lbl dark">Debugging</span>
+            <pre><span><em>41</em><b class="k">const</b> total = (items) =&gt; {</span><span><em>42</em>  let sum = 0;</span><span class="del"><em>43</em>  for (let i = 0; i &lt;= items.length; i++)</span><span class="add"><em>43</em>  for (let i = 0; i &lt; items.length; i++)</span><span><em>44</em>    sum += items[i].price;</span><span><em>45</em>  <b class="k">return</b> sum;</span><span><em>46</em>};</span></pre>
+          </div>
+          <div class="meta"><span class="av open" style="background:#2B59FF">LM</span><div class="who"><b>Leo M.</b><span>MIT, Computer Science student</span></div></div>
+          <h3>Live code review and debugging, in any language you’re stuck on</h3>
+          <p class="price">From <b>$35</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="agents" data-cat="ai startups" data-inst="MIT" data-len="hour long" data-k="ai agents agent automation automate inbox email calendar follow ups crm workflow">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">AI agents</span>
+            <svg viewBox="0 0 300 225" font-family="Schibsted Grotesk, sans-serif" font-size="10.5">
+              <rect x="16" y="86" width="80" height="44" rx="6" fill="#fff"/>
+              <text x="56" y="105" text-anchor="middle" fill="#121317" font-weight="600">New email</text>
+              <text x="56" y="119" text-anchor="middle" fill="#6E7079" font-size="9.5">from a lead</text>
+              <path d="M100 108h10" stroke="#9A9CA3" stroke-width="1.3"/><path d="M108 104.5l4 3.5-4 3.5" fill="none" stroke="#9A9CA3" stroke-width="1.3"/>
+              <rect x="116" y="86" width="80" height="44" rx="6" fill="#121317"/>
+              <text x="156" y="105" text-anchor="middle" fill="#fff" font-weight="600">AI agent</text>
+              <text x="156" y="119" text-anchor="middle" fill="#B7B9C0" font-size="9.5">drafts the reply</text>
+              <path d="M200 108h10" stroke="#9A9CA3" stroke-width="1.3"/><path d="M208 104.5l4 3.5-4 3.5" fill="none" stroke="#9A9CA3" stroke-width="1.3"/>
+              <rect x="216" y="86" width="68" height="44" rx="6" fill="#2B59FF"/>
+              <text x="250" y="105" text-anchor="middle" fill="#fff" font-weight="600">You</text>
+              <text x="250" y="119" text-anchor="middle" fill="#DCE4FF" font-size="9.5">approve</text>
+              <text x="150" y="164" text-anchor="middle" fill="#6E7079" font-size="10">Then it books the call and updates your CRM.</text>
+            </svg>
+          </div>
+          <div class="meta"><span class="av" style="background:#4B4A2E">JT</span><div class="who"><b>James T.</b><span>MIT Sloan, MBA student</span></div></div>
+          <h3>Automate your inbox, calendar and follow-ups with AI agents</h3>
+          <p class="price">From <b>$80</b> for 1 hr</p>
+        </button>
+
+        <button class="card" data-id="essay" data-cat="applications" data-inst="Harvard" data-len="hour" data-k="college essay application personal statement writing editing cv">
+          <div class="th essay" aria-hidden="true">
+            <span class="lbl">Application essay</span>
+            <div class="pg"><s>I have always been passionate about building things.</s> <ins>The summer I rebuilt my uncle’s shop counter, I learned</ins> that measuring twice is a kind of patience. By August I could</div>
+          </div>
+          <div class="meta"><span class="av" style="background:#6B4E3D">AO</span><div class="who"><b>Amara O.</b><span>Harvard, PhD candidate in English</span></div></div>
+          <h3>Line edit of your application essay, with notes on every paragraph</h3>
+          <p class="price">From <b>$60</b> for 45 min</p>
+        </button>
+
+        <button class="card" data-id="prompting" data-cat="ai classes" data-inst="Harvard" data-len="hour" data-k="prompting prompt prompts prompt engineering chatgpt claude gemini class llm better answers">
+          <div class="th prm" aria-hidden="true">
+            <span class="lbl">Prompting class</span>
+            <div class="pb b1"><small>Before</small>write a marketing email</div>
+            <div class="pb b2"><small>After</small>You run growth at a gym. Write a 90-word email to members who stopped coming. Offer one free week. Plain tone, no hype.</div>
+          </div>
+          <div class="meta"><span class="av" style="background:#2E4D5C">ML</span><div class="who"><b>Mei L.</b><span>Harvard, CS PhD candidate</span></div></div>
+          <h3>Prompting class: get reliable answers from ChatGPT, Claude and Gemini</h3>
+          <p class="price"><b>$20</b> a seat, 1 hr class</p>
+        </button>
+
+        <button class="card" data-id="research" data-cat="research" data-inst="Harvard" data-len="short hour" data-k="research question methods paper thesis statistics data neuroscience">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Research design</span>
+            <svg viewBox="0 0 300 225" font-family="Schibsted Grotesk, sans-serif">
+              <rect x="44" y="52" width="216" height="134" rx="6" fill="#fff"/>
+              <path d="M66 166h176M66 166V70" stroke="#C9CBD1" stroke-width="1"/>
+              <g fill="#121317"><circle cx="84" cy="150" r="3"/><circle cx="100" cy="141" r="3"/><circle cx="112" cy="146" r="3"/><circle cx="130" cy="128" r="3"/><circle cx="146" cy="133" r="3"/><circle cx="160" cy="114" r="3"/><circle cx="176" cy="118" r="3"/><circle cx="196" cy="100" r="3"/></g>
+              <path d="M78 154L228 88" stroke="#121317" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <circle cx="196" cy="100" r="10" fill="none" stroke="#2B59FF" stroke-width="1.5"/>
+              <text x="78" y="77" fill="#2B59FF" font-size="10.5" font-weight="600">n = 8. Too small to claim this.</text>
+              <text x="242" y="180" fill="#6E7079" font-size="9.5" text-anchor="end">hours of sleep</text>
+            </svg>
+          </div>
+          <div class="meta"><span class="av" style="background:#4A5D4F">EW</span><div class="who"><b>Elena W.</b><span>Harvard, PhD candidate in Neuroscience</span></div></div>
+          <h3>Turn a vague idea into a research question you can actually answer</h3>
+          <p class="price">From <b>$45</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="aimap" data-cat="ai startups" data-inst="Babson" data-len="short hour" data-k="ai strategy startup small business automation operations audit which jobs">
+          <div class="th aimap" aria-hidden="true">
+            <span class="lbl">AI for startups</span>
+            <table><tr><td>Support replies</td><td><span class="pill ai">AI</span></td></tr><tr><td>Bookkeeping</td><td><span class="pill ai">AI</span></td></tr><tr><td>Investor update</td><td><span class="pill ai">AI drafts</span></td></tr><tr><td>Hiring</td><td><span class="pill you">You</span></td></tr></table>
+            <span class="tip">Hand off three. Keep hiring.</span>
+          </div>
+          <div class="meta"><span class="av" style="background:#6A4A3A">OH</span><div class="who"><b>Omar H.</b><span>Babson, MBA in Entrepreneurship</span></div></div>
+          <h3>Map which jobs in your startup to hand to AI, and which to keep</h3>
+          <p class="price">From <b>$45</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="math" data-cat="tutoring" data-inst="MIT" data-len="hour long" data-k="tutoring math calculus problem set exam proof physics">
+          <div class="th math" aria-hidden="true">
+            <span class="lbl">Problem set</span>
+            <div class="pg">∫ <i>x</i> e<sup><i>x</i></sup> d<i>x</i><br><i>u</i> = <i>x</i>,&nbsp; d<i>v</i> = e<sup><i>x</i></sup> d<i>x</i><br>= <i>x</i> e<sup><i>x</i></sup> − ∫ e<sup><i>x</i></sup> d<i>x</i><br>= e<sup><i>x</i></sup>(<i>x</i> − 1) + <i>C</i></div>
+            <span class="ok"><svg width="12" height="12" viewBox="0 0 12 12" style="position:static"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+          <div class="meta"><span class="av" style="background:#5A4B6E">TR</span><div class="who"><b>Tomás R.</b><span>MIT, Mathematics PhD student</span></div></div>
+          <h3>Work through a problem set with you, from calculus to real analysis</h3>
+          <p class="price">From <b>$55</b> for 1 hr</p>
+        </button>
+
+        <button class="card" data-id="build" data-cat="ai code" data-inst="MIT" data-len="hour long" data-k="build ai app chatbot api claude api openai llm prototype ship mvp">
+          <div class="th build" aria-hidden="true">
+            <span class="lbl">Build an AI app</span>
+            <div class="win"><div class="chrome"><i></i><i></i><i></i><span>localhost:3000</span></div>
+              <div class="msgs"><span class="me">Summarise this lease in 3 points</span><span class="bot">1. 24 months from Jan 1. 2. Rent rises 3% a year. 3. Two months’ notice to leave.</span></div></div>
+            <span class="tip">Shipped before the session ended.</span>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3B3F6B">PV</span><div class="who"><b>Priyanka V.</b><span>MIT, Computer Science student</span></div></div>
+          <h3>Build and ship a small AI app with you, from idea to a working link</h3>
+          <p class="price">From <b>$70</b> for 1 hr</p>
+        </button>
+
+        <button class="card" data-id="offer" data-cat="careers" data-inst="Babson" data-len="short" data-k="job offer negotiation salary career switch advice">
+          <div class="th offer" aria-hidden="true">
+            <span class="lbl">Job offers</span>
+            <table><tr><th></th><th>Offer A</th><th class="hi">Offer B</th></tr><tr><td>Base</td><td>$135k</td><td class="hi">$128k</td></tr><tr><td>Bonus</td><td>10%</td><td class="hi">15%</td></tr><tr><td>Equity</td><td>None</td><td class="hi">$40k/yr</td></tr></table>
+            <span class="tip">Take B. Ask for $8k more base.</span>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3D5566">HL</span><div class="who"><b>Hannah L.</b><span>Babson alum, product lead in fintech</span></div></div>
+          <h3>Compare two job offers and plan the negotiation call</h3>
+          <p class="price">From <b>$50</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="papers" data-cat="ai research" data-inst="Harvard" data-len="short hour" data-k="ai research papers literature review reading summaries citations fact check">
+          <div class="th papers" aria-hidden="true">
+            <span class="lbl">AI for research</span>
+            <div class="pg"><b>Methods</b>We enrolled <mark>20 participants</mark> across two sites and followed them for six weeks, measuring sleep and recall.</div>
+            <div class="side">AI said n = 200. The paper says 20.</div>
+          </div>
+          <div class="meta"><span class="av" style="background:#4F5B3A">BA</span><div class="who"><b>Ben A.</b><span>Harvard, PhD candidate in Biology</span></div></div>
+          <h3>Use AI to read papers faster, and catch it when it gets facts wrong</h3>
+          <p class="price">From <b>$35</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="gtm" data-cat="startups pitch" data-inst="MIT" data-len="hour long" data-k="startup go-to-market gtm customers growth pricing marketing product">
+          <div class="th funnel" aria-hidden="true">
+            <span class="lbl">Go-to-market</span>
+            <div class="rows">
+              <div class="row"><span>Visits</span><div style="--w:100%"></div><b>2,400</b></div>
+              <div class="row"><span>Sign-ups</span><div style="--w:42%"></div><b>310</b></div>
+              <div class="row weak"><span>Paid</span><div style="--w:7%"></div><b>12</b></div>
+            </div>
+            <span class="tip">Your leak is onboarding, not traffic.</span>
+          </div>
+          <div class="meta"><span class="av" style="background:#7A5C2E">SP</span><div class="who"><b>Sam P.</b><span>MIT Sloan, MBA student</span></div></div>
+          <h3>Plan how you’ll get your first 100 paying customers</h3>
+          <p class="price">From <b>$95</b> for 1 hr</p>
+        </button>
+
+        <div class="empty" id="empty" hidden>
+          <h3>Nothing in the examples matches that yet</h3>
+          <p>Tell us what you need. We’ll match you with the right member when we open.</p>
+          <button class="btn" type="button" data-request data-fromsearch>Request access</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><a href="/" class="logo" aria-label="Valedictor home"></a></div>
+    <div><h4>Valedictor</h4><ul><li><a href="/sessions/">Browse sessions</a></li><li><a href="/ai/">AI sessions and classes</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
+    <div><h4>Members</h4><ul><li><a href="/members/">For members</a></li><li><a href="/members/#plans">Standard and Plus</a></li><li><button class="link" type="button" data-request data-member>Apply</button></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li><li>Vansh Aggarwal and Maud Bismuth</li></ul></div>
+    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><span>© 2026 Valedictor</span></span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
+  <div class="bar"><span>Example listing</span><button class="x" type="button" id="sClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
+  <div class="body">
+    <div id="sThumb"></div>
+    <h3 id="sTitle"></h3>
+    <div class="meta" id="sMeta"></div>
+    <p class="bio" id="sBio"></p>
+    <h4 id="sOptH">Choose a length</h4>
+    <div class="opts" id="sOpts"></div>
+    <h4>Where your money goes</h4>
+    <div class="ledger" id="sLedger"></div>
+    <h4 id="sTimeH">Pick a time</h4>
+    <div class="clsinfo" id="sClass" hidden></div>
+    <div class="days" id="sDays"></div>
+    <div class="times" id="sTimes"></div>
+    <p class="fine">This is an example of the format. Send a request and we’ll match you with a verified member when Boston opens.</p>
+  </div>
+  <div class="foot"><div><b id="sTotal">$45</b><span id="sWhen"></span></div><button class="btn" type="button" id="sBook">Request this session</button></div>
+</aside>
+
+<dialog class="req" id="req" aria-labelledby="rTitle">
+  <form id="rForm" method="dialog">
+    <div class="hd">
+      <div><h2 id="rTitle">Request access</h2><p class="sub">We’re opening in Boston first. The founders read every request.</p></div>
+      <button class="x" type="button" id="rClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="rbody">
+      <div class="seg">
+        <label><input type="radio" name="role" value="Looking for help" checked><span>I need help</span></label>
+        <label><input type="radio" name="role" value="Applying to be a member" id="roleMember"><span>I want to be a member</span></label>
+      </div>
+      <div class="fields">
+        <label class="field"><span>Name</span><input name="name" required autocomplete="name"></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+        <label class="field full" id="instField" hidden><span>Institution and field</span><input name="inst" placeholder="MIT, Computer Science"></label>
+        <label class="field full"><span id="whatLbl">What do you need help with?</span><textarea name="what" id="what"></textarea></label>
+      </div>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="err" id="rErr" role="alert" hidden></p>
+      <button class="btn send" type="submit" id="rSend">Send request</button>
+      <p class="fine">By sending this you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="done" hidden>
+      <h3>Request sent</h3>
+      <p id="rDoneMsg">Thanks. One of the founders will reply by email.</p>
+      <button class="btn quiet" type="button" id="rDone">Close</button>
+    </div>
+  </form>
+</dialog>
+<script src="/site.js"></script>
+</body>
+</html>

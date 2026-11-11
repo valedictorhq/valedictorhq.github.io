@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For members | Valedictor</title>
+<meta name="description" content="Take paid bookings as a student, alum or faculty member of a top institution. Set your own prices. Keep 75%, or 80% on Plus.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:title" content="For members | Valedictor">
+<meta property="og:description" content="Take paid bookings as a student, alum or faculty member of a top institution. Set your own prices. Keep 75%, or 80% on Plus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://valedictor.com/members/">
+<meta property="og:site_name" content="Valedictor">
+<meta property="og:image" content="https://valedictor.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Valedictor. Ask the top of the class. Example listings for a pitch deck review and a code review.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For members | Valedictor">
+<meta name="twitter:description" content="Take paid bookings as a student, alum or faculty member of a top institution. Set your own prices. Keep 75%, or 80% on Plus.">
+<meta name="twitter:image" content="https://valedictor.com/og-image.png">
+<link rel="canonical" href="https://valedictor.com/members/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body class="page">
+
+<header class="top searching" id="top">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Valedictor home"></a>
+    <form class="mini" id="mini" role="search" action="/sessions/">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="mq" name="q" placeholder="Search sessions" aria-label="Search sessions">
+      <button type="submit" aria-label="Search"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    </form>
+    <nav aria-label="Main">
+      <a class="nl" href="/sessions/">Browse</a>
+      <a class="nl" href="/ai/">AI</a>
+      <a class="nl" href="/pricing/">Pricing</a>
+      <a class="nl" href="/members/">For members</a>
+      <a class="nl" href="/faq/">FAQ</a>
+      <button class="btn" type="button" data-request>Request access</button>
+      <button class="menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="mnav" id="mnav" hidden>
+    <div class="wrap">
+      <a href="/sessions/">Browse sessions</a>
+      <a href="/ai/">AI</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/members/">For members</a>
+      <a href="/faq/">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="members first" id="members">
+    <div class="wrap split">
+      <div>
+        <h1>Take bookings as a member</h1>
+        <p>If you study, teach or graduated at a top institution, you can apply. We read every application ourselves.</p>
+        <ul class="who-can">
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Set your own price for each kind of session</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Open your calendar only when it suits you</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We handle booking, payment and the call itself</span></li>
+        </ul>
+      </div>
+      <div class="calc" id="calc">
+        <div class="out">
+          <span>What you’d take home</span>
+          <div><output id="earn">$980</output><small>a month, after our 25%</small></div>
+        </div>
+        <div class="rng">
+          <div class="h"><label for="rate">Your rate</label><b id="rateV">$75 an hour</b></div>
+          <input type="range" id="rate" min="30" max="250" step="5" value="75">
+        </div>
+        <div class="rng">
+          <div class="h"><label for="hrs">Hours a week</label><b id="hrsV">4 hours</b></div>
+          <input type="range" id="hrs" min="1" max="15" step="1" value="4">
+        </div>
+        <p class="plusline">On Plus you’d keep <b id="earnPlus">$1,040</b> a month, before the plan price.</p>
+        <button class="btn" type="button" data-request data-member>Apply to be a member</button>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="plans" id="plans">
+        <article class="plan">
+          <div class="ph"><h3>Standard</h3><p class="pp">Free</p></div>
+          <p class="keep"><b>You keep 75%</b> of every booking</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your profile and 1:1 sessions</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Set your own prices and hours</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking, payment and the video room handled</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out weekly</li>
+          </ul>
+        </article>
+        <article class="plan plus">
+          <div class="ph"><h3>Plus</h3><p class="pp">Monthly plan. Price announced before launch</p></div>
+          <p class="keep"><b>You keep 80%</b> of every booking</p>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Featured higher in search and categories</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Run paid group classes with seats</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your own booking link to share anywhere</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out the next day, with a dashboard of views, bookings and repeat clients</li>
+          </ul>
+        </article>
+      </div>
+      <p class="plannote">Clients pay the same price on either plan. The plan only changes how much of it you keep.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap split">
+      <div><h2>Member questions</h2><p>Ready to apply? <button class="link" type="button" data-request data-member>Send an application</button>. We read every one ourselves.</p></div>
+      <div class="qs">
+        <details><summary>Who can be a member?<i></i></summary><p>Students, alumni and faculty of top institutions, plus people formally affiliated with them. We start with Harvard, MIT and Babson.</p></details>
+        <details><summary>How do you check members?<i></i></summary><p>Every member is verified with their institution before their first booking, for example through their institution email. We also read each application ourselves.</p></details>
+        <details><summary>What is Plus?<i></i></summary><p>A monthly plan for members. On Plus you keep 80% of every booking instead of 75%, appear higher in search, can run paid group classes, get your own booking link, and are paid out the next day with a dashboard of your bookings. We’ll announce the price before launch.</p></details>
+        <details><summary>What are group classes?<i></i></summary><p>Small live classes, usually 8 to 10 people, run by one member on a set day and time. You pay per seat. They’re a cheaper way to learn things like AI basics or prompting with others.</p></details>
+        <details><summary>Is Valedictor part of Harvard, MIT or Babson?<i></i></summary><p>No. Institution names show where members study, teach or graduated. Valedictor isn’t affiliated with or endorsed by any of them.</p></details>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><a href="/" class="logo" aria-label="Valedictor home"></a></div>
+    <div><h4>Valedictor</h4><ul><li><a href="/sessions/">Browse sessions</a></li><li><a href="/ai/">AI sessions and classes</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
+    <div><h4>Members</h4><ul><li><a href="/members/">For members</a></li><li><a href="/members/#plans">Standard and Plus</a></li><li><button class="link" type="button" data-request data-member>Apply</button></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li><li>Vansh Aggarwal and Maud Bismuth</li></ul></div>
+    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><span>© 2026 Valedictor</span></span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
+  <div class="bar"><span>Example listing</span><button class="x" type="button" id="sClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
+  <div class="body">
+    <div id="sThumb"></div>
+    <h3 id="sTitle"></h3>
+    <div class="meta" id="sMeta"></div>
+    <p class="bio" id="sBio"></p>
+    <h4 id="sOptH">Choose a length</h4>
+    <div class="opts" id="sOpts"></div>
+    <h4>Where your money goes</h4>
+    <div class="ledger" id="sLedger"></div>
+    <h4 id="sTimeH">Pick a time</h4>
+    <div class="clsinfo" id="sClass" hidden></div>
+    <div class="days" id="sDays"></div>
+    <div class="times" id="sTimes"></div>
+    <p class="fine">This is an example of the format. Send a request and we’ll match you with a verified member when Boston opens.</p>
+  </div>
+  <div class="foot"><div><b id="sTotal">$45</b><span id="sWhen"></span></div><button class="btn" type="button" id="sBook">Request this session</button></div>
+</aside>
+
+<dialog class="req" id="req" aria-labelledby="rTitle">
+  <form id="rForm" method="dialog">
+    <div class="hd">
+      <div><h2 id="rTitle">Request access</h2><p class="sub">We’re opening in Boston first. The founders read every request.</p></div>
+      <button class="x" type="button" id="rClose" aria-label="Close"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="rbody">
+      <div class="seg">
+        <label><input type="radio" name="role" value="Looking for help" checked><span>I need help</span></label>
+        <label><input type="radio" name="role" value="Applying to be a member" id="roleMember"><span>I want to be a member</span></label>
+      </div>
+      <div class="fields">
+        <label class="field"><span>Name</span><input name="name" required autocomplete="name"></label>
+        <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+        <label class="field full" id="instField" hidden><span>Institution and field</span><input name="inst" placeholder="MIT, Computer Science"></label>
+        <label class="field full"><span id="whatLbl">What do you need help with?</span><textarea name="what" id="what"></textarea></label>
+      </div>
+      <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="err" id="rErr" role="alert" hidden></p>
+      <button class="btn send" type="submit" id="rSend">Send request</button>
+      <p class="fine">By sending this you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+    </div>
+    <div class="done" hidden>
+      <h3>Request sent</h3>
+      <p id="rDoneMsg">Thanks. One of the founders will reply by email.</p>
+      <button class="btn quiet" type="button" id="rDone">Close</button>
+    </div>
+  </form>
+</dialog>
+<script src="/site.js"></script>
+</body>
+</html>

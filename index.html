@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Valedictor: Ask the top of the class.</title>
-<meta name="description" content="Book short sessions with verified students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours. Opening in Boston first.">
+<meta name="description" content="Book short sessions and small classes with verified students, alumni and faculty of the world’s top institutions. From 15 minutes to 2 hours. Opening in Boston first.">
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="Valedictor: Ask the top of the class.">
-<meta property="og:description" content="Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.">
+<meta property="og:description" content="Book short sessions and small classes with verified students, alumni and faculty of the world’s top institutions. From 15 minutes to 2 hours. Opening in Boston first.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://valedictor.com/">
 <meta property="og:site_name" content="Valedictor">
@@ -17,481 +17,45 @@
 <meta property="og:image:alt" content="Valedictor. Ask the top of the class. Example listings for a pitch deck review and a code review.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Valedictor: Ask the top of the class.">
-<meta name="twitter:description" content="Students, alumni and faculty of the world's top institutions. From 15 minutes to 2 hours.">
+<meta name="twitter:description" content="Book short sessions and small classes with verified students, alumni and faculty of the world’s top institutions. From 15 minutes to 2 hours. Opening in Boston first.">
 <meta name="twitter:image" content="https://valedictor.com/og-image.png">
 <link rel="canonical" href="https://valedictor.com/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink: #121317;
-  --ink-2: #3C3E45;
-  --muted: #6E7079;
-  --faint: #9A9CA3;
-  --line: #E6E6E9;
-  --line-2: #D6D6DB;
-  --surface: #F4F4F5;
-  --paper: #F6F3EC;
-  --blue: #2B59FF;
-  --blue-soft: #EAEFFF;
-  --white: #FFFFFF;
-  --pad: 32px;
-  --max: 1280px;
-}
-*, *::before, *::after { box-sizing: border-box; }
-* { margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  background: var(--white); color: var(--ink);
-  font-family: 'Schibsted Grotesk', system-ui, -apple-system, sans-serif;
-  font-size: 16px; line-height: 1.5;
-  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-}
-a { color: inherit; text-decoration: none; }
-button, input, select, textarea { font: inherit; color: inherit; }
-button { cursor: pointer; background: none; border: 0; }
-img { display: block; max-width: 100%; }
-::selection { background: var(--blue); color: #fff; }
-:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-/* buttons */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  height: 44px; padding: 0 18px; border-radius: 10px;
-  background: var(--ink); color: #fff; font-weight: 600; font-size: 15px; letter-spacing: -.005em;
-  transition: background-color .15s;
-}
-.btn:hover { background: #2A2C33; }
-.btn.blue { background: var(--blue); }
-.btn.blue:hover { background: #1F4AE8; }
-.btn.quiet { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--line-2); }
-.btn.quiet:hover { background: var(--surface); }
-.link { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
-.link:hover { text-decoration-color: currentColor; }
-
-/* header */
-.top { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: saturate(1.4) blur(12px); -webkit-backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid transparent; transition: border-color .2s; }
-.top.lined { border-bottom-color: var(--line); }
-.top .wrap { height: 68px; display: flex; align-items: center; gap: 28px; }
-.logo { display: block; flex: none; width: 112px; height: 31px; background: url(logo.png) left center / contain no-repeat; }
-.mini {
-  flex: 1; max-width: 420px; height: 42px; display: flex; align-items: center; gap: 10px;
-  padding: 0 6px 0 14px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line-2);
-  opacity: 0; visibility: hidden; transform: translateY(-4px); transition: opacity .2s, transform .2s, visibility .2s;
-}
-.top.searching .mini { opacity: 1; visibility: visible; transform: none; }
-.mini svg { flex: none; color: var(--muted); }
-.mini input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 15px; }
-.mini input::placeholder { color: var(--muted); }
-.mini button { width: 32px; height: 32px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; flex: none; }
-.top nav { margin-left: auto; display: flex; align-items: center; gap: 26px; font-size: 15px; color: var(--ink-2); }
-.top nav a:not(.btn):hover { color: var(--ink); }
-.top nav .btn { height: 40px; }
-
-/* hero */
-.hero { padding: 72px 0 56px; }
-h1 {
-  font-weight: 700; font-size: clamp(44px, 6.4vw, 88px); line-height: .98; letter-spacing: -.045em;
-  max-width: 12ch;
-}
-.desc { margin-top: 20px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.45; color: var(--ink-2); max-width: 34em; }
-.finder {
-  margin-top: 40px; max-width: 920px; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, .8fr) minmax(0, .8fr) auto;
-  align-items: stretch; border-radius: 16px; background: var(--white);
-  box-shadow: 0 0 0 1px var(--line-2), 0 6px 20px -8px rgba(18,19,23,.14);
-}
-.finder label { display: block; padding: 13px 20px 12px; position: relative; cursor: text; }
-.finder label + label::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 1px; background: var(--line); }
-.finder label span { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink); letter-spacing: -.003em; }
-.finder input, .finder select {
-  display: block; width: 100%; border: 0; outline: 0; background: transparent; font-size: 15.5px; padding: 1px 0 0; color: var(--ink);
-  -webkit-appearance: none; appearance: none;
-}
-.finder input::placeholder { color: var(--muted); }
-.finder select { cursor: pointer; padding-right: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236E7079' stroke-width='1.5'/%3E%3C/svg%3E") right center no-repeat; }
-.finder label:focus-within { background: var(--surface); border-radius: 14px; }
-.finder label:focus-within::before, .finder label:focus-within + label::before { opacity: 0; }
-.finder .go { margin: 8px; height: auto; min-height: 48px; padding: 0 22px; border-radius: 11px; }
-.try { margin-top: 18px; font-size: 14.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
-.try button { color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
-.try button:hover { color: var(--ink); text-decoration-color: currentColor; }
-.where { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px; font-size: 14.5px; color: var(--muted); }
-.where b { font-weight: 600; font-size: 17px; color: var(--ink); letter-spacing: -.015em; }
-
-/* browse */
-.browse { padding: 8px 0 96px; scroll-margin-top: 68px; }
-.tabsbar { position: sticky; top: 68px; z-index: 10; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-.tabsbar .wrap { display: flex; align-items: center; gap: 24px; }
-.tabs { display: flex; gap: 26px; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; }
-.tabs::-webkit-scrollbar { display: none; }
-.tab { position: relative; flex: none; padding: 16px 0 15px; font-size: 14.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
-.tab:hover { color: var(--ink); }
-.tab[aria-selected="true"] { color: var(--ink); }
-.tab[aria-selected="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--ink); border-radius: 2px; }
-.inst { flex: none; display: flex; gap: 4px; padding: 3px; border-radius: 10px; background: var(--surface); }
-.inst button { padding: 5px 11px; border-radius: 7px; font-size: 13.5px; font-weight: 500; color: var(--muted); }
-.inst button[aria-pressed="true"] { background: var(--white); color: var(--ink); box-shadow: 0 1px 2px rgba(18,19,23,.12); }
-.status { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0 22px; font-size: 14px; color: var(--muted); }
-.status strong { color: var(--ink); font-weight: 600; }
-.status .clear { margin-left: 8px; }
-.note { display: flex; align-items: flex-start; gap: 8px; }
-.note::before { content: ""; width: 6px; height: 6px; margin-top: .58em; border-radius: 50%; background: var(--faint); flex: none; }
-
-.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px 24px; }
-.card { display: block; text-align: left; width: 100%; }
-.card[hidden] { display: none; }
-.card .th { transition: transform .25s cubic-bezier(.2,.7,.2,1); }
-.card:hover .th { transform: translateY(-2px); }
-.card .meta { margin-top: 14px; display: flex; gap: 10px; align-items: center; }
-.av { width: 32px; height: 32px; border-radius: 50%; flex: none; display: grid; place-items: center; font-size: 12px; font-weight: 600; color: #fff; letter-spacing: .01em; position: relative; }
-.av.open::after { content: ""; position: absolute; right: -1px; top: -1px; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 2px #fff; }
-.who { min-width: 0; line-height: 1.3; }
-.who b { display: block; font-size: 14.5px; font-weight: 600; }
-.who span { display: block; font-size: 13px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card h3 { margin-top: 10px; font-size: 16px; font-weight: 500; line-height: 1.35; letter-spacing: -.012em; }
-.card .price { margin-top: 8px; font-size: 14px; color: var(--muted); }
-.card .price b { color: var(--ink); font-weight: 600; }
-.empty { grid-column: 1 / -1; padding: 56px 0; border-top: 1px solid var(--line); max-width: 560px; }
-.empty h3 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; }
-.empty p { margin-top: 8px; color: var(--muted); }
-.empty .btn { margin-top: 20px; }
-
-/* thumbnails: miniature work samples */
-.th { position: relative; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; background: var(--surface); }
-.th .lbl { position: absolute; left: 10px; top: 10px; z-index: 2; font-size: 11.5px; font-weight: 600; color: var(--ink); background: rgba(255,255,255,.92); padding: 3px 8px; border-radius: 6px; }
-.th .lbl.dark { background: rgba(255,255,255,.12); color: #fff; }
-.th svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.mark { color: var(--blue); }
-/* deck */
-.deck .slide { position: absolute; left: 13%; right: 13%; top: 20%; bottom: 14%; background: #fff; border-radius: 4px; box-shadow: 0 1px 2px rgba(18,19,23,.1), 0 8px 20px -10px rgba(18,19,23,.25); padding: 7% 8%; }
-.deck .slide i { display: block; font-style: normal; font-weight: 700; font-size: 11px; letter-spacing: -.01em; }
-.deck .bars { position: absolute; left: 8%; right: 42%; bottom: 14%; top: 42%; display: flex; align-items: flex-end; gap: 9%; }
-.deck .bars span { flex: 1; background: #C9CBD1; border-radius: 1px; }
-.deck .bars span:last-child { background: var(--ink); }
-.deck .lines { position: absolute; right: 8%; width: 28%; top: 44%; display: grid; gap: 5px; }
-.deck .lines span { height: 3px; background: #DEDFE3; border-radius: 2px; }
-.deck .ring { position: absolute; right: 40%; bottom: 9%; width: 20%; height: 58%; border: 1.5px solid var(--blue); border-radius: 50%; transform: rotate(-6deg); }
-.deck .bub { position: absolute; right: 5%; bottom: 7%; background: var(--blue); color: #fff; font-size: 10.5px; font-weight: 600; line-height: 1.25; padding: 5px 8px; border-radius: 7px 7px 2px 7px; max-width: 44%; }
-/* code */
-.code { background: var(--ink); }
-.code pre { position: absolute; left: 0; right: 0; top: 24%; font: 500 10.5px/1.75 ui-monospace, 'SF Mono', Menlo, monospace; color: #C9CBD3; padding: 0 0 0 4%; white-space: pre; overflow: hidden; }
-.code pre span { display: block; padding-right: 8px; }
-.code pre em { font-style: normal; color: #5C5F69; display: inline-block; width: 22px; }
-.code .del { background: rgba(255,255,255,.05); color: #7D808B; text-decoration: line-through; text-decoration-color: #7D808B; }
-.code .add { background: rgba(43,89,255,.28); color: #fff; }
-.code .k { color: #8FA7FF; }
-/* essay */
-.essay { background: var(--paper); }
-.essay .pg { position: absolute; left: 10%; right: 10%; top: 20%; bottom: -4%; background: #fffdf8; box-shadow: 0 1px 2px rgba(18,19,23,.08); padding: 8% 9%; font-family: Georgia, 'Times New Roman', serif; font-size: 10.5px; line-height: 1.6; color: #45474E; }
-.essay s { color: #9A9CA3; text-decoration-color: var(--blue); text-decoration-thickness: 1.5px; }
-.essay ins { text-decoration: none; color: var(--blue); font-family: 'Schibsted Grotesk', sans-serif; font-weight: 500; }
-/* math */
-.math .pg { position: absolute; left: 12%; right: 12%; top: 20%; bottom: 10%; background: #fff; border-radius: 4px; box-shadow: 0 1px 2px rgba(18,19,23,.08); padding: 7% 9%; font-family: Georgia, serif; font-size: 11.5px; line-height: 1.85; color: #2E3036; }
-.math .pg i { font-style: italic; }
-.math .ok { position: absolute; right: 9%; bottom: 12%; width: 22px; height: 22px; border-radius: 50%; background: var(--blue); display: grid; place-items: center; }
-/* offer table */
-.offer table { position: absolute; left: 10%; width: 80%; top: 24%; border-collapse: collapse; font-size: 11px; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 2px rgba(18,19,23,.08); }
-.offer th, .offer td { padding: 6px 9px; text-align: left; border-bottom: 1px solid var(--line); }
-.offer th { font-weight: 600; color: var(--muted); font-size: 10.5px; }
-.offer td:first-child { color: var(--muted); }
-.offer .hi { background: var(--blue-soft); color: var(--ink); font-weight: 600; }
-.offer tr:last-child td { border-bottom: 0; }
-.offer .tip { position: absolute; right: 10%; bottom: 9%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
-/* funnel */
-.funnel .rows { position: absolute; left: 11%; right: 11%; top: 26%; display: grid; gap: 9px; }
-.funnel .row { display: grid; grid-template-columns: 58px 1fr 38px; align-items: center; gap: 8px; font-size: 10.5px; color: var(--muted); }
-.funnel .row div { height: 12px; background: #fff; border-radius: 3px; position: relative; overflow: hidden; }
-.funnel .row div::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--ink); border-radius: 3px; }
-.funnel .row.weak div::after { background: var(--blue); }
-.funnel .row b { color: var(--ink); font-weight: 600; text-align: right; }
-.funnel .tip { position: absolute; left: 11%; bottom: 11%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
-
-/* facts */
-.facts { border-top: 1px solid var(--line); padding: 96px 0; }
-.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; }
-h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.06; letter-spacing: -.035em; font-weight: 700; }
-.split > div > p { margin-top: 16px; color: var(--ink-2); max-width: 26em; font-size: 17px; }
-dl.list { border-top: 1px solid var(--ink); }
-dl.list > div { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 24px; padding: 22px 0 24px; border-bottom: 1px solid var(--line); }
-dl.list dt { font-weight: 600; font-size: 17px; letter-spacing: -.012em; }
-dl.list dd { color: var(--ink-2); }
-
-/* members */
-.members { background: var(--surface); padding: 96px 0; scroll-margin-top: 68px; }
-.calc { background: var(--white); border-radius: 18px; padding: 32px; box-shadow: 0 0 0 1px var(--line); }
-.calc .out { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
-.calc .out span { color: var(--muted); font-size: 14.5px; }
-.calc .out output { font-size: clamp(40px, 4.4vw, 56px); font-weight: 700; letter-spacing: -.045em; line-height: 1; }
-.calc .out small { display: block; text-align: right; color: var(--muted); font-size: 13px; margin-top: 6px; }
-.rng { padding-top: 24px; }
-.rng + .rng { padding-top: 20px; }
-.rng .h { display: flex; justify-content: space-between; font-size: 14.5px; margin-bottom: 12px; }
-.rng .h b { font-weight: 600; }
-input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 22px; background: transparent; cursor: pointer; }
-input[type=range]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(var(--ink), var(--ink)) 0 / var(--p, 50%) 100% no-repeat, var(--line); }
-input[type=range]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--line); }
-input[type=range]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--ink); }
-input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 2px 6px rgba(18,19,23,.18); }
-input[type=range]::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--line-2), 0 2px 6px rgba(18,19,23,.18); }
-.calc .btn { margin-top: 28px; width: 100%; height: 50px; }
-.who-can { margin-top: 32px; display: grid; gap: 14px; max-width: 30em; }
-.who-can li { list-style: none; display: grid; grid-template-columns: 18px 1fr; gap: 12px; color: var(--ink-2); }
-.who-can svg { margin-top: 4px; color: var(--ink); }
-
-/* faq */
-.faq { padding: 96px 0; scroll-margin-top: 68px; }
-.qs { border-top: 1px solid var(--ink); }
-.qs details { border-bottom: 1px solid var(--line); }
-.qs summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; font-weight: 600; font-size: 17px; letter-spacing: -.012em; }
-.qs summary::-webkit-details-marker { display: none; }
-.qs summary i { flex: none; width: 14px; height: 14px; position: relative; }
-.qs summary i::before, .qs summary i::after { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 2px; background: var(--ink); border-radius: 1px; transition: transform .2s; }
-.qs summary i::after { transform: rotate(90deg); }
-.qs details[open] summary i::after { transform: rotate(0); }
-.qs details p { padding: 0 48px 24px 0; color: var(--ink-2); max-width: 40em; }
-
-/* footer */
-footer { border-top: 1px solid var(--line); padding: 48px 0 56px; font-size: 14px; color: var(--muted); }
-footer .wrap { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, .6fr)) minmax(0, 1fr); gap: 32px; }
-footer .logo { width: 100px; height: 28px; }
-footer h4 { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-footer ul { list-style: none; display: grid; gap: 8px; }
-footer a:hover { color: var(--ink); }
-footer .legal { grid-column: 1 / -1; padding-top: 28px; margin-top: 8px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-footer .legal p { max-width: 46em; }
-footer .legal .links { display: flex; gap: 20px; flex-wrap: wrap; }
-
-/* AI thumbnails */
-.term pre { top: 23%; padding-left: 7%; }
-.term .p { color: #fff; font-weight: 600; }
-.term .u { color: #fff; }
-.term .ok { color: #8FA7FF; }
-.term .cur { display: inline-block; width: 6px; height: 11px; background: #fff; vertical-align: -1px; }
-.file { position: absolute; left: 11%; right: 11%; top: 19%; bottom: -4%; background: #fff; border-radius: 6px 6px 0 0; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); overflow: hidden; }
-.file .fn { padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 10px; font-weight: 600; color: var(--ink); }
-.file pre { padding: 7px 10px; font: 500 9.5px/1.72 ui-monospace, 'SF Mono', Menlo, monospace; color: #3C3E45; white-space: pre; }
-.file .dim { color: #A3A5AC; }
-.file .hl { display: block; margin: 0 -10px; padding: 0 10px; background: var(--blue-soft); color: #1F3FB8; }
-.cls { position: absolute; left: 12%; right: 12%; top: 20%; bottom: 13%; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); padding: 7% 8%; }
-.cls b { display: block; font-size: 12px; font-weight: 700; letter-spacing: -.01em; }
-.cls small { display: block; margin-top: 2px; font-size: 10px; color: var(--muted); }
-.cls .seats { margin-top: 9%; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 5px; }
-.cls .seats span { aspect-ratio: 1; border-radius: 50%; background: var(--c, #C9CBD1); }
-.cls .seats .free { background: transparent; box-shadow: inset 0 0 0 1.3px #C9CBD1; }
-.cls .left { margin-top: 9%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
-.prm .pb { position: absolute; left: 10%; right: 10%; border-radius: 7px; padding: 7px 10px; font-size: 10px; line-height: 1.45; }
-.prm .pb small { display: block; font-size: 9.5px; font-weight: 600; margin-bottom: 2px; }
-.prm .b1 { top: 20%; background: transparent; box-shadow: inset 0 0 0 1px #CFD1D6; color: var(--muted); }
-.prm .b1 small { color: var(--muted); }
-.prm .b2 { top: 43%; background: #fff; box-shadow: 0 1px 2px rgba(18,19,23,.08), inset 3px 0 0 var(--blue); color: var(--ink-2); padding-left: 13px; }
-.prm .b2 small { color: var(--blue); }
-.aimap table { position: absolute; left: 10%; width: 80%; top: 22%; border-collapse: collapse; font-size: 10.5px; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 2px rgba(18,19,23,.08); }
-.aimap td { padding: 5px 9px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
-.aimap tr:last-child td { border-bottom: 0; }
-.aimap td:last-child { text-align: right; }
-.aimap .pill { display: inline-block; padding: 1px 7px; border-radius: 99px; font-size: 9.5px; font-weight: 600; }
-.aimap .ai { background: var(--blue-soft); color: var(--blue); }
-.aimap .you { background: var(--surface); color: var(--ink); }
-.aimap .tip { position: absolute; left: 10%; bottom: 8%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
-.win { position: absolute; left: 10%; right: 10%; top: 19%; bottom: 17%; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); overflow: hidden; }
-.win .chrome { height: 18px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-bottom: 1px solid var(--line); }
-.win .chrome i { width: 6px; height: 6px; border-radius: 50%; background: #D6D6DB; }
-.win .chrome span { margin-left: 6px; font-size: 8.5px; color: var(--faint); }
-.win .msgs { padding: 8px 10px; display: grid; gap: 6px; font-size: 9.5px; line-height: 1.4; }
-.win .me { justify-self: end; background: var(--ink); color: #fff; padding: 4px 8px; border-radius: 8px 8px 2px 8px; }
-.win .bot { justify-self: start; max-width: 86%; background: var(--surface); color: var(--ink-2); padding: 4px 8px; border-radius: 8px 8px 8px 2px; }
-.build .tip { position: absolute; left: 10%; bottom: 7%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
-.papers { background: var(--paper); }
-.papers .pg { position: absolute; left: 9%; width: 60%; top: 19%; bottom: -4%; background: #fffdf8; box-shadow: 0 1px 2px rgba(18,19,23,.08); padding: 8% 7%; font-family: Georgia, 'Times New Roman', serif; font-size: 9.5px; line-height: 1.6; color: #55575E; }
-.papers .pg b { display: block; font-family: 'Schibsted Grotesk', sans-serif; font-size: 10px; color: var(--ink); margin-bottom: 4px; }
-.papers mark { background: var(--blue-soft); color: var(--ink); padding: 0 1px; }
-.papers .side { position: absolute; left: 73%; right: 6%; top: 38%; padding-left: 7px; box-shadow: inset 1.5px 0 0 var(--blue); font-size: 10px; line-height: 1.38; font-weight: 600; color: var(--blue); }
-
-/* pricing */
-.pricing { padding: 96px 0; border-top: 1px solid var(--line); scroll-margin-top: 68px; }
-.rules { margin-top: 32px; list-style: none; border-top: 1px solid var(--ink); max-width: 34em; }
-.rules li { padding: 16px 0 17px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
-.rules li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
-.paycalc { align-self: start; }
-.plusline { margin-top: 22px; font-size: 14px; color: var(--muted); }
-.plusline b { color: var(--ink); font-weight: 600; }
-.plans { margin-top: 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.plan { background: var(--white); border-radius: 18px; padding: 30px 32px 32px; box-shadow: 0 0 0 1px var(--line); }
-.plan.plus { box-shadow: 0 0 0 1.5px var(--ink); }
-.plan .ph { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.plan h3 { font-size: 22px; letter-spacing: -.025em; font-weight: 700; }
-.plan .pp { font-size: 14.5px; color: var(--muted); }
-.plan .keep { margin-top: 18px; padding-bottom: 20px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
-.plan .keep b { display: block; font-size: clamp(30px, 3vw, 38px); line-height: 1.05; letter-spacing: -.04em; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
-.plan.plus .keep b { color: var(--blue); }
-.plan ul { margin-top: 20px; list-style: none; display: grid; gap: 12px; }
-.plan li { display: grid; grid-template-columns: 18px 1fr; gap: 12px; color: var(--ink-2); }
-.plan li svg { margin-top: 4px; color: var(--ink); }
-.plannote { margin-top: 18px; font-size: 14px; color: var(--muted); }
-@media (max-width: 860px) { .plans { grid-template-columns: 1fr; margin-top: 48px; } .plan { padding: 24px; } }
-.paycalc .out output { font-variant-numeric: tabular-nums; }
-.splitbar { margin-top: 26px; height: 10px; border-radius: 5px; background: var(--ink); overflow: hidden; display: flex; }
-.splitbar i { display: block; height: 100%; }
-.splitbar .m { background: var(--blue); }
-.splitbar .v { background: var(--ink); }
-.ledger { margin-top: 18px; display: grid; }
-.ledger div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
-.ledger div:last-child { border-bottom: 0; }
-.ledger div b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
-.ledger .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
-.ledger .dot.m { background: var(--blue); }
-.ledger .dot.v { background: var(--ink); }
-.ledger .tot { color: var(--ink); font-weight: 600; }
-.paycalc .fine { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
-
-/* sheet */
-.scrim { position: fixed; inset: 0; z-index: 40; background: rgba(18,19,23,.36); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
-.scrim.on { opacity: 1; visibility: visible; }
-.sheet {
-  position: fixed; z-index: 41; top: 0; right: 0; bottom: 0; width: min(500px, 100%); background: #fff;
-  display: flex; flex-direction: column; transform: translateX(100%); visibility: hidden;
-  transition: transform .34s cubic-bezier(.2,.8,.2,1), visibility .34s; box-shadow: -20px 0 60px -30px rgba(18,19,23,.35);
-}
-.sheet.on { transform: none; visibility: visible; }
-.sheet .bar { display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 16px 0 24px; border-bottom: 1px solid var(--line); flex: none; font-size: 14px; color: var(--muted); }
-.x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--ink); }
-.x:hover { background: var(--surface); }
-.sheet .body { flex: 1; overflow-y: auto; padding: 24px; overscroll-behavior: contain; }
-.sheet .th { border-radius: 12px; }
-.sheet h3 { margin-top: 22px; font-size: 23px; line-height: 1.2; letter-spacing: -.025em; font-weight: 700; }
-.sheet .meta { margin-top: 16px; display: flex; gap: 12px; align-items: center; }
-.sheet .meta .av { width: 40px; height: 40px; font-size: 13.5px; }
-.sheet .who span { white-space: normal; }
-.sheet .who .live { color: var(--blue); font-weight: 500; }
-.sheet .foot .btn { white-space: nowrap; flex: none; }
-.sheet .bio { margin-top: 16px; color: var(--ink-2); }
-.sheet h4 { margin-top: 28px; margin-bottom: 10px; font-size: 14.5px; font-weight: 600; }
-.opts { display: grid; gap: 8px; }
-.opt { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line-2); cursor: pointer; }
-.opt input { position: absolute; opacity: 0; pointer-events: none; }
-.opt span small { display: block; color: var(--muted); font-size: 13px; }
-.opt b { font-weight: 600; }
-.opt:has(input:checked) { box-shadow: inset 0 0 0 2px var(--ink); }
-.opt:has(input:focus-visible) { outline: 2px solid var(--blue); outline-offset: 2px; }
-.days { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
-.day { padding: 9px 0 8px; border-radius: 10px; text-align: center; box-shadow: inset 0 0 0 1px var(--line); line-height: 1.2; }
-.day small { display: block; font-size: 12px; color: var(--muted); }
-.day b { font-size: 16px; font-weight: 600; }
-.day[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: none; }
-.day[aria-pressed="true"] small { color: rgba(255,255,255,.7); }
-.times { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
-.time { padding: 8px 12px; border-radius: 9px; font-size: 14px; box-shadow: inset 0 0 0 1px var(--line); }
-.time[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--ink); font-weight: 600; }
-.sheet .foot { flex: none; border-top: 1px solid var(--line); padding: 16px 24px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.sheet .foot div { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
-.sheet .foot div b { display: block; color: var(--ink); font-size: 16px; font-weight: 600; }
-.sheet .foot .btn { height: 48px; padding: 0 22px; }
-.sheet .ledger { margin-top: 4px; padding: 4px 16px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); }
-.sheet .ledger div { font-size: 14px; padding: 9px 0; }
-.sheet .splitbar { margin: 8px 0 2px; height: 6px; }
-.clsinfo { padding: 14px 16px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); font-size: 14.5px; color: var(--ink-2); }
-.clsinfo b { display: block; color: var(--ink); font-weight: 600; }
-.clsinfo .left { color: var(--blue); font-weight: 500; }
-.sheet .fine { margin-top: 24px; padding: 14px 16px; border-radius: 12px; background: var(--surface); font-size: 13.5px; color: var(--ink-2); }
-
-/* request dialog */
-dialog.req { margin: auto; width: min(520px, calc(100% - 32px)); max-height: calc(100% - 32px); border: 0; border-radius: 20px; padding: 0; color: var(--ink); box-shadow: 0 30px 80px -20px rgba(18,19,23,.45); }
-dialog.req::backdrop { background: rgba(18,19,23,.4); }
-dialog.req form { padding: 28px; }
-dialog.req .hd { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
-dialog.req h2 { font-size: 26px; letter-spacing: -.03em; }
-dialog.req .sub { margin-top: 8px; color: var(--ink-2); font-size: 15px; }
-.seg { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 12px; background: var(--surface); }
-.seg label { cursor: pointer; }
-.seg input { position: absolute; opacity: 0; pointer-events: none; }
-.seg span { display: block; text-align: center; padding: 9px 8px; border-radius: 9px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
-.seg input:checked + span { background: #fff; color: var(--ink); box-shadow: 0 1px 2px rgba(18,19,23,.12); }
-.seg input:focus-visible + span { outline: 2px solid var(--blue); }
-.fields { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.field.full { grid-column: 1 / -1; }
-.field span { display: block; font-size: 13.5px; font-weight: 500; margin-bottom: 6px; }
-.field span small { color: var(--muted); font-weight: 400; font-size: 13px; }
-.field input, .field textarea { width: 100%; border: 0; border-radius: 10px; padding: 11px 13px; font-size: 16px; outline: 0; box-shadow: inset 0 0 0 1px var(--line-2); background: #fff; transition: box-shadow .15s; }
-.field textarea { min-height: 92px; resize: vertical; }
-.field input:focus, .field textarea:focus { box-shadow: inset 0 0 0 2px var(--ink); }
-.field[hidden] { display: none; }
-dialog.req .btn.send { margin-top: 20px; width: 100%; height: 50px; }
-dialog.req .fine { margin-top: 12px; text-align: center; font-size: 13.5px; color: var(--muted); }
-dialog.req .fine a { color: var(--ink-2); text-decoration: underline; text-underline-offset: 2px; }
-dialog.req .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
-dialog.req .err { margin-top: 16px; padding: 12px 14px; border-radius: 10px; background: #FDF0EE; color: #8A2A1C; font-size: 14px; }
-dialog.req .err a { text-decoration: underline; text-underline-offset: 2px; font-weight: 500; }
-dialog.req .btn.send:disabled { opacity: .7; cursor: default; }
-dialog.req .done { padding: 8px 0 4px; }
-dialog.req .done h3 { margin-top: 18px; font-size: 19px; letter-spacing: -.02em; }
-dialog.req .done p { margin-top: 8px; color: var(--ink-2); }
-dialog.req .done .btn { margin-top: 20px; }
-
-/* responsive */
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .split { grid-template-columns: 1fr; gap: 40px; }
-  footer .wrap { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 860px) {
-  .top nav .hide-s { display: none; }
-  .mini { display: none; }
-  .finder { grid-template-columns: 1fr 1fr; }
-  .finder label:first-child { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
-  .finder label:nth-child(2)::before { display: none; }
-  .finder .go { grid-column: 1 / -1; margin: 0 8px 8px; }
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 18px; }
-  .inst { display: none; }
-}
-@media (max-width: 560px) {
-  :root { --pad: 20px; }
-  .top .wrap { height: 60px; }
-  .tabsbar { top: 60px; }
-  .logo { width: 100px; height: 28px; }
-  .hero { padding: 44px 0 36px; }
-  h1 { font-size: 46px; }
-  .finder { margin-top: 30px; }
-  .where { margin-top: 32px; gap: 4px 20px; }
-  .grid { grid-template-columns: 1fr; gap: 36px; }
-  .status { flex-direction: column; align-items: flex-start; gap: 6px; }
-  .facts, .members, .faq { padding: 64px 0; }
-  dl.list > div { grid-template-columns: 1fr; gap: 6px; }
-  .calc { padding: 22px; }
-  .qs details p { padding-right: 0; }
-  footer .wrap { grid-template-columns: 1fr 1fr; }
-  footer .brand { grid-column: 1 / -1; }
-  .fields { grid-template-columns: 1fr; }
-  dialog.req form { padding: 22px; }
-  .sheet .body { padding: 20px; }
-  .sheet .foot { padding: 14px 20px 18px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition-duration: .01ms !important; scroll-behavior: auto !important; }
-}
-</style>
+<link rel="stylesheet" href="/site.css">
 </head>
-<body>
+<body class="home">
 
 <header class="top" id="top">
   <div class="wrap">
-    <a href="./" class="logo" aria-label="Valedictor home"></a>
-    <form class="mini" id="mini" role="search">
+    <a href="/" class="logo" aria-label="Valedictor home"></a>
+    <form class="mini" id="mini" role="search" action="/sessions/">
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <input id="mq" placeholder="Search sessions" aria-label="Search sessions">
+      <input id="mq" name="q" placeholder="Search sessions" aria-label="Search sessions">
       <button type="submit" aria-label="Search"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </form>
-    <nav>
-      <a class="hide-s" href="#pricing">Pricing</a>
-      <a class="hide-s" href="#members">For members</a>
-      <a class="hide-s" href="#faq">FAQ</a>
+    <nav aria-label="Main">
+      <a class="nl" href="/sessions/">Browse</a>
+      <a class="nl" href="/ai/">AI</a>
+      <a class="nl" href="/pricing/">Pricing</a>
+      <a class="nl" href="/members/">For members</a>
+      <a class="nl" href="/faq/">FAQ</a>
       <button class="btn" type="button" data-request>Request access</button>
+      <button class="menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
     </nav>
+  </div>
+  <div class="mnav" id="mnav" hidden>
+    <div class="wrap">
+      <a href="/sessions/">Browse sessions</a>
+      <a href="/ai/">AI</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/members/">For members</a>
+      <a href="/faq/">FAQ</a>
+    </div>
   </div>
 </header>
 
@@ -501,61 +65,33 @@ dialog.req .done .btn { margin-top: 20px; }
       <h1>Ask the top of the class.</h1>
       <p class="desc">Students, alumni and faculty of the world’s top institutions. From 15 minutes to 2 hours.</p>
 
-      <form class="finder" id="finder" role="search">
-        <label><span>What do you need?</span><input id="q" placeholder="Set up Claude Code, a pitch deck review…" autocomplete="off"></label>
+      <form class="finder" id="finder" role="search" action="/sessions/" method="get">
+        <label><span>What do you need?</span><input id="q" name="q" placeholder="Set up Claude Code, a pitch deck review…" autocomplete="off"></label>
         <label><span>Institution</span>
-          <select id="fi"><option value="">Any</option><option>Harvard</option><option>MIT</option><option>Babson</option></select>
+          <select id="fi" name="inst"><option value="">Any</option><option>Harvard</option><option>MIT</option><option>Babson</option></select>
         </label>
         <label><span>Length</span>
-          <select id="fl"><option value="">Any length</option><option value="short">Up to 30 min</option><option value="hour">About an hour</option><option value="long">2 hours</option></select>
+          <select id="fl" name="len"><option value="">Any length</option><option value="short">Up to 30 min</option><option value="hour">About an hour</option><option value="long">2 hours</option></select>
         </label>
         <button class="btn go" type="submit">Search</button>
       </form>
 
       <div class="try">Try
-        <button type="button">Claude setup</button>
-        <button type="button">AI class</button>
-        <button type="button">pitch deck</button>
-        <button type="button">case interview</button>
-        <button type="button">college essay</button>
+        <a href="/sessions/?q=Claude+setup">Claude setup</a>
+        <a href="/sessions/?cat=classes">AI class</a>
+        <a href="/sessions/?q=pitch+deck">pitch deck</a>
+        <a href="/sessions/?q=case+interview">case interview</a>
+        <a href="/sessions/?q=college+essay">college essay</a>
       </div>
 
       <div class="where"><b>Harvard</b><b>MIT</b><b>Babson</b><span>Boston first, more institutions next</span></div>
     </div>
   </section>
 
-  <section class="browse" id="browse" aria-label="Browse sessions">
-    <div class="tabsbar">
-      <div class="wrap">
-        <div class="tabs" role="tablist" aria-label="Categories">
-          <button class="tab" role="tab" aria-selected="true" data-cat="">All</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="ai">AI</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="classes">Group classes</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="pitch">Pitch decks</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="interviews">Interviews</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="code">Code</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="applications">Applications</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="research">Research</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="tutoring">Tutoring</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="careers">Careers</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="startups">Startups</button>
-        </div>
-        <div class="inst" role="group" aria-label="Institution">
-          <button type="button" aria-pressed="true" data-inst="">All</button>
-          <button type="button" aria-pressed="false" data-inst="Harvard">Harvard</button>
-          <button type="button" aria-pressed="false" data-inst="MIT">MIT</button>
-          <button type="button" aria-pressed="false" data-inst="Babson">Babson</button>
-        </div>
-      </div>
-    </div>
-
+  <section class="shelf" aria-labelledby="popH">
     <div class="wrap">
-      <div class="status">
-        <div id="count" aria-live="polite"><strong>16 sessions</strong></div>
-        <div class="note">These are example listings that show the format. Real members go live in Boston first.</div>
-      </div>
-
-      <div class="grid" id="grid">
+      <div class="hd"><div><h2 id="popH">Popular right now</h2><p class="sub">Example listings that show the format. Real members go live in Boston first.</p></div><a href="/sessions/">See all 16 sessions</a></div>
+      <div class="grid">
         <button class="card" data-id="claude" data-cat="ai code" data-inst="MIT" data-len="short hour" data-k="claude claude code setup set up install ai assistant terminal agent coding anthropic">
           <div class="th code term" aria-hidden="true">
             <span class="lbl dark">Claude Code setup</span>
@@ -626,14 +162,14 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$70</b> for 1 hr</p>
         </button>
 
-        <button class="card" data-id="code" data-cat="code" data-inst="MIT" data-len="short hour" data-k="code debugging debug bug programming python javascript ai review">
-          <div class="th code" aria-hidden="true">
-            <span class="lbl dark">Debugging</span>
-            <pre><span><em>41</em><b class="k">const</b> total = (items) =&gt; {</span><span><em>42</em>  let sum = 0;</span><span class="del"><em>43</em>  for (let i = 0; i &lt;= items.length; i++)</span><span class="add"><em>43</em>  for (let i = 0; i &lt; items.length; i++)</span><span><em>44</em>    sum += items[i].price;</span><span><em>45</em>  <b class="k">return</b> sum;</span><span><em>46</em>};</span></pre>
+        <button class="card" data-id="essay" data-cat="applications" data-inst="Harvard" data-len="hour" data-k="college essay application personal statement writing editing cv">
+          <div class="th essay" aria-hidden="true">
+            <span class="lbl">Application essay</span>
+            <div class="pg"><s>I have always been passionate about building things.</s> <ins>The summer I rebuilt my uncle’s shop counter, I learned</ins> that measuring twice is a kind of patience. By August I could</div>
           </div>
-          <div class="meta"><span class="av open" style="background:#2B59FF">LM</span><div class="who"><b>Leo M.</b><span>MIT, Computer Science student</span></div></div>
-          <h3>Live code review and debugging, in any language you’re stuck on</h3>
-          <p class="price">From <b>$35</b> for 30 min</p>
+          <div class="meta"><span class="av" style="background:#6B4E3D">AO</span><div class="who"><b>Amara O.</b><span>Harvard, PhD candidate in English</span></div></div>
+          <h3>Line edit of your application essay, with notes on every paragraph</h3>
+          <p class="price">From <b>$60</b> for 45 min</p>
         </button>
 
         <button class="card" data-id="agents" data-cat="ai startups" data-inst="MIT" data-len="hour long" data-k="ai agents agent automation automate inbox email calendar follow ups crm workflow">
@@ -659,14 +195,35 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$80</b> for 1 hr</p>
         </button>
 
-        <button class="card" data-id="essay" data-cat="applications" data-inst="Harvard" data-len="hour" data-k="college essay application personal statement writing editing cv">
-          <div class="th essay" aria-hidden="true">
-            <span class="lbl">Application essay</span>
-            <div class="pg"><s>I have always been passionate about building things.</s> <ins>The summer I rebuilt my uncle’s shop counter, I learned</ins> that measuring twice is a kind of patience. By August I could</div>
+        <button class="card" data-id="offer" data-cat="careers" data-inst="Babson" data-len="short" data-k="job offer negotiation salary career switch advice">
+          <div class="th offer" aria-hidden="true">
+            <span class="lbl">Job offers</span>
+            <table><tr><th></th><th>Offer A</th><th class="hi">Offer B</th></tr><tr><td>Base</td><td>$135k</td><td class="hi">$128k</td></tr><tr><td>Bonus</td><td>10%</td><td class="hi">15%</td></tr><tr><td>Equity</td><td>None</td><td class="hi">$40k/yr</td></tr></table>
+            <span class="tip">Take B. Ask for $8k more base.</span>
           </div>
-          <div class="meta"><span class="av" style="background:#6B4E3D">AO</span><div class="who"><b>Amara O.</b><span>Harvard, PhD candidate in English</span></div></div>
-          <h3>Line edit of your application essay, with notes on every paragraph</h3>
-          <p class="price">From <b>$60</b> for 45 min</p>
+          <div class="meta"><span class="av open" style="background:#3D5566">HL</span><div class="who"><b>Hannah L.</b><span>Babson alum, product lead in fintech</span></div></div>
+          <h3>Compare two job offers and plan the negotiation call</h3>
+          <p class="price">From <b>$50</b> for 30 min</p>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf" aria-labelledby="aiH">
+    <div class="wrap">
+      <div class="hd"><div><h2 id="aiH">AI, set up properly</h2><p class="sub">Sessions and small classes with people who build with AI every day.</p></div><a href="/ai/">See AI sessions and classes</a></div>
+      <div class="grid">
+        <button class="card" data-id="build" data-cat="ai code" data-inst="MIT" data-len="hour long" data-k="build ai app chatbot api claude api openai llm prototype ship mvp">
+          <div class="th build" aria-hidden="true">
+            <span class="lbl">Build an AI app</span>
+            <div class="win"><div class="chrome"><i></i><i></i><i></i><span>localhost:3000</span></div>
+              <div class="msgs"><span class="me">Summarise this lease in 3 points</span><span class="bot">1. 24 months from Jan 1. 2. Rent rises 3% a year. 3. Two months’ notice to leave.</span></div></div>
+            <span class="tip">Shipped before the session ended.</span>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3B3F6B">PV</span><div class="who"><b>Priyanka V.</b><span>MIT, Computer Science student</span></div></div>
+          <h3>Build and ship a small AI app with you, from idea to a working link</h3>
+          <p class="price">From <b>$70</b> for 1 hr</p>
         </button>
 
         <button class="card" data-id="prompting" data-cat="ai classes" data-inst="Harvard" data-len="hour" data-k="prompting prompt prompts prompt engineering chatgpt claude gemini class llm better answers">
@@ -680,24 +237,6 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price"><b>$20</b> a seat, 1 hr class</p>
         </button>
 
-        <button class="card" data-id="research" data-cat="research" data-inst="Harvard" data-len="short hour" data-k="research question methods paper thesis statistics data neuroscience">
-          <div class="th" aria-hidden="true">
-            <span class="lbl">Research design</span>
-            <svg viewBox="0 0 300 225" font-family="Schibsted Grotesk, sans-serif">
-              <rect x="44" y="52" width="216" height="134" rx="6" fill="#fff"/>
-              <path d="M66 166h176M66 166V70" stroke="#C9CBD1" stroke-width="1"/>
-              <g fill="#121317"><circle cx="84" cy="150" r="3"/><circle cx="100" cy="141" r="3"/><circle cx="112" cy="146" r="3"/><circle cx="130" cy="128" r="3"/><circle cx="146" cy="133" r="3"/><circle cx="160" cy="114" r="3"/><circle cx="176" cy="118" r="3"/><circle cx="196" cy="100" r="3"/></g>
-              <path d="M78 154L228 88" stroke="#121317" stroke-width="1.2" stroke-dasharray="3 3"/>
-              <circle cx="196" cy="100" r="10" fill="none" stroke="#2B59FF" stroke-width="1.5"/>
-              <text x="78" y="77" fill="#2B59FF" font-size="10.5" font-weight="600">n = 8. Too small to claim this.</text>
-              <text x="242" y="180" fill="#6E7079" font-size="9.5" text-anchor="end">hours of sleep</text>
-            </svg>
-          </div>
-          <div class="meta"><span class="av" style="background:#4A5D4F">EW</span><div class="who"><b>Elena W.</b><span>Harvard, PhD candidate in Neuroscience</span></div></div>
-          <h3>Turn a vague idea into a research question you can actually answer</h3>
-          <p class="price">From <b>$45</b> for 30 min</p>
-        </button>
-
         <button class="card" data-id="aimap" data-cat="ai startups" data-inst="Babson" data-len="short hour" data-k="ai strategy startup small business automation operations audit which jobs">
           <div class="th aimap" aria-hidden="true">
             <span class="lbl">AI for startups</span>
@@ -707,40 +246,6 @@ dialog.req .done .btn { margin-top: 20px; }
           <div class="meta"><span class="av" style="background:#6A4A3A">OH</span><div class="who"><b>Omar H.</b><span>Babson, MBA in Entrepreneurship</span></div></div>
           <h3>Map which jobs in your startup to hand to AI, and which to keep</h3>
           <p class="price">From <b>$45</b> for 30 min</p>
-        </button>
-
-        <button class="card" data-id="math" data-cat="tutoring" data-inst="MIT" data-len="hour long" data-k="tutoring math calculus problem set exam proof physics">
-          <div class="th math" aria-hidden="true">
-            <span class="lbl">Problem set</span>
-            <div class="pg">∫ <i>x</i> e<sup><i>x</i></sup> d<i>x</i><br><i>u</i> = <i>x</i>,&nbsp; d<i>v</i> = e<sup><i>x</i></sup> d<i>x</i><br>= <i>x</i> e<sup><i>x</i></sup> − ∫ e<sup><i>x</i></sup> d<i>x</i><br>= e<sup><i>x</i></sup>(<i>x</i> − 1) + <i>C</i></div>
-            <span class="ok"><svg width="12" height="12" viewBox="0 0 12 12" style="position:static"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </div>
-          <div class="meta"><span class="av" style="background:#5A4B6E">TR</span><div class="who"><b>Tomás R.</b><span>MIT, Mathematics PhD student</span></div></div>
-          <h3>Work through a problem set with you, from calculus to real analysis</h3>
-          <p class="price">From <b>$55</b> for 1 hr</p>
-        </button>
-
-        <button class="card" data-id="build" data-cat="ai code" data-inst="MIT" data-len="hour long" data-k="build ai app chatbot api claude api openai llm prototype ship mvp">
-          <div class="th build" aria-hidden="true">
-            <span class="lbl">Build an AI app</span>
-            <div class="win"><div class="chrome"><i></i><i></i><i></i><span>localhost:3000</span></div>
-              <div class="msgs"><span class="me">Summarise this lease in 3 points</span><span class="bot">1. 24 months from Jan 1. 2. Rent rises 3% a year. 3. Two months’ notice to leave.</span></div></div>
-            <span class="tip">Shipped before the session ended.</span>
-          </div>
-          <div class="meta"><span class="av open" style="background:#3B3F6B">PV</span><div class="who"><b>Priyanka V.</b><span>MIT, Computer Science student</span></div></div>
-          <h3>Build and ship a small AI app with you, from idea to a working link</h3>
-          <p class="price">From <b>$70</b> for 1 hr</p>
-        </button>
-
-        <button class="card" data-id="offer" data-cat="careers" data-inst="Babson" data-len="short" data-k="job offer negotiation salary career switch advice">
-          <div class="th offer" aria-hidden="true">
-            <span class="lbl">Job offers</span>
-            <table><tr><th></th><th>Offer A</th><th class="hi">Offer B</th></tr><tr><td>Base</td><td>$135k</td><td class="hi">$128k</td></tr><tr><td>Bonus</td><td>10%</td><td class="hi">15%</td></tr><tr><td>Equity</td><td>None</td><td class="hi">$40k/yr</td></tr></table>
-            <span class="tip">Take B. Ask for $8k more base.</span>
-          </div>
-          <div class="meta"><span class="av open" style="background:#3D5566">HL</span><div class="who"><b>Hannah L.</b><span>Babson alum, product lead in fintech</span></div></div>
-          <h3>Compare two job offers and plan the negotiation call</h3>
-          <p class="price">From <b>$50</b> for 30 min</p>
         </button>
 
         <button class="card" data-id="papers" data-cat="ai research" data-inst="Harvard" data-len="short hour" data-k="ai research papers literature review reading summaries citations fact check">
@@ -754,26 +259,6 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$35</b> for 30 min</p>
         </button>
 
-        <button class="card" data-id="gtm" data-cat="startups pitch" data-inst="MIT" data-len="hour long" data-k="startup go-to-market gtm customers growth pricing marketing product">
-          <div class="th funnel" aria-hidden="true">
-            <span class="lbl">Go-to-market</span>
-            <div class="rows">
-              <div class="row"><span>Visits</span><div style="--w:100%"></div><b>2,400</b></div>
-              <div class="row"><span>Sign-ups</span><div style="--w:42%"></div><b>310</b></div>
-              <div class="row weak"><span>Paid</span><div style="--w:7%"></div><b>12</b></div>
-            </div>
-            <span class="tip">Your leak is onboarding, not traffic.</span>
-          </div>
-          <div class="meta"><span class="av" style="background:#7A5C2E">SP</span><div class="who"><b>Sam P.</b><span>MIT Sloan, MBA student</span></div></div>
-          <h3>Plan how you’ll get your first 100 paying customers</h3>
-          <p class="price">From <b>$95</b> for 1 hr</p>
-        </button>
-
-        <div class="empty" id="empty" hidden>
-          <h3>Nothing in the examples matches that yet</h3>
-          <p>Tell us what you need. We’ll match you with the right member when we open.</p>
-          <button class="btn" type="button" data-request data-fromsearch>Request access</button>
-        </div>
       </div>
     </div>
   </section>
@@ -793,121 +278,23 @@ dialog.req .done .btn { margin-top: 20px; }
     </div>
   </section>
 
-  <section class="pricing" id="pricing">
-    <div class="wrap split">
-      <div>
-        <h2>The price you see is the price you pay</h2>
-        <p>No booking fee, no card fee, no subscription to browse. Members keep 75% of what you pay, or 80% on our Plus plan, and we keep the rest.</p>
-        <ul class="rules">
-          <li><b>Members set their own prices</b>Each listing shows the full price for every length before you choose anything.</li>
-          <li><b>Our 25% covers everything we run</b>Checking every member, card processing, the video room, notes and support. Nothing else is added later.</li>
-          <li><b>Payment waits for the session</b>We hold your payment and release it to the member only after the session happens.</li>
-          <li><b>If it doesn’t happen, you get it all back</b>If the member cancels or doesn’t show up, you’re refunded in full.</li>
-          <li><b>Group classes are priced per seat</b>Classes are run by members on Plus, so they keep 80% of each seat and we keep 20%.</li>
-        </ul>
-      </div>
-      <div class="calc paycalc">
-        <div class="out">
-          <span>You pay</span>
-          <div><output id="pPay">$60</output><small>and nothing more</small></div>
-        </div>
-        <div class="rng">
-          <div class="h"><label for="price">Try a session price</label><b id="priceV">$60</b></div>
-          <input type="range" id="price" min="20" max="300" step="5" value="60">
-        </div>
-        <div class="splitbar" aria-hidden="true"><i class="m" style="width:75%"></i><i class="v" style="width:25%"></i></div>
-        <div class="ledger">
-          <div><span><i class="dot m"></i>The member gets 75%</span><b id="pMember">$45</b></div>
-          <div><span><i class="dot v"></i>Valedictor keeps 25%</span><b id="pUs">$15</b></div>
-          <div><span>Booking and card fees</span><b>$0</b></div>
-        </div>
-        <p class="fine">For members on Plus it’s 80% to them and 20% to us. Your price is the same either way.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="members" id="members">
-    <div class="wrap split">
-      <div>
-        <h2>Take bookings as a member</h2>
-        <p>If you study, teach or graduated at a top institution, you can apply. We read every application ourselves.</p>
-        <ul class="who-can">
-          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Set your own price for each kind of session</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Open your calendar only when it suits you</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We handle booking, payment and the call itself</span></li>
-        </ul>
-      </div>
-      <div class="calc" id="calc">
-        <div class="out">
-          <span>What you’d take home</span>
-          <div><output id="earn">$980</output><small>a month, after our 25%</small></div>
-        </div>
-        <div class="rng">
-          <div class="h"><label for="rate">Your rate</label><b id="rateV">$75 an hour</b></div>
-          <input type="range" id="rate" min="30" max="250" step="5" value="75">
-        </div>
-        <div class="rng">
-          <div class="h"><label for="hrs">Hours a week</label><b id="hrsV">4 hours</b></div>
-          <input type="range" id="hrs" min="1" max="15" step="1" value="4">
-        </div>
-        <p class="plusline">On Plus you’d keep <b id="earnPlus">$1,040</b> a month, before the plan price.</p>
-        <button class="btn" type="button" data-request data-member>Apply to be a member</button>
-      </div>
-    </div>
+  <section class="next" aria-label="More about Valedictor">
     <div class="wrap">
-      <div class="plans" id="plans">
-        <article class="plan">
-          <div class="ph"><h3>Standard</h3><p class="pp">Free</p></div>
-          <p class="keep"><b>You keep 75%</b> of every booking</p>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your profile and 1:1 sessions</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Set your own prices and hours</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking, payment and the video room handled</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out weekly</li>
-          </ul>
-        </article>
-        <article class="plan plus">
-          <div class="ph"><h3>Plus</h3><p class="pp">Monthly plan. Price announced before launch</p></div>
-          <p class="keep"><b>You keep 80%</b> of every booking</p>
-          <ul>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Standard</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Featured higher in search and categories</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Run paid group classes with seats</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Your own booking link to share anywhere</li>
-            <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.4l3 3 7-7.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Paid out the next day, with a dashboard of views, bookings and repeat clients</li>
-          </ul>
-        </article>
-      </div>
-      <p class="plannote">Clients pay the same price on either plan. The plan only changes how much of it you keep.</p>
-    </div>
-  </section>
-
-  <section class="faq" id="faq">
-    <div class="wrap split">
-      <div><h2>Questions</h2></div>
-      <div class="qs">
-        <details><summary>Who can be a member?<i></i></summary><p>Students, alumni and faculty of top institutions, plus people formally affiliated with them. We start with Harvard, MIT and Babson.</p></details>
-        <details><summary>How do you check members?<i></i></summary><p>Every member is verified with their institution before their first booking, for example through their institution email. We also read each application ourselves.</p></details>
-        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 75% and Valedictor keeps 25%, or 80% and 20% if the member is on Plus. Each booking shows you the exact split.</p></details>
-        <details><summary>What is Plus?<i></i></summary><p>A monthly plan for members. On Plus you keep 80% of every booking instead of 75%, appear higher in search, can run paid group classes, get your own booking link, and are paid out the next day with a dashboard of your bookings. We’ll announce the price before launch.</p></details>
-        <details><summary>What if a session doesn’t happen?<i></i></summary><p>Your payment is held until the session takes place. If the member cancels or doesn’t show up, you get a full refund.</p></details>
-        <details><summary>What are group classes?<i></i></summary><p>Small live classes, usually 8 to 10 people, run by one member on a set day and time. You pay per seat. They’re a cheaper way to learn things like AI basics or prompting with others.</p></details>
-        <details><summary>Can someone help me set up Claude or other AI tools?<i></i></summary><p>Yes. Members can install and set up tools like Claude Code with you on your own laptop, build custom skills and agents, or teach you to use ChatGPT, Claude and Gemini on your real work.</p></details>
-        <details><summary>Where do sessions take place?<i></i></summary><p>On Valedictor, in your browser. If you both agree, the session is recorded and you each get a transcript and a short summary.</p></details>
-        <details><summary>When can I book?<i></i></summary><p>We’re opening in Boston first. Request access and we’ll email you when your place is ready.</p></details>
-        <details><summary>Is Valedictor part of Harvard, MIT or Babson?<i></i></summary><p>No. Institution names show where members study, teach or graduated. Valedictor isn’t affiliated with or endorsed by any of them.</p></details>
-      </div>
+      <a href="/pricing/"><b>Pricing</b><span>The price you see is the price you pay. No booking or card fees, and every split is shown to the cent.</span><em>See how pricing works</em></a>
+      <a href="/members/"><b>For members</b><span>Take bookings at your own price. Keep 75%, or 80% on Plus.</span><em>See member plans</em></a>
+      <a href="/faq/"><b>Questions</b><span>Who can be a member, how we check them, refunds and where sessions happen.</span><em>Read the FAQ</em></a>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="brand"><a href="#top" class="logo" aria-label="Back to top"></a></div>
-    <div><h4>Valedictor</h4><ul><li><a href="#browse">Browse sessions</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#members">For members</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li></ul></div>
-    <div><h4>Founders</h4><ul><li>Vansh Aggarwal</li><li>Maud Bismuth</li></ul></div>
-    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><span>© 2026 Valedictor</span></span></div>
+    <div class="brand"><a href="/" class="logo" aria-label="Valedictor home"></a></div>
+    <div><h4>Valedictor</h4><ul><li><a href="/sessions/">Browse sessions</a></li><li><a href="/ai/">AI sessions and classes</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/faq/">FAQ</a></li></ul></div>
+    <div><h4>Members</h4><ul><li><a href="/members/">For members</a></li><li><a href="/members/#plans">Standard and Plus</a></li><li><button class="link" type="button" data-request data-member>Apply</button></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li><li>Vansh Aggarwal and Maud Bismuth</li></ul></div>
+    <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a><span>© 2026 Valedictor</span></span></div>
   </div>
 </footer>
 
@@ -961,251 +348,6 @@ dialog.req .done .btn { margin-top: 20px; }
     </div>
   </form>
 </dialog>
-
-<script>
-(function () {
-  var $ = function (s, r) { return (r || document).querySelector(s); };
-  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-
-  /* header states */
-  var top = $('#top'), finder = $('#finder');
-  addEventListener('scroll', function () { top.classList.toggle('lined', scrollY > 4); }, { passive: true });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (e) { top.classList.toggle('searching', !e[0].isIntersecting); }, { rootMargin: '-68px 0px 0px 0px' }).observe(finder);
-  }
-
-  /* listing details */
-  var D = {
-    deck:     { name: 'Daniel K.', av: ['DK', '#3E4A3F'], open: true, who: 'Babson, MBA in Entrepreneurship', bio: 'I raised a pre-seed round for my own company last year and now help founders fix their deck before it reaches investors. Send it ahead and I’ll come with notes.', opts: [['30 min', 'Deck review with notes', 45], ['1 hr', 'Review plus a practice pitch', 80]] },
-    case:     { name: 'Priya S.', av: ['PS', '#121317'], who: 'Harvard, Economics alum', bio: 'Former consultant. I run cases the way a final round does, then tell you exactly where you lost points and how to get them back.', opts: [['15 min', 'Quick case check', 30], ['1 hr', 'Full mock case with written feedback', 90], ['2 hr', 'Final-round prep, two cases', 170]] },
-    code:     { name: 'Leo M.', av: ['LM', '#2B59FF'], open: true, who: 'MIT, Computer Science student', bio: 'Python, TypeScript, C++ and anything with a stack trace. Share your screen, we find the bug together, and you leave knowing why it happened.', opts: [['30 min', 'Find and fix one bug', 35], ['1 hr', 'Code review and refactor', 65]] },
-    essay:    { name: 'Amara O.', av: ['AO', '#6B4E3D'], who: 'Harvard, PhD candidate in English', bio: 'I teach undergraduate writing. I’ll line edit your essay with you, keep your voice, and cut what an admissions reader would skim past.', opts: [['45 min', 'Line edit of one essay', 60], ['2 hr', 'Full application, every essay', 150]] },
-    research: { name: 'Elena W.', av: ['EW', '#4A5D4F'], who: 'Harvard, PhD candidate in Neuroscience', bio: 'Bring a half-formed idea. We’ll narrow it to a question you can test with the time and data you actually have.', opts: [['30 min', 'Shape your research question', 45], ['1 hr', 'Question, methods and a plan', 85]] },
-    math:     { name: 'Tomás R.', av: ['TR', '#5A4B6E'], who: 'MIT, Mathematics PhD student', bio: 'I’ve taught recitations for calculus, linear algebra and real analysis. We go through your problem set until each step makes sense to you.', opts: [['1 hr', 'One problem set', 55], ['2 hr', 'Exam review', 100]] },
-    offer:    { name: 'Hannah L.', av: ['HL', '#3D5566'], open: true, who: 'Babson alum, product lead in fintech', bio: 'I’ve hired for product teams and negotiated my own offers. We’ll compare yours line by line and script the call.', opts: [['30 min', 'Compare two offers', 50], ['1 hr', 'Offer review plus a practice negotiation', 90]] },
-    gtm:      { name: 'Sam P.', av: ['SP', '#7A5C2E'], who: 'MIT Sloan, MBA student', bio: 'I led growth at a B2B startup before Sloan. We’ll find where your funnel leaks and write a plan for your first 100 paying customers.', opts: [['1 hr', 'Go-to-market plan', 95], ['2 hr', 'Plan plus pricing and messaging', 180]] },
-    claude:   { name: 'Arjun M.', av: ['AM', '#2F3B52'], open: true, who: 'MIT, EECS student', bio: 'I set up Claude Code for founders and researchers most weeks. We install it, point it at your real project, write your CLAUDE.md together and add the commands you’ll actually use.', opts: [['30 min', 'Install it and run your first task', 40], ['1 hr', 'Full setup with your own commands and skills', 75]] },
-    aiclass:  { name: 'Sofia G.', av: ['SG', '#3E5A4A'], open: true, who: 'Babson, MBA student', bio: 'A small class for people who have never used AI properly. We use ChatGPT, Claude and Gemini on your own work: email, research, planning and spreadsheets. Bring a laptop.', plus: true, cls: { day: 'Thursday', time: '6:00 pm', len: '90 min', seats: 8, taken: 5 }, opts: [['90 min', 'One seat', 25], ['90 min', 'Two seats', 50]] },
-    skill:    { name: 'Nadia R.', av: ['NR', '#5B3F55'], who: 'Harvard, Computer Science alum', bio: 'Bring a task you do every week. We turn it into a Claude skill with clear steps and test it on your real files, so next week it takes one line to run.', opts: [['1 hr', 'Build and test one skill', 70], ['2 hr', 'Three skills for you or your team', 130]] },
-    agents:   { name: 'James T.', av: ['JT', '#4B4A2E'], who: 'MIT Sloan, MBA student', bio: 'I run my own inbox, calendar and sales follow-ups with AI agents. We set up one workflow end to end, with you approving anything that goes out.', opts: [['1 hr', 'Automate one workflow', 80], ['2 hr', 'Inbox, calendar and CRM together', 150]] },
-    prompting:{ name: 'Mei L.', av: ['ML', '#2E4D5C'], who: 'Harvard, CS PhD candidate', bio: 'I research how language models fail. In this class you learn to write prompts that give the same good answer every time, and to spot when the model is guessing.', plus: true, cls: { day: 'Tuesday', time: '7:30 pm', len: '1 hr', seats: 10, taken: 7 }, opts: [['1 hr', 'One seat', 20], ['1 hr', 'Two seats', 40]] },
-    aimap:    { name: 'Omar H.', av: ['OH', '#6A4A3A'], who: 'Babson, MBA in Entrepreneurship', bio: 'We go through your week task by task and decide what AI should do, what it should draft for you, and what stays human. You leave with the first two automations running.', opts: [['30 min', 'Quick AI audit', 45], ['1 hr', 'Full map and first automations', 85]] },
-    build:    { name: 'Priyanka V.', av: ['PV', '#3B3F6B'], open: true, who: 'MIT, Computer Science student', bio: 'Bring an idea for a small AI tool. We plan it, build it on your laptop with you typing, and put it online so you leave with a link you can share.', opts: [['1 hr', 'Plan it and build the first version', 70], ['2 hr', 'Build and ship it together', 140]] },
-    papers:   { name: 'Ben A.', av: ['BA', '#4F5B3A'], who: 'Harvard, PhD candidate in Biology', bio: 'AI can read fifty papers in an afternoon and still get the sample size wrong. I’ll show you a workflow that saves the time and checks every claim against the source.', opts: [['30 min', 'Set up your reading workflow', 35], ['1 hr', 'Literature review with AI, checked', 65]] }
-  };
-  var FEE = 0.25, PLUS_KEEP = 0.8;
-  function cash(n) { n = Math.round(n * 100) / 100; return n % 1 ? '$' + n.toFixed(2) : money(n); }
-
-  /* filtering */
-  var state = { cat: '', inst: '', len: '', q: '' };
-  var cards = $$('.card'), empty = $('#empty'), count = $('#count');
-  function apply() {
-    var words = state.q.toLowerCase().split(/\s+/).filter(Boolean), n = 0;
-    cards.forEach(function (c) {
-      var hay = (c.dataset.k + ' ' + c.textContent).toLowerCase();
-      var ok = (!state.cat || c.dataset.cat.split(' ').indexOf(state.cat) > -1) &&
-        (!state.inst || c.dataset.inst === state.inst) &&
-        (!state.len || c.dataset.len.split(' ').indexOf(state.len) > -1) &&
-        words.every(function (w) { return hay.indexOf(w) > -1 || hay.indexOf(w.replace(/s$/, '')) > -1; });
-      c.hidden = !ok; if (ok) n++;
-    });
-    empty.hidden = n > 0;
-    var html = '<strong>' + n + (n === 1 ? ' session' : ' sessions') + '</strong>';
-    if (state.q) html += ' for “' + esc(state.q) + '”<button class="link clear" type="button" id="clearQ">Clear</button>';
-    count.innerHTML = html;
-    var cq = $('#clearQ'); if (cq) cq.onclick = function () { setQuery(''); };
-  }
-  function esc(s) { return s.replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); }
-  function setQuery(v, scroll) {
-    state.q = v.trim(); $('#q').value = state.q; $('#mq').value = state.q; apply();
-    if (scroll) $('#browse').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-  }
-  $$('.tab').forEach(function (t) {
-    t.addEventListener('click', function () {
-      $$('.tab').forEach(function (x) { x.setAttribute('aria-selected', x === t); });
-      state.cat = t.dataset.cat; apply();
-    });
-  });
-  $$('.inst button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      $$('.inst button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-      state.inst = b.dataset.inst; $('#fi').value = state.inst; apply();
-    });
-  });
-  finder.addEventListener('submit', function (e) {
-    e.preventDefault();
-    state.inst = $('#fi').value; state.len = $('#fl').value;
-    $$('.inst button').forEach(function (x) { x.setAttribute('aria-pressed', x.dataset.inst === state.inst); });
-    setQuery($('#q').value, true);
-  });
-  $('#mini').addEventListener('submit', function (e) { e.preventDefault(); setQuery($('#mq').value, true); });
-  $$('.try button').forEach(function (b) { b.addEventListener('click', function () { setQuery(b.textContent, true); }); });
-
-  /* sheet */
-  var sheet = $('#sheet'), scrim = $('#scrim'), current = null, lastFocus = null;
-  var days = [], sel = { opt: 0, day: 0, time: 1 };
-  (function () {
-    var d = new Date(); d.setDate(d.getDate() + 2);
-    var names = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    while (days.length < 5) { days.push({ n: names[d.getDay()], d: d.getDate(), wk: d.getDay() % 6 === 0 }); d.setDate(d.getDate() + 1); }
-  })();
-  function timesFor(i) { return days[i].wk ? ['10:00 am', '11:30 am', '2:00 pm'] : ['8:00 am', '6:00 pm', '7:30 pm', '9:00 pm']; }
-  function money(n) { return '$' + n.toLocaleString('en-US'); }
-  function ledger(price, label, plus) {
-    var fee = plus ? 1 - PLUS_KEEP : FEE, cut = price * fee, keep = price - cut, mp = Math.round((1 - fee) * 100), vp = 100 - mp;
-    return '<div><span>' + label + '</span><b>' + money(price) + '</b></div>' +
-      '<div><span>Booking and card fees</span><b>$0</b></div>' +
-      '<div class="tot"><span>You pay</span><b>' + money(price) + '</b></div>' +
-      '<p class="splitbar" aria-hidden="true"><i class="m" style="width:' + mp + '%"></i><i class="v" style="width:' + vp + '%"></i></p>' +
-      '<div><span><i class="dot m"></i>The member gets ' + mp + '%' + (plus ? ' (on Plus)' : '') + '</span><b>' + cash(keep) + '</b></div>' +
-      '<div><span><i class="dot v"></i>Valedictor keeps ' + vp + '%</span><b>' + cash(cut) + '</b></div>';
-  }
-  function renderSheet() {
-    var L = D[current], c = L.cls;
-    $('#sOptH').textContent = c ? 'Choose seats' : 'Choose a length';
-    $('#sTimeH').textContent = c ? 'When the class runs' : 'Pick a time';
-    $('#sOpts').innerHTML = L.opts.map(function (o, i) {
-      return '<label class="opt"><input type="radio" name="opt" value="' + i + '"' + (i === sel.opt ? ' checked' : '') + '><span>' + o[1] + '<small>' + (c ? o[0] + ' class' : o[0]) + '</small></span><b>' + money(o[2]) + '</b></label>';
-    }).join('');
-    var o = L.opts[sel.opt];
-    $('#sLedger').innerHTML = ledger(o[2], c ? o[1] + ', ' + o[0] + ' class' : o[0] + ' session', L.plus);
-    $('#sClass').hidden = !c; $('#sDays').hidden = !!c; $('#sTimes').hidden = !!c;
-    $('#sTotal').textContent = money(o[2]);
-    $('#sBook').textContent = c ? 'Request a seat' : 'Request this session';
-    if (c) {
-      $('#sClass').innerHTML = '<b>Every ' + c.day + ' at ' + c.time + ', ' + c.len + '</b>Up to ' + c.seats + ' people, online. <span class="left">' + (c.seats - c.taken) + ' of ' + c.seats + ' seats left.</span>';
-      $('#sWhen').textContent = o[1] + ', ' + c.day + ' at ' + c.time;
-      return;
-    }
-    $('#sDays').innerHTML = days.map(function (d, i) {
-      return '<button type="button" class="day" aria-pressed="' + (i === sel.day) + '" data-i="' + i + '"><small>' + d.n + '</small><b>' + d.d + '</b></button>';
-    }).join('');
-    var t = timesFor(sel.day); if (sel.time >= t.length) sel.time = 0;
-    $('#sTimes').innerHTML = t.map(function (x, i) { return '<button type="button" class="time" aria-pressed="' + (i === sel.time) + '" data-i="' + i + '">' + x + '</button>'; }).join('');
-    $('#sWhen').textContent = o[0] + ', ' + days[sel.day].n + ' ' + days[sel.day].d + ' at ' + t[sel.time];
-  }
-  $('#sOpts').addEventListener('change', function (e) { sel.opt = +e.target.value; renderSheet(); });
-  $('#sDays').addEventListener('click', function (e) { var b = e.target.closest('.day'); if (b) { sel.day = +b.dataset.i; renderSheet(); } });
-  $('#sTimes').addEventListener('click', function (e) { var b = e.target.closest('.time'); if (b) { sel.time = +b.dataset.i; renderSheet(); } });
-  function openSheet(card) {
-    current = card.dataset.id; lastFocus = card; sel = { opt: 0, day: 0, time: 1 };
-    var L = D[current];
-    var th = card.querySelector('.th').cloneNode(true); $('#sThumb').innerHTML = ''; $('#sThumb').appendChild(th);
-    $('#sTitle').textContent = card.querySelector('h3').textContent;
-    $('#sMeta').innerHTML = '<span class="av' + (L.open ? ' open' : '') + '" style="background:' + L.av[1] + '">' + L.av[0] + '</span><div class="who"><b>' + L.name + '</b><span>' + L.who + '</span>' + (L.open ? '<span class="live">Open this week</span>' : '') + '</div>';
-    $('#sBio').textContent = L.bio;
-    renderSheet();
-    sheet.classList.add('on'); scrim.classList.add('on'); document.body.style.overflow = 'hidden';
-    sheet.querySelector('.body').scrollTop = 0;
-    setTimeout(function () { $('#sClose').focus(); }, 60);
-  }
-  function closeSheet() {
-    sheet.classList.remove('on'); scrim.classList.remove('on'); document.body.style.overflow = '';
-    if (lastFocus) lastFocus.focus({ preventScroll: true });
-  }
-  cards.forEach(function (c) { c.addEventListener('click', function () { openSheet(c); }); });
-  $('#sClose').addEventListener('click', closeSheet);
-  scrim.addEventListener('click', closeSheet);
-  addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet.classList.contains('on')) closeSheet(); });
-  sheet.addEventListener('keydown', function (e) {
-    if (e.key !== 'Tab') return;
-    var f = $$('button, input, [href]', sheet).filter(function (x) { return x.offsetParent !== null; });
-    if (!f.length) return;
-    if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
-    else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
-  });
-  $('#sBook').addEventListener('click', function () {
-    var L = D[current], o = L.opts[sel.opt];
-    if (L.cls) {
-      closeSheet(); openRequest({ what: 'I’d like ' + o[1].toLowerCase() + ' in a class like this one: “' + $('#sTitle').textContent + '” (' + money(o[2]) + '), run by someone like ' + L.name + ' (' + L.who + '), ' + L.cls.day + 's at ' + L.cls.time + '.' });
-      return;
-    }
-    var text = 'I’d like a session like this one: “' + $('#sTitle').textContent + '” (' + o[0] + ', ' + money(o[2]) + '), with someone like ' + L.name + ' (' + L.who + '). ' + $('#sWhen').textContent.replace(o[0] + ', ', '') + ' would suit me.';
-    closeSheet(); openRequest({ what: text });
-  });
-
-  /* request dialog */
-  var req = $('#req'), form = $('#rForm'), what = $('#what');
-  function setRole(member) {
-    $('#roleMember').checked = !!member; form.querySelector('[value="Looking for help"]').checked = !member;
-    $('#instField').hidden = !member;
-    $('#whatLbl').textContent = member ? 'What would you offer?' : 'What do you need help with?';
-  }
-  $$('input[name=role]', form).forEach(function (r) { r.addEventListener('change', function () { setRole($('#roleMember').checked); }); });
-  function openRequest(o) {
-    o = o || {};
-    form.querySelector('.rbody').hidden = false; form.querySelector('.done').hidden = true;
-    setRole(o.member);
-    if (o.what !== undefined) what.value = o.what;
-    if (typeof req.showModal === 'function') req.showModal(); else req.setAttribute('open', '');
-    setTimeout(function () { form.querySelector('[name=name]').focus(); }, 30);
-  }
-  $$('[data-request]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      openRequest({ member: b.hasAttribute('data-member'), what: b.hasAttribute('data-fromsearch') && state.q ? 'I need help with: ' + state.q : undefined });
-    });
-  });
-  function closeReq() { if (req.close) req.close(); else req.removeAttribute('open'); }
-  $('#rClose').addEventListener('click', closeReq);
-  $('#rDone').addEventListener('click', closeReq);
-  req.addEventListener('click', function (e) { if (e.target === req) closeReq(); });
-  var INBOX = 'valedictor2026@gmail.com', sendBtn = $('#rSend'), err = $('#rErr');
-  function mailtoFor(f, member) {
-    var body = 'Name: ' + f.get('name') + '\nEmail: ' + f.get('email') +
-      (member ? '\nInstitution: ' + (f.get('inst') || '-') : '') + '\n\n' + (f.get('what') || '');
-    return 'mailto:' + INBOX + '?subject=' + encodeURIComponent('Request access: ' + f.get('role')) + '&body=' + encodeURIComponent(body);
-  }
-  function showError(f, member) {
-    err.innerHTML = 'That didn’t go through. <a href="' + mailtoFor(f, member).replace(/"/g, '&quot;') + '">Send it by email instead</a> or write to ' + INBOX + '.';
-    err.hidden = false;
-  }
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var f = new FormData(form), member = f.get('role') !== 'Looking for help';
-    if (f.get('_honey')) return;
-    err.hidden = true; sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
-    var payload = {
-      _subject: (member ? 'Member application: ' : 'Help request: ') + f.get('name'),
-      _template: 'table', _captcha: 'false',
-      Type: f.get('role'), Name: f.get('name'), email: f.get('email'),
-      Institution: member ? (f.get('inst') || '-') : 'n/a', Message: f.get('what') || '-',
-      Page: location.href
-    };
-    fetch('https://formsubmit.co/ajax/' + INBOX, {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload)
-    }).then(function (r) { return r.json(); }).then(function (d) {
-      if (String(d.success) !== 'true') throw new Error(d.message || 'failed');
-      $('#rDoneMsg').textContent = 'Thanks, ' + String(f.get('name')).split(' ')[0] + '. One of the founders will reply to ' + f.get('email') + '.';
-      form.querySelector('.rbody').hidden = true; form.querySelector('.done').hidden = false;
-      form.reset(); setRole(false);
-    }).catch(function () { showError(f, member); }).then(function () {
-      sendBtn.disabled = false; sendBtn.textContent = 'Send request';
-    });
-  });
-  if (location.hash === '#request') openRequest({});
-
-  /* earnings */
-  var rate = $('#rate'), hrs = $('#hrs');
-  function earn() {
-    var r = +rate.value, h = +hrs.value, m = Math.round(r * h * 52 / 12 * (1 - FEE) / 10) * 10;
-    $('#earn').textContent = money(m);
-    $('#earnPlus').textContent = money(Math.round(r * h * 52 / 12 * PLUS_KEEP / 10) * 10);
-    $('#rateV').textContent = '$' + r + ' an hour';
-    $('#hrsV').textContent = h + (h === 1 ? ' hour' : ' hours');
-    [rate, hrs].forEach(function (x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); });
-  }
-  rate.addEventListener('input', earn); hrs.addEventListener('input', earn); earn();
-
-  /* pricing calculator */
-  var price = $('#price');
-  function split() {
-    var p = +price.value, cut = p * FEE;
-    $('#pPay').textContent = money(p); $('#priceV').textContent = money(p);
-    $('#pMember').textContent = cash(p - cut); $('#pUs').textContent = cash(cut);
-    price.style.setProperty('--p', ((p - price.min) / (price.max - price.min) * 100) + '%');
-  }
-  price.addEventListener('input', split); split();
-})();
-</script>
+<script src="/site.js"></script>
 </body>
 </html>
