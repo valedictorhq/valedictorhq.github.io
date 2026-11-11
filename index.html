@@ -267,6 +267,73 @@ footer .legal { grid-column: 1 / -1; padding-top: 28px; margin-top: 8px; border-
 footer .legal p { max-width: 46em; }
 footer .legal .links { display: flex; gap: 20px; flex-wrap: wrap; }
 
+/* AI thumbnails */
+.term pre { top: 23%; padding-left: 7%; }
+.term .p { color: #fff; font-weight: 600; }
+.term .u { color: #fff; }
+.term .ok { color: #8FA7FF; }
+.term .cur { display: inline-block; width: 6px; height: 11px; background: #fff; vertical-align: -1px; }
+.file { position: absolute; left: 11%; right: 11%; top: 19%; bottom: -4%; background: #fff; border-radius: 6px 6px 0 0; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); overflow: hidden; }
+.file .fn { padding: 6px 10px; border-bottom: 1px solid var(--line); font-size: 10px; font-weight: 600; color: var(--ink); }
+.file pre { padding: 7px 10px; font: 500 9.5px/1.72 ui-monospace, 'SF Mono', Menlo, monospace; color: #3C3E45; white-space: pre; }
+.file .dim { color: #A3A5AC; }
+.file .hl { display: block; margin: 0 -10px; padding: 0 10px; background: var(--blue-soft); color: #1F3FB8; }
+.cls { position: absolute; left: 12%; right: 12%; top: 20%; bottom: 13%; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); padding: 7% 8%; }
+.cls b { display: block; font-size: 12px; font-weight: 700; letter-spacing: -.01em; }
+.cls small { display: block; margin-top: 2px; font-size: 10px; color: var(--muted); }
+.cls .seats { margin-top: 9%; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 5px; }
+.cls .seats span { aspect-ratio: 1; border-radius: 50%; background: var(--c, #C9CBD1); }
+.cls .seats .free { background: transparent; box-shadow: inset 0 0 0 1.3px #C9CBD1; }
+.cls .left { margin-top: 9%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
+.prm .pb { position: absolute; left: 10%; right: 10%; border-radius: 7px; padding: 7px 10px; font-size: 10px; line-height: 1.45; }
+.prm .pb small { display: block; font-size: 9.5px; font-weight: 600; margin-bottom: 2px; }
+.prm .b1 { top: 20%; background: transparent; box-shadow: inset 0 0 0 1px #CFD1D6; color: var(--muted); }
+.prm .b1 small { color: var(--muted); }
+.prm .b2 { top: 43%; background: #fff; box-shadow: 0 1px 2px rgba(18,19,23,.08), inset 3px 0 0 var(--blue); color: var(--ink-2); padding-left: 13px; }
+.prm .b2 small { color: var(--blue); }
+.aimap table { position: absolute; left: 10%; width: 80%; top: 22%; border-collapse: collapse; font-size: 10.5px; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 2px rgba(18,19,23,.08); }
+.aimap td { padding: 5px 9px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.aimap tr:last-child td { border-bottom: 0; }
+.aimap td:last-child { text-align: right; }
+.aimap .pill { display: inline-block; padding: 1px 7px; border-radius: 99px; font-size: 9.5px; font-weight: 600; }
+.aimap .ai { background: var(--blue-soft); color: var(--blue); }
+.aimap .you { background: var(--surface); color: var(--ink); }
+.aimap .tip { position: absolute; left: 10%; bottom: 8%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
+.win { position: absolute; left: 10%; right: 10%; top: 19%; bottom: 17%; background: #fff; border-radius: 8px; box-shadow: 0 1px 2px rgba(18,19,23,.08), 0 8px 20px -12px rgba(18,19,23,.2); overflow: hidden; }
+.win .chrome { height: 18px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-bottom: 1px solid var(--line); }
+.win .chrome i { width: 6px; height: 6px; border-radius: 50%; background: #D6D6DB; }
+.win .chrome span { margin-left: 6px; font-size: 8.5px; color: var(--faint); }
+.win .msgs { padding: 8px 10px; display: grid; gap: 6px; font-size: 9.5px; line-height: 1.4; }
+.win .me { justify-self: end; background: var(--ink); color: #fff; padding: 4px 8px; border-radius: 8px 8px 2px 8px; }
+.win .bot { justify-self: start; max-width: 86%; background: var(--surface); color: var(--ink-2); padding: 4px 8px; border-radius: 8px 8px 8px 2px; }
+.build .tip { position: absolute; left: 10%; bottom: 7%; font-size: 10.5px; font-weight: 600; color: var(--blue); }
+.papers { background: var(--paper); }
+.papers .pg { position: absolute; left: 9%; width: 60%; top: 19%; bottom: -4%; background: #fffdf8; box-shadow: 0 1px 2px rgba(18,19,23,.08); padding: 8% 7%; font-family: Georgia, 'Times New Roman', serif; font-size: 9.5px; line-height: 1.6; color: #55575E; }
+.papers .pg b { display: block; font-family: 'Schibsted Grotesk', sans-serif; font-size: 10px; color: var(--ink); margin-bottom: 4px; }
+.papers mark { background: var(--blue-soft); color: var(--ink); padding: 0 1px; }
+.papers .side { position: absolute; left: 73%; right: 6%; top: 38%; padding-left: 7px; box-shadow: inset 1.5px 0 0 var(--blue); font-size: 10px; line-height: 1.38; font-weight: 600; color: var(--blue); }
+
+/* pricing */
+.pricing { padding: 96px 0; border-top: 1px solid var(--line); scroll-margin-top: 68px; }
+.rules { margin-top: 32px; list-style: none; border-top: 1px solid var(--ink); max-width: 34em; }
+.rules li { padding: 16px 0 17px; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+.rules li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+.paycalc { align-self: start; }
+.paycalc .out output { font-variant-numeric: tabular-nums; }
+.splitbar { margin-top: 26px; height: 10px; border-radius: 5px; background: var(--ink); overflow: hidden; display: flex; }
+.splitbar i { display: block; height: 100%; }
+.splitbar .m { background: var(--blue); }
+.splitbar .v { background: var(--ink); }
+.ledger { margin-top: 18px; display: grid; }
+.ledger div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+.ledger div:last-child { border-bottom: 0; }
+.ledger div b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.ledger .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+.ledger .dot.m { background: var(--blue); }
+.ledger .dot.v { background: var(--ink); }
+.ledger .tot { color: var(--ink); font-weight: 600; }
+.paycalc .fine { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+
 /* sheet */
 .scrim { position: fixed; inset: 0; z-index: 40; background: rgba(18,19,23,.36); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
 .scrim.on { opacity: 1; visibility: visible; }
@@ -309,6 +376,12 @@ footer .legal .links { display: flex; gap: 20px; flex-wrap: wrap; }
 .sheet .foot div { font-size: 13.5px; color: var(--muted); line-height: 1.35; }
 .sheet .foot div b { display: block; color: var(--ink); font-size: 16px; font-weight: 600; }
 .sheet .foot .btn { height: 48px; padding: 0 22px; }
+.sheet .ledger { margin-top: 4px; padding: 4px 16px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); }
+.sheet .ledger div { font-size: 14px; padding: 9px 0; }
+.sheet .splitbar { margin: 8px 0 2px; height: 6px; }
+.clsinfo { padding: 14px 16px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); font-size: 14.5px; color: var(--ink-2); }
+.clsinfo b { display: block; color: var(--ink); font-weight: 600; }
+.clsinfo .left { color: var(--blue); font-weight: 500; }
 .sheet .fine { margin-top: 24px; padding: 14px 16px; border-radius: 12px; background: var(--surface); font-size: 13.5px; color: var(--ink-2); }
 
 /* request dialog */
@@ -398,6 +471,7 @@ dialog.req .done .btn { margin-top: 20px; }
       <button type="submit" aria-label="Search"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </form>
     <nav>
+      <a class="hide-s" href="#pricing">Pricing</a>
       <a class="hide-s" href="#members">For members</a>
       <a class="hide-s" href="#faq">FAQ</a>
       <button class="btn" type="button" data-request>Request access</button>
@@ -412,7 +486,7 @@ dialog.req .done .btn { margin-top: 20px; }
       <p class="desc">Students, alumni and faculty of the world’s top institutions. From 15 minutes to 2 hours.</p>
 
       <form class="finder" id="finder" role="search">
-        <label><span>What do you need?</span><input id="q" placeholder="A pitch deck review, help with a proof…" autocomplete="off"></label>
+        <label><span>What do you need?</span><input id="q" placeholder="Set up Claude Code, a pitch deck review…" autocomplete="off"></label>
         <label><span>Institution</span>
           <select id="fi"><option value="">Any</option><option>Harvard</option><option>MIT</option><option>Babson</option></select>
         </label>
@@ -423,11 +497,11 @@ dialog.req .done .btn { margin-top: 20px; }
       </form>
 
       <div class="try">Try
+        <button type="button">Claude setup</button>
+        <button type="button">AI class</button>
         <button type="button">pitch deck</button>
         <button type="button">case interview</button>
-        <button type="button">debugging</button>
         <button type="button">college essay</button>
-        <button type="button">job offer</button>
       </div>
 
       <div class="where"><b>Harvard</b><b>MIT</b><b>Babson</b><span>Boston first, more institutions next</span></div>
@@ -439,9 +513,11 @@ dialog.req .done .btn { margin-top: 20px; }
       <div class="wrap">
         <div class="tabs" role="tablist" aria-label="Categories">
           <button class="tab" role="tab" aria-selected="true" data-cat="">All</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="ai">AI</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="classes">Group classes</button>
           <button class="tab" role="tab" aria-selected="false" data-cat="pitch">Pitch decks</button>
           <button class="tab" role="tab" aria-selected="false" data-cat="interviews">Interviews</button>
-          <button class="tab" role="tab" aria-selected="false" data-cat="code">Code and AI</button>
+          <button class="tab" role="tab" aria-selected="false" data-cat="code">Code</button>
           <button class="tab" role="tab" aria-selected="false" data-cat="applications">Applications</button>
           <button class="tab" role="tab" aria-selected="false" data-cat="research">Research</button>
           <button class="tab" role="tab" aria-selected="false" data-cat="tutoring">Tutoring</button>
@@ -459,11 +535,20 @@ dialog.req .done .btn { margin-top: 20px; }
 
     <div class="wrap">
       <div class="status">
-        <div id="count" aria-live="polite"><strong>8 sessions</strong></div>
+        <div id="count" aria-live="polite"><strong>16 sessions</strong></div>
         <div class="note">These are example listings that show the format. Real members go live in Boston first.</div>
       </div>
 
       <div class="grid" id="grid">
+        <button class="card" data-id="claude" data-cat="ai code" data-inst="MIT" data-len="short hour" data-k="claude claude code setup set up install ai assistant terminal agent coding anthropic">
+          <div class="th code term" aria-hidden="true">
+            <span class="lbl dark">Claude Code setup</span>
+            <pre><span><b class="p">~/startup $</b> claude</span><span class="u">&gt; set this project up for me</span><span class="ok">  ✓ Read 42 files</span><span class="ok">  ✓ Wrote CLAUDE.md</span><span class="ok">  ✓ Added a /deploy command</span><span class="u">&gt; <i class="cur"></i></span></pre>
+          </div>
+          <div class="meta"><span class="av open" style="background:#2F3B52">AM</span><div class="who"><b>Arjun M.</b><span>MIT, EECS student</span></div></div>
+          <h3>Set up Claude Code on your laptop and get it working on your own project</h3>
+          <p class="price">From <b>$40</b> for 30 min</p>
+        </button>
 
         <button class="card" data-id="deck" data-cat="pitch startups" data-inst="Babson" data-len="short hour" data-k="pitch deck fundraising investor slides startup">
           <div class="th deck" aria-hidden="true">
@@ -475,6 +560,18 @@ dialog.req .done .btn { margin-top: 20px; }
           <div class="meta"><span class="av open" style="background:#3E4A3F">DK</span><div class="who"><b>Daniel K.</b><span>Babson, MBA in Entrepreneurship</span></div></div>
           <h3>Slide-by-slide review of your pitch deck before you send it</h3>
           <p class="price">From <b>$45</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="aiclass" data-cat="ai classes" data-inst="Babson" data-len="hour" data-k="ai class beginners beginner course learn ai basics chatgpt claude gemini group class">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Group class</span>
+            <div class="cls"><b>AI for complete beginners</b><small>Thursday, 6:00 pm, 90 min</small>
+              <div class="seats"><span style="--c:#3E5A4A"></span><span style="--c:#6B4E3D"></span><span style="--c:#2F3B52"></span><span style="--c:#5A4B6E"></span><span style="--c:#7A5C2E"></span><span class="free"></span><span class="free"></span><span class="free"></span></div>
+              <div class="left">3 of 8 seats left</div></div>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3E5A4A">SG</span><div class="who"><b>Sofia G.</b><span>Babson, MBA student</span></div></div>
+          <h3>AI for complete beginners: a hands-on class where you leave using it daily</h3>
+          <p class="price"><b>$25</b> a seat, 90 min class</p>
         </button>
 
         <button class="card" data-id="case" data-cat="interviews careers" data-inst="Harvard" data-len="short hour long" data-k="case interview consulting mock interview mbb">
@@ -497,6 +594,22 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$30</b> for 15 min</p>
         </button>
 
+        <button class="card" data-id="skill" data-cat="ai" data-inst="Harvard" data-len="hour long" data-k="claude skills skill build custom automation workflow ai repeat task">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">Claude skill</span>
+            <div class="file"><div class="fn">SKILL.md</div><pre><span class="dim">---</span>
+<span class="hl">name: friday-update</span>description: Turns my week's notes
+  into the client email
+<span class="dim">---</span>
+1. Read notes/this-week.md
+2. Draft it in my tone
+3. Flag anything late</pre></div>
+          </div>
+          <div class="meta"><span class="av" style="background:#5B3F55">NR</span><div class="who"><b>Nadia R.</b><span>Harvard, Computer Science alum</span></div></div>
+          <h3>Build a Claude skill that does a task you repeat every week</h3>
+          <p class="price">From <b>$70</b> for 1 hr</p>
+        </button>
+
         <button class="card" data-id="code" data-cat="code" data-inst="MIT" data-len="short hour" data-k="code debugging debug bug programming python javascript ai review">
           <div class="th code" aria-hidden="true">
             <span class="lbl dark">Debugging</span>
@@ -507,6 +620,29 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$35</b> for 30 min</p>
         </button>
 
+        <button class="card" data-id="agents" data-cat="ai startups" data-inst="MIT" data-len="hour long" data-k="ai agents agent automation automate inbox email calendar follow ups crm workflow">
+          <div class="th" aria-hidden="true">
+            <span class="lbl">AI agents</span>
+            <svg viewBox="0 0 300 225" font-family="Schibsted Grotesk, sans-serif" font-size="10.5">
+              <rect x="16" y="86" width="80" height="44" rx="6" fill="#fff"/>
+              <text x="56" y="105" text-anchor="middle" fill="#121317" font-weight="600">New email</text>
+              <text x="56" y="119" text-anchor="middle" fill="#6E7079" font-size="9.5">from a lead</text>
+              <path d="M100 108h10" stroke="#9A9CA3" stroke-width="1.3"/><path d="M108 104.5l4 3.5-4 3.5" fill="none" stroke="#9A9CA3" stroke-width="1.3"/>
+              <rect x="116" y="86" width="80" height="44" rx="6" fill="#121317"/>
+              <text x="156" y="105" text-anchor="middle" fill="#fff" font-weight="600">AI agent</text>
+              <text x="156" y="119" text-anchor="middle" fill="#B7B9C0" font-size="9.5">drafts the reply</text>
+              <path d="M200 108h10" stroke="#9A9CA3" stroke-width="1.3"/><path d="M208 104.5l4 3.5-4 3.5" fill="none" stroke="#9A9CA3" stroke-width="1.3"/>
+              <rect x="216" y="86" width="68" height="44" rx="6" fill="#2B59FF"/>
+              <text x="250" y="105" text-anchor="middle" fill="#fff" font-weight="600">You</text>
+              <text x="250" y="119" text-anchor="middle" fill="#DCE4FF" font-size="9.5">approve</text>
+              <text x="150" y="164" text-anchor="middle" fill="#6E7079" font-size="10">Then it books the call and updates your CRM.</text>
+            </svg>
+          </div>
+          <div class="meta"><span class="av" style="background:#4B4A2E">JT</span><div class="who"><b>James T.</b><span>MIT Sloan, MBA student</span></div></div>
+          <h3>Automate your inbox, calendar and follow-ups with AI agents</h3>
+          <p class="price">From <b>$80</b> for 1 hr</p>
+        </button>
+
         <button class="card" data-id="essay" data-cat="applications" data-inst="Harvard" data-len="hour" data-k="college essay application personal statement writing editing cv">
           <div class="th essay" aria-hidden="true">
             <span class="lbl">Application essay</span>
@@ -515,6 +651,17 @@ dialog.req .done .btn { margin-top: 20px; }
           <div class="meta"><span class="av" style="background:#6B4E3D">AO</span><div class="who"><b>Amara O.</b><span>Harvard, PhD candidate in English</span></div></div>
           <h3>Line edit of your application essay, with notes on every paragraph</h3>
           <p class="price">From <b>$60</b> for 45 min</p>
+        </button>
+
+        <button class="card" data-id="prompting" data-cat="ai classes" data-inst="Harvard" data-len="hour" data-k="prompting prompt prompts prompt engineering chatgpt claude gemini class llm better answers">
+          <div class="th prm" aria-hidden="true">
+            <span class="lbl">Prompting class</span>
+            <div class="pb b1"><small>Before</small>write a marketing email</div>
+            <div class="pb b2"><small>After</small>You run growth at a gym. Write a 90-word email to members who stopped coming. Offer one free week. Plain tone, no hype.</div>
+          </div>
+          <div class="meta"><span class="av" style="background:#2E4D5C">ML</span><div class="who"><b>Mei L.</b><span>Harvard, CS PhD candidate</span></div></div>
+          <h3>Prompting class: get reliable answers from ChatGPT, Claude and Gemini</h3>
+          <p class="price"><b>$20</b> a seat, 1 hr class</p>
         </button>
 
         <button class="card" data-id="research" data-cat="research" data-inst="Harvard" data-len="short hour" data-k="research question methods paper thesis statistics data neuroscience">
@@ -535,6 +682,17 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$45</b> for 30 min</p>
         </button>
 
+        <button class="card" data-id="aimap" data-cat="ai startups" data-inst="Babson" data-len="short hour" data-k="ai strategy startup small business automation operations audit which jobs">
+          <div class="th aimap" aria-hidden="true">
+            <span class="lbl">AI for startups</span>
+            <table><tr><td>Support replies</td><td><span class="pill ai">AI</span></td></tr><tr><td>Bookkeeping</td><td><span class="pill ai">AI</span></td></tr><tr><td>Investor update</td><td><span class="pill ai">AI drafts</span></td></tr><tr><td>Hiring</td><td><span class="pill you">You</span></td></tr></table>
+            <span class="tip">Hand off three. Keep hiring.</span>
+          </div>
+          <div class="meta"><span class="av" style="background:#6A4A3A">OH</span><div class="who"><b>Omar H.</b><span>Babson, MBA in Entrepreneurship</span></div></div>
+          <h3>Map which jobs in your startup to hand to AI, and which to keep</h3>
+          <p class="price">From <b>$45</b> for 30 min</p>
+        </button>
+
         <button class="card" data-id="math" data-cat="tutoring" data-inst="MIT" data-len="hour long" data-k="tutoring math calculus problem set exam proof physics">
           <div class="th math" aria-hidden="true">
             <span class="lbl">Problem set</span>
@@ -546,6 +704,18 @@ dialog.req .done .btn { margin-top: 20px; }
           <p class="price">From <b>$55</b> for 1 hr</p>
         </button>
 
+        <button class="card" data-id="build" data-cat="ai code" data-inst="MIT" data-len="hour long" data-k="build ai app chatbot api claude api openai llm prototype ship mvp">
+          <div class="th build" aria-hidden="true">
+            <span class="lbl">Build an AI app</span>
+            <div class="win"><div class="chrome"><i></i><i></i><i></i><span>localhost:3000</span></div>
+              <div class="msgs"><span class="me">Summarise this lease in 3 points</span><span class="bot">1. 24 months from Jan 1. 2. Rent rises 3% a year. 3. Two months’ notice to leave.</span></div></div>
+            <span class="tip">Shipped before the session ended.</span>
+          </div>
+          <div class="meta"><span class="av open" style="background:#3B3F6B">PV</span><div class="who"><b>Priyanka V.</b><span>MIT, Computer Science student</span></div></div>
+          <h3>Build and ship a small AI app with you, from idea to a working link</h3>
+          <p class="price">From <b>$70</b> for 1 hr</p>
+        </button>
+
         <button class="card" data-id="offer" data-cat="careers" data-inst="Babson" data-len="short" data-k="job offer negotiation salary career switch advice">
           <div class="th offer" aria-hidden="true">
             <span class="lbl">Job offers</span>
@@ -555,6 +725,17 @@ dialog.req .done .btn { margin-top: 20px; }
           <div class="meta"><span class="av open" style="background:#3D5566">HL</span><div class="who"><b>Hannah L.</b><span>Babson alum, product lead in fintech</span></div></div>
           <h3>Compare two job offers and plan the negotiation call</h3>
           <p class="price">From <b>$50</b> for 30 min</p>
+        </button>
+
+        <button class="card" data-id="papers" data-cat="ai research" data-inst="Harvard" data-len="short hour" data-k="ai research papers literature review reading summaries citations fact check">
+          <div class="th papers" aria-hidden="true">
+            <span class="lbl">AI for research</span>
+            <div class="pg"><b>Methods</b>We enrolled <mark>20 participants</mark> across two sites and followed them for six weeks, measuring sleep and recall.</div>
+            <div class="side">AI said n = 200. The paper says 20.</div>
+          </div>
+          <div class="meta"><span class="av" style="background:#4F5B3A">BA</span><div class="who"><b>Ben A.</b><span>Harvard, PhD candidate in Biology</span></div></div>
+          <h3>Use AI to read papers faster, and catch it when it gets facts wrong</h3>
+          <p class="price">From <b>$35</b> for 30 min</p>
         </button>
 
         <button class="card" data-id="gtm" data-cat="startups pitch" data-inst="MIT" data-len="hour long" data-k="startup go-to-market gtm customers growth pricing marketing product">
@@ -596,6 +777,39 @@ dialog.req .done .btn { margin-top: 20px; }
     </div>
   </section>
 
+  <section class="pricing" id="pricing">
+    <div class="wrap split">
+      <div>
+        <h2>The price you see is the price you pay</h2>
+        <p>No booking fee, no card fee, no subscription to browse. Every member gets 80% of what you pay, and we keep 20%.</p>
+        <ul class="rules">
+          <li><b>Members set their own prices</b>Each listing shows the full price for every length before you choose anything.</li>
+          <li><b>Our 20% covers everything we run</b>Checking every member, card processing, the video room, notes and support. Nothing else is added later.</li>
+          <li><b>Payment waits for the session</b>We hold your payment and release it to the member only after the session happens.</li>
+          <li><b>If it doesn’t happen, you get it all back</b>If the member cancels or doesn’t show up, you’re refunded in full.</li>
+          <li><b>Group classes work the same way</b>You pay per seat. The 80/20 split is the same.</li>
+        </ul>
+      </div>
+      <div class="calc paycalc">
+        <div class="out">
+          <span>You pay</span>
+          <div><output id="pPay">$50</output><small>and nothing more</small></div>
+        </div>
+        <div class="rng">
+          <div class="h"><label for="price">Try a session price</label><b id="priceV">$50</b></div>
+          <input type="range" id="price" min="20" max="300" step="5" value="50">
+        </div>
+        <div class="splitbar" aria-hidden="true"><i class="m" style="width:80%"></i><i class="v" style="width:20%"></i></div>
+        <div class="ledger">
+          <div><span><i class="dot m"></i>The member gets 80%</span><b id="pMember">$40</b></div>
+          <div><span><i class="dot v"></i>Valedictor keeps 20%</span><b id="pUs">$10</b></div>
+          <div><span>Booking and card fees</span><b>$0</b></div>
+        </div>
+        <p class="fine">Members can see the same numbers before they set a price.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="members" id="members">
     <div class="wrap split">
       <div>
@@ -609,8 +823,8 @@ dialog.req .done .btn { margin-top: 20px; }
       </div>
       <div class="calc" id="calc">
         <div class="out">
-          <span>What you could earn</span>
-          <div><output id="earn">$1,300</output><small>a month, before fees</small></div>
+          <span>What you’d take home</span>
+          <div><output id="earn">$1,040</output><small>a month, after our 20%</small></div>
         </div>
         <div class="rng">
           <div class="h"><label for="rate">Your rate</label><b id="rateV">$75 an hour</b></div>
@@ -631,7 +845,10 @@ dialog.req .done .btn { margin-top: 20px; }
       <div class="qs">
         <details><summary>Who can be a member?<i></i></summary><p>Students, alumni and faculty of top institutions, plus people formally affiliated with them. We start with Harvard, MIT and Babson.</p></details>
         <details><summary>How do you check members?<i></i></summary><p>Every member is verified with their institution before their first booking, for example through their institution email. We also read each application ourselves.</p></details>
-        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices. You see the full price for the length you choose before you book, and payment is only released to the member after the session happens.</p></details>
+        <details><summary>How much does a session cost?<i></i></summary><p>Each member sets their own prices, and the price on the listing is everything you pay. There’s no booking fee, card fee or subscription. The member gets 80% and Valedictor keeps 20%.</p></details>
+        <details><summary>What if a session doesn’t happen?<i></i></summary><p>Your payment is held until the session takes place. If the member cancels or doesn’t show up, you get a full refund.</p></details>
+        <details><summary>What are group classes?<i></i></summary><p>Small live classes, usually 8 to 10 people, run by one member on a set day and time. You pay per seat. They’re a cheaper way to learn things like AI basics or prompting with others.</p></details>
+        <details><summary>Can someone help me set up Claude or other AI tools?<i></i></summary><p>Yes. Members can install and set up tools like Claude Code with you on your own laptop, build custom skills and agents, or teach you to use ChatGPT, Claude and Gemini on your real work.</p></details>
         <details><summary>Where do sessions take place?<i></i></summary><p>On Valedictor, in your browser. If you both agree, the session is recorded and you each get a transcript and a short summary.</p></details>
         <details><summary>When can I book?<i></i></summary><p>We’re opening in Boston first. Request access and we’ll email you when your place is ready.</p></details>
         <details><summary>Is Valedictor part of Harvard, MIT or Babson?<i></i></summary><p>No. Institution names show where members study, teach or graduated. Valedictor isn’t affiliated with or endorsed by any of them.</p></details>
@@ -643,7 +860,7 @@ dialog.req .done .btn { margin-top: 20px; }
 <footer>
   <div class="wrap">
     <div class="brand"><a href="#top" class="logo" aria-label="Back to top"></a></div>
-    <div><h4>Valedictor</h4><ul><li><a href="#browse">Browse sessions</a></li><li><a href="#members">For members</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><h4>Valedictor</h4><ul><li><a href="#browse">Browse sessions</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#members">For members</a></li><li><a href="#faq">FAQ</a></li></ul></div>
     <div><h4>Contact</h4><ul><li><a href="mailto:valedictor2026@gmail.com">Email us</a></li><li>Boston, MA</li></ul></div>
     <div><h4>Founders</h4><ul><li>Vansh Aggarwal</li><li>Maud Bismuth</li></ul></div>
     <div class="legal"><p>Institution names show where members study, teach or graduated. They don’t imply any partnership with or endorsement by those institutions.</p><span class="links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><span>© 2026 Valedictor</span></span></div>
@@ -658,9 +875,12 @@ dialog.req .done .btn { margin-top: 20px; }
     <h3 id="sTitle"></h3>
     <div class="meta" id="sMeta"></div>
     <p class="bio" id="sBio"></p>
-    <h4>Choose a length</h4>
+    <h4 id="sOptH">Choose a length</h4>
     <div class="opts" id="sOpts"></div>
-    <h4>Pick a time</h4>
+    <h4>Where your money goes</h4>
+    <div class="ledger" id="sLedger"></div>
+    <h4 id="sTimeH">Pick a time</h4>
+    <div class="clsinfo" id="sClass" hidden></div>
     <div class="days" id="sDays"></div>
     <div class="times" id="sTimes"></div>
     <p class="fine">This is an example of the format. Send a request and we’ll match you with a verified member when Boston opens.</p>
@@ -719,8 +939,17 @@ dialog.req .done .btn { margin-top: 20px; }
     research: { name: 'Elena W.', av: ['EW', '#4A5D4F'], who: 'Harvard, PhD candidate in Neuroscience', bio: 'Bring a half-formed idea. We’ll narrow it to a question you can test with the time and data you actually have.', opts: [['30 min', 'Shape your research question', 45], ['1 hr', 'Question, methods and a plan', 85]] },
     math:     { name: 'Tomás R.', av: ['TR', '#5A4B6E'], who: 'MIT, Mathematics PhD student', bio: 'I’ve taught recitations for calculus, linear algebra and real analysis. We go through your problem set until each step makes sense to you.', opts: [['1 hr', 'One problem set', 55], ['2 hr', 'Exam review', 100]] },
     offer:    { name: 'Hannah L.', av: ['HL', '#3D5566'], open: true, who: 'Babson alum, product lead in fintech', bio: 'I’ve hired for product teams and negotiated my own offers. We’ll compare yours line by line and script the call.', opts: [['30 min', 'Compare two offers', 50], ['1 hr', 'Offer review plus a practice negotiation', 90]] },
-    gtm:      { name: 'Sam P.', av: ['SP', '#7A5C2E'], who: 'MIT Sloan, MBA student', bio: 'I led growth at a B2B startup before Sloan. We’ll find where your funnel leaks and write a plan for your first 100 paying customers.', opts: [['1 hr', 'Go-to-market plan', 95], ['2 hr', 'Plan plus pricing and messaging', 180]] }
+    gtm:      { name: 'Sam P.', av: ['SP', '#7A5C2E'], who: 'MIT Sloan, MBA student', bio: 'I led growth at a B2B startup before Sloan. We’ll find where your funnel leaks and write a plan for your first 100 paying customers.', opts: [['1 hr', 'Go-to-market plan', 95], ['2 hr', 'Plan plus pricing and messaging', 180]] },
+    claude:   { name: 'Arjun M.', av: ['AM', '#2F3B52'], open: true, who: 'MIT, EECS student', bio: 'I set up Claude Code for founders and researchers most weeks. We install it, point it at your real project, write your CLAUDE.md together and add the commands you’ll actually use.', opts: [['30 min', 'Install it and run your first task', 40], ['1 hr', 'Full setup with your own commands and skills', 75]] },
+    aiclass:  { name: 'Sofia G.', av: ['SG', '#3E5A4A'], open: true, who: 'Babson, MBA student', bio: 'A small class for people who have never used AI properly. We use ChatGPT, Claude and Gemini on your own work: email, research, planning and spreadsheets. Bring a laptop.', cls: { day: 'Thursday', time: '6:00 pm', len: '90 min', seats: 8, taken: 5 }, opts: [['90 min', 'One seat', 25], ['90 min', 'Two seats', 50]] },
+    skill:    { name: 'Nadia R.', av: ['NR', '#5B3F55'], who: 'Harvard, Computer Science alum', bio: 'Bring a task you do every week. We turn it into a Claude skill with clear steps and test it on your real files, so next week it takes one line to run.', opts: [['1 hr', 'Build and test one skill', 70], ['2 hr', 'Three skills for you or your team', 130]] },
+    agents:   { name: 'James T.', av: ['JT', '#4B4A2E'], who: 'MIT Sloan, MBA student', bio: 'I run my own inbox, calendar and sales follow-ups with AI agents. We set up one workflow end to end, with you approving anything that goes out.', opts: [['1 hr', 'Automate one workflow', 80], ['2 hr', 'Inbox, calendar and CRM together', 150]] },
+    prompting:{ name: 'Mei L.', av: ['ML', '#2E4D5C'], who: 'Harvard, CS PhD candidate', bio: 'I research how language models fail. In this class you learn to write prompts that give the same good answer every time, and to spot when the model is guessing.', cls: { day: 'Tuesday', time: '7:30 pm', len: '1 hr', seats: 10, taken: 7 }, opts: [['1 hr', 'One seat', 20], ['1 hr', 'Two seats', 40]] },
+    aimap:    { name: 'Omar H.', av: ['OH', '#6A4A3A'], who: 'Babson, MBA in Entrepreneurship', bio: 'We go through your week task by task and decide what AI should do, what it should draft for you, and what stays human. You leave with the first two automations running.', opts: [['30 min', 'Quick AI audit', 45], ['1 hr', 'Full map and first automations', 85]] },
+    build:    { name: 'Priyanka V.', av: ['PV', '#3B3F6B'], open: true, who: 'MIT, Computer Science student', bio: 'Bring an idea for a small AI tool. We plan it, build it on your laptop with you typing, and put it online so you leave with a link you can share.', opts: [['1 hr', 'Plan it and build the first version', 70], ['2 hr', 'Build and ship it together', 140]] },
+    papers:   { name: 'Ben A.', av: ['BA', '#4F5B3A'], who: 'Harvard, PhD candidate in Biology', bio: 'AI can read fifty papers in an afternoon and still get the sample size wrong. I’ll show you a workflow that saves the time and checks every claim against the source.', opts: [['30 min', 'Set up your reading workflow', 35], ['1 hr', 'Literature review with AI, checked', 65]] }
   };
+  var FEE = 0.2;
 
   /* filtering */
   var state = { cat: '', inst: '', len: '', q: '' };
@@ -777,18 +1006,37 @@ dialog.req .done .btn { margin-top: 20px; }
   })();
   function timesFor(i) { return days[i].wk ? ['10:00 am', '11:30 am', '2:00 pm'] : ['8:00 am', '6:00 pm', '7:30 pm', '9:00 pm']; }
   function money(n) { return '$' + n.toLocaleString('en-US'); }
+  function ledger(price, label) {
+    var cut = Math.round(price * FEE), keep = price - cut;
+    return '<div><span>' + label + '</span><b>' + money(price) + '</b></div>' +
+      '<div><span>Booking and card fees</span><b>$0</b></div>' +
+      '<div class="tot"><span>You pay</span><b>' + money(price) + '</b></div>' +
+      '<p class="splitbar" aria-hidden="true"><i class="m" style="width:' + (100 - FEE * 100) + '%"></i><i class="v" style="width:' + FEE * 100 + '%"></i></p>' +
+      '<div><span><i class="dot m"></i>The member gets ' + (100 - FEE * 100) + '%</span><b>' + money(keep) + '</b></div>' +
+      '<div><span><i class="dot v"></i>Valedictor keeps ' + FEE * 100 + '%</span><b>' + money(cut) + '</b></div>';
+  }
   function renderSheet() {
-    var L = D[current];
+    var L = D[current], c = L.cls;
+    $('#sOptH').textContent = c ? 'Choose seats' : 'Choose a length';
+    $('#sTimeH').textContent = c ? 'When the class runs' : 'Pick a time';
     $('#sOpts').innerHTML = L.opts.map(function (o, i) {
-      return '<label class="opt"><input type="radio" name="opt" value="' + i + '"' + (i === sel.opt ? ' checked' : '') + '><span>' + o[1] + '<small>' + o[0] + '</small></span><b>' + money(o[2]) + '</b></label>';
+      return '<label class="opt"><input type="radio" name="opt" value="' + i + '"' + (i === sel.opt ? ' checked' : '') + '><span>' + o[1] + '<small>' + (c ? o[0] + ' class' : o[0]) + '</small></span><b>' + money(o[2]) + '</b></label>';
     }).join('');
+    var o = L.opts[sel.opt];
+    $('#sLedger').innerHTML = ledger(o[2], c ? o[1] + ', ' + o[0] + ' class' : o[0] + ' session');
+    $('#sClass').hidden = !c; $('#sDays').hidden = !!c; $('#sTimes').hidden = !!c;
+    $('#sTotal').textContent = money(o[2]);
+    $('#sBook').textContent = c ? 'Request a seat' : 'Request this session';
+    if (c) {
+      $('#sClass').innerHTML = '<b>Every ' + c.day + ' at ' + c.time + ', ' + c.len + '</b>Up to ' + c.seats + ' people, online. <span class="left">' + (c.seats - c.taken) + ' of ' + c.seats + ' seats left.</span>';
+      $('#sWhen').textContent = o[1] + ', ' + c.day + ' at ' + c.time;
+      return;
+    }
     $('#sDays').innerHTML = days.map(function (d, i) {
       return '<button type="button" class="day" aria-pressed="' + (i === sel.day) + '" data-i="' + i + '"><small>' + d.n + '</small><b>' + d.d + '</b></button>';
     }).join('');
     var t = timesFor(sel.day); if (sel.time >= t.length) sel.time = 0;
     $('#sTimes').innerHTML = t.map(function (x, i) { return '<button type="button" class="time" aria-pressed="' + (i === sel.time) + '" data-i="' + i + '">' + x + '</button>'; }).join('');
-    var o = L.opts[sel.opt];
-    $('#sTotal').textContent = money(o[2]);
     $('#sWhen').textContent = o[0] + ', ' + days[sel.day].n + ' ' + days[sel.day].d + ' at ' + t[sel.time];
   }
   $('#sOpts').addEventListener('change', function (e) { sel.opt = +e.target.value; renderSheet(); });
@@ -823,6 +1071,10 @@ dialog.req .done .btn { margin-top: 20px; }
   });
   $('#sBook').addEventListener('click', function () {
     var L = D[current], o = L.opts[sel.opt];
+    if (L.cls) {
+      closeSheet(); openRequest({ what: 'I’d like ' + o[1].toLowerCase() + ' in a class like this one: “' + $('#sTitle').textContent + '” (' + money(o[2]) + '), run by someone like ' + L.name + ' (' + L.who + '), ' + L.cls.day + 's at ' + L.cls.time + '.' });
+      return;
+    }
     var text = 'I’d like a session like this one: “' + $('#sTitle').textContent + '” (' + o[0] + ', ' + money(o[2]) + '), with someone like ' + L.name + ' (' + L.who + '). ' + $('#sWhen').textContent.replace(o[0] + ', ', '') + ' would suit me.';
     closeSheet(); openRequest({ what: text });
   });
@@ -890,13 +1142,23 @@ dialog.req .done .btn { margin-top: 20px; }
   /* earnings */
   var rate = $('#rate'), hrs = $('#hrs');
   function earn() {
-    var r = +rate.value, h = +hrs.value, m = Math.round(r * h * 52 / 12 / 10) * 10;
+    var r = +rate.value, h = +hrs.value, m = Math.round(r * h * 52 / 12 * (1 - FEE) / 10) * 10;
     $('#earn').textContent = money(m);
     $('#rateV').textContent = '$' + r + ' an hour';
     $('#hrsV').textContent = h + (h === 1 ? ' hour' : ' hours');
     [rate, hrs].forEach(function (x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); });
   }
   rate.addEventListener('input', earn); hrs.addEventListener('input', earn); earn();
+
+  /* pricing calculator */
+  var price = $('#price');
+  function split() {
+    var p = +price.value, cut = Math.round(p * FEE);
+    $('#pPay').textContent = money(p); $('#priceV').textContent = money(p);
+    $('#pMember').textContent = money(p - cut); $('#pUs').textContent = money(cut);
+    price.style.setProperty('--p', ((p - price.min) / (price.max - price.min) * 100) + '%');
+  }
+  price.addEventListener('input', split); split();
 })();
 </script>
 </body>
