@@ -234,6 +234,53 @@
   });
   if (location.hash === '#request') openRequest({});
 
+  /* member application page */
+  var apply = $('#apply');
+  if (apply) {
+    var aErr = $('#aErr'), aSend = $('#aSend');
+    apply.addEventListener('input', function () { aErr.hidden = true; });
+    apply.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var f = new FormData(apply);
+      if (f.get('_honey')) return;
+      var bad = $$('[required]', apply).filter(function (el) { return el.type === 'checkbox' ? !el.checked : !String(el.value).trim(); });
+      if (!f.get('school_email') && !f.get('work')) bad.push(apply.querySelector('[name=school_email]'));
+      var emailEl = apply.querySelector('[name=email]');
+      if (emailEl.value && !emailEl.checkValidity()) bad.push(emailEl);
+      if (bad.length) {
+        aErr.textContent = bad[0].type === 'checkbox' ? 'Tick the three boxes at the end to apply.'
+          : bad[0].name === 'school_email' ? 'Add your school or alumni email, or a department page, so we can check you’re part of the institution.'
+          : 'Fill in the highlighted fields first.';
+        aErr.hidden = false;
+        $$('.field', apply).forEach(function (l) { l.classList.remove('miss'); });
+        bad.forEach(function (el) { var l = el.closest('.field'); if (l) l.classList.add('miss'); });
+        bad[0].focus(); return;
+      }
+      aSend.disabled = true; aSend.textContent = 'Sending…';
+      var payload = {
+        _subject: 'Member application: ' + f.get('name') + ' (' + f.get('institution') + ')',
+        _template: 'table', _captcha: 'false',
+        Type: 'Member application', Name: f.get('name'), email: f.get('email'),
+        Institution: f.get('institution'), Connection: f.get('connection'), Program: f.get('program'),
+        'School email': f.get('school_email') || '-', LinkedIn: f.get('linkedin'), 'Other work': f.get('work') || '-',
+        Areas: f.getAll('areas').join(', ') || '-', Session: f.get('session'), Prices: f.get('prices'),
+        'Hours a week': f.get('hours'), 'Group class': f.get('classes'),
+        'Can earn freelance income in US': f.get('work_authorized'), Lives: f.get('city'), Heard: f.get('heard') || '-',
+        'Agreed to terms, 18+, on-platform rule': 'Yes'
+      };
+      fetch('https://formsubmit.co/ajax/' + INBOX, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload)
+      }).then(function (r) { return r.json(); }).then(function (d) {
+        if (String(d.success) !== 'true') throw new Error(d.message || 'failed');
+        $('#aDoneMsg').textContent = 'Thanks, ' + String(f.get('name')).split(' ')[0] + '. We’ll reply to ' + f.get('email') + ' within a week.' + (f.get('school_email') ? ' Look out for a six-digit code at ' + f.get('school_email') + '.' : '');
+        apply.hidden = true; $('#aDone').hidden = false; window.scrollTo(0, 0);
+      }).catch(function () {
+        aErr.innerHTML = 'That didn’t go through. Try again, or email your answers to <a href="mailto:' + INBOX + '">' + INBOX + '</a>.';
+        aErr.hidden = false;
+      }).then(function () { aSend.disabled = false; aSend.textContent = 'Send application'; });
+    });
+  }
+
   /* earnings */
   var rate = $('#rate'), hrs = $('#hrs');
   function earn() {

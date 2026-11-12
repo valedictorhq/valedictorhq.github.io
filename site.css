@@ -94,6 +94,11 @@ h1 {
 .try button:hover { color: var(--ink); text-decoration-color: currentColor; }
 .where { margin-top: 44px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 28px; font-size: 14.5px; color: var(--muted); }
 .where b { font-weight: 600; font-size: 17px; color: var(--ink); letter-spacing: -.015em; }
+.first25 { margin-top: 28px; display: inline-flex; align-items: flex-start; gap: 12px; max-width: 100%; padding: 12px 18px; border-radius: 14px; background: var(--blue-soft); color: #1B3BB0; font-size: 15px; line-height: 1.4; }
+.first25 .dot { width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; background: var(--blue); flex: none; }
+.first25 b { font-weight: 600; color: var(--ink); }
+.first25 u { text-underline-offset: 3px; text-decoration-color: rgba(43,89,255,.45); white-space: nowrap; }
+.first25:hover u { text-decoration-color: currentColor; }
 
 /* browse */
 .browse { padding: 8px 0 96px; scroll-margin-top: 68px; }
@@ -458,6 +463,28 @@ footer .link:hover { color: var(--ink); }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 12px 16px 12px 0; border-top: 1px solid var(--line); }
 .doc th { font-weight: 600; color: var(--ink); width: 34%; }
 .doc td { color: var(--ink-2); }
+.apply .aform h2 { margin-top: 44px; }
+.apply .field select { width: 100%; height: 46px; border: 0; border-radius: 10px; padding: 0 36px 0 13px; font-size: 16px; outline: 0; box-shadow: inset 0 0 0 1px var(--line-2); background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236E7079' stroke-width='1.5'/%3E%3C/svg%3E") right 14px center no-repeat; -webkit-appearance: none; appearance: none; cursor: pointer; }
+.apply .field select:focus { box-shadow: inset 0 0 0 2px var(--ink); }
+.apply .field.miss input, .apply .field.miss select, .apply .field.miss textarea { box-shadow: inset 0 0 0 2px #C2412D; }
+.chips { border: 0; margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips legend { font-size: 13.5px; font-weight: 500; margin-bottom: 10px; }
+.chips label { cursor: pointer; }
+.chips input { position: absolute; opacity: 0; pointer-events: none; }
+.chips span { display: inline-block; padding: 8px 14px; border-radius: 999px; font-size: 14.5px; box-shadow: inset 0 0 0 1px var(--line-2); color: var(--ink-2); }
+.chips input:checked + span { background: var(--ink); color: #fff; box-shadow: none; }
+.chips input:focus-visible + span { outline: 2px solid var(--blue); outline-offset: 2px; }
+.checks { margin-top: 24px; display: grid; gap: 12px; }
+.checks label { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; color: var(--ink-2); cursor: pointer; }
+.checks input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--ink); flex: none; }
+.apply .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.apply .err { margin-top: 20px; padding: 12px 14px; border-radius: 10px; background: #FDF0EE; color: #8A2A1C; font-size: 14px; }
+.apply .err a { color: inherit; font-weight: 500; }
+.apply .btn.send { margin-top: 24px; height: 50px; padding: 0 28px; }
+.apply .btn.send:disabled { opacity: .7; cursor: default; }
+.apply .adone { margin-top: 32px; padding: 28px; border-radius: 16px; background: var(--surface); }
+.apply .adone h2 { margin-top: 0; }
+@media (max-width: 640px) { .apply .fields { grid-template-columns: 1fr; } .doc h1 { font-size: 36px; } }
 .lost { max-width: 720px; margin: 0 auto; padding: 120px var(--pad) 140px; }
 .lost h1 { font-size: 56px; line-height: 1.04; letter-spacing: -.04em; max-width: none; }
 .lost p { margin-top: 18px; font-size: 18px; color: var(--ink-2); }
