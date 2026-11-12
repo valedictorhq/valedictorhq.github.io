@@ -247,9 +247,15 @@
       if (!f.get('school_email') && !f.get('work')) bad.push(apply.querySelector('[name=school_email]'));
       var emailEl = apply.querySelector('[name=email]');
       if (emailEl.value && !emailEl.checkValidity()) bad.push(emailEl);
+      var schoolEl = apply.querySelector('[name=school_email]');
+      if (schoolEl.value && !schoolEl.checkValidity()) bad.push(schoolEl);
+      var liEl = apply.querySelector('[name=linkedin]'), li = liEl.value.trim();
+      if (li && !/^(https?:\/\/)?([a-z]{2,3}\.)?linkedin\.com\/\S+/i.test(li)) bad.push(liEl);
       if (bad.length) {
         aErr.textContent = bad[0].type === 'checkbox' ? 'Tick the three boxes at the end to apply.'
-          : bad[0].name === 'school_email' ? 'Add your school or alumni email, or a department page, so we can check you’re part of the institution.'
+          : bad[0].name === 'school_email' ? (bad[0].value ? 'Check your school or alumni email address.' : 'Add your school or alumni email, or a department page, so we can check you’re part of the institution.')
+          : bad[0].name === 'linkedin' && bad[0].value ? 'Paste your full LinkedIn profile link, like linkedin.com/in/yourname.'
+          : bad[0].name === 'email' && bad[0].value ? 'Check your email address.'
           : 'Fill in the highlighted fields first.';
         aErr.hidden = false;
         $$('.field', apply).forEach(function (l) { l.classList.remove('miss'); });
